@@ -1,0 +1,54 @@
+# Git Manual  
+
+  [Git manual 참고 사이트](https://rogerdudler.github.io/git-guide/index.ko.html)  
+    
+- Git Manual 단계별 설명  
+  
+   * powershell 사용 권장! (시작에서 power shell 검색)  
+  
+ -1. Git 설치 [윈도우 다운로드](https://gitforwindows.org/)    
+ 
+ -2. Github 회원가입 [Github 사이트](https://github.com/)  
+ 
+ -3. Github 레포지터리 생성  
+ 
+ -4. 해당 레포지터리에 Readme.txt 생성  
+ 
+ -5. 이후 해당 레포지터리에서 clone and download 위치 확인, (우측 녹색 중단 버튼)  
+ 
+ -6. 자신이 사용중인 컴퓨터에 Github에 연동할 폴더 생성. (이 폴더를 로컬 레포지터리라 함)
+ 
+ -7. 시작에서 Powershell 검색하여 실행  
+ 
+ -8. 자신의 컴퓨터에 생성한 로컬 레포티터리 폴더의 주소를 복사  
+ 
+ -9. powershell에 다음과 같이 작성  
+     -cd 해당 폴더 주소  
+     (오른쪽 마우스 클릭하면 복사됌)
+     
+ -10. 이후 다시 github 사이트에 들어가 github에 생성한 내 레포지터리에서 clone and download 클릭 후 주소 복사  
+ 
+ -11. powershell에 다음과 같이 작성 
+     -git config --global user.name "git아이디" 
+     -git config --global user.email "git 이메일 주소"
+     -git clone 레포지터리 주소  
+     
+ -12. 이후 정상적으로 작동 됐다면, 다음과 같이 powershell에 입력  
+     -git add --all  
+
+ -13. 이후 정상적으로 작동 됐다면, 다음과 같이 powershell에 입력    
+     -git commit -m "커밋할 메세지" 
+
+ -14. 이후 정상적으로 작동 됐다면, 다음과 같이 powershell에 입력  
+     -git push
+ 
+ 
+ *주의사항  
+ The file will have its original line endings in your working directory.  
+ 와 같은 오류가 발생한다면 다음을 입력  
+ 
+ git config --global core.autocrlf true   
+ 오류 원인은 윈도우와 맥 리눅스간에 크로스 플랫폼간의 문제이다.
+
+
+
