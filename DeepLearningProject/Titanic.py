@@ -2,11 +2,12 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt 
 import tensorflow as tf
+import csv
 import keras 
+import dataProcessClass as dpc
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import Dropout 
-import csv
 from pandas import DataFrame, Series
 
 trainFile = pd.read_csv('C:/Users/Playdata/Desktop/Playdata/PlayData/DeepLearningProject/data/train.csv')
@@ -18,67 +19,37 @@ testFrame = DataFrame(testFile)
 testAnswerFrame = DataFrame(testAnswerFile)
 #print(trainFrame)
 
-sumAge = 0
-countNum = 0
-MeanAge=0
-nanRow = pd.isna(trainFrame["Age"])
-for i in range(trainFrame.shape[0]):
-   #print(trainFrame.ix[i,2])
-    if nanRow[i]== False:
-         sumAge += trainFrame.ix[i,5]
-         countNum = countNum + 1
-meanAge = sumAge / countNum
-#meanAge ~= 29
+dp = dpc.dataProcess(trainFrame)
 
-countfemale = 0
-countNum = 0
-nanRow = pd.isna(trainFrame["Sex"])
-for i in range(trainFrame.shape[0]):
-    if nanRow[i] == False:
-         countNum = countNum + 1
-         if trainFrame.ix[i,4] == 'female':
-             countfemale = countfemale + 1
-countmale = countNum - countfemale
-countNum =0
-if countmale > countfemale :
-    replaceNanInSex = 1
-else :
-    replaceNanInSex = 0
-
-sumFare= 0
-nanRow = pd.isna(trainFrame["Fare"])
-for i in range(trainFrame.shape[0]):
+MeanAge = dp.avgMethod("Age")
+replaceNanInSex = dp.replaceNanInSex("Sex")
+meanFare = dp.avgMethod("Fare")
+replaceNanInEmvarked = dp.replaceNanInEmbarked1("Emvarked")
+#countNum =0
+#countS=0
+#countQ=0
+#countC=0
+#replaceNanInEmvarked =''
+#nanRow = pd.isna(trainFrame["Embarked"])
+#for i in range(trainFrame.shape[0]):
    #print(trainFrame.ix[i,2])
-    if nanRow[i] == False:
-         sumFare += trainFrame.ix[i,9]
-         countNum = countNum + 1
-meanFare = sumAge / countNum
-countnum =0
-
-countS=0
-countQ=0
-countC=0
-replaceNanInEmvarked =''
-nanRow = pd.isna(trainFrame["Embarked"])
-for i in range(trainFrame.shape[0]):
-   #print(trainFrame.ix[i,2])
-    if nanRow[i] == False:
-        countNum = countNum + 1
-        if trainFrame.ix[i,11] == 'S':
-            countS =countS +1
-        if trainFrame.ix[i,11] == 'Q':
-            countS =countQ +1
-        if trainFrame.ix[i,11] == 'C':
-            countS =countC +1
-if countS >countQ :
-    if countS > countC :
-        replaceNanInEmvarked = 1
-    else :
-         replaceNanInEmvarked = 2
-elif countQ > countC:
-     replaceNanInEmvarked = 3
-else :
-     replaceNanInEmvarked = 2
+ #   if nanRow[i] == False:
+  #      countNum = countNum + 1
+   #     if trainFrame.ix[i,11] == 'S':
+    #        countS =countS +1
+     #   if trainFrame.ix[i,11] == 'Q':
+      #      countS =countQ +1
+       # if trainFrame.ix[i,11] == 'C':
+        #    countS =countC +1
+#if countS >countQ :
+ #   if countS > countC :
+  #      replaceNanInEmvarked = 1
+   # else :
+    #     replaceNanInEmvarked = 2
+#elif countQ > countC:
+ #    replaceNanInEmvarked = 3
+#else :
+ #    replaceNanInEmvarked = 2
 
 #,Fare,Cabin,Embarked
 
