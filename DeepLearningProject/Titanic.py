@@ -24,32 +24,7 @@ dp = dpc.dataProcess(trainFrame)
 MeanAge = dp.avgMethod("Age")
 replaceNanInSex = dp.replaceNanInSex("Sex")
 meanFare = dp.avgMethod("Fare")
-replaceNanInEmvarked = dp.replaceNanInEmbarked1("Emvarked")
-#countNum =0
-#countS=0
-#countQ=0
-#countC=0
-#replaceNanInEmvarked =''
-#nanRow = pd.isna(trainFrame["Embarked"])
-#for i in range(trainFrame.shape[0]):
-   #print(trainFrame.ix[i,2])
- #   if nanRow[i] == False:
-  #      countNum = countNum + 1
-   #     if trainFrame.ix[i,11] == 'S':
-    #        countS =countS +1
-     #   if trainFrame.ix[i,11] == 'Q':
-      #      countS =countQ +1
-       # if trainFrame.ix[i,11] == 'C':
-        #    countS =countC +1
-#if countS >countQ :
- #   if countS > countC :
-  #      replaceNanInEmvarked = 1
-   # else :
-    #     replaceNanInEmvarked = 2
-#elif countQ > countC:
- #    replaceNanInEmvarked = 3
-#else :
- #    replaceNanInEmvarked = 2
+replaceNanInEmvarked = dp.replaceNanInEmvarked1("Embarked")
 
 #,Fare,Cabin,Embarked
 

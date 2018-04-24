@@ -38,21 +38,22 @@ class dataProcess :
         return("Can't")
 
     def replaceNanInEmvarked1(self,colName):
-        nanCol = pd.isna(self.dataFrame[colName])
         countAllNum = 0
         countS =0
         countQ =0
         countC =0
+        replaceNanInEmvarked=0
+        nanCol = pd.isna(self.dataFrame[colName])
         for i in range(self.dataFrame.shape[0]):
         #print(trainFrame.ix[i,2])
             if nanCol[i] == False:
                 countAllNum = countAllNum + 1
-            if self.dataFrame.ix[i,colName] == 'S':
-                countS =countS +1
-            if self.dataFrame.ix[i,colName] == 'Q':
-                countQ =countQ +1
-            if self.dataFrame.ix[i,colName] == 'C':
-                countC =countC +1
+                if self.dataFrame.ix[i,colName] == 'S':
+                   countS =countS +1
+                if self.dataFrame.ix[i,colName] == 'Q':
+                   countQ =countQ +1
+                if self.dataFrame.ix[i,colName] == 'C':
+                   countC =countC +1
         if countS >countQ :
             if countS > countC :
                 replaceNanInEmvarked = 1
@@ -62,4 +63,5 @@ class dataProcess :
             replaceNanInEmvarked = 3
         else :
             replaceNanInEmvarked = 2
-        return (replaceNanInEmvarked)
+        print(replaceNanInEmvarked)
+        return replaceNanInEmvarked
