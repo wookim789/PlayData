@@ -1,0 +1,18 @@
+import static java.lang.System.out;
+public class Forloop {
+
+	public static void main(String[] args) {
+		
+		int sum=0,i=1; 
+		
+		for( ;;) {
+			if (i<=10)
+				sum += i;
+			else
+				break;
+			i++;
+		}
+		out.println(sum);
+	}
+
+}

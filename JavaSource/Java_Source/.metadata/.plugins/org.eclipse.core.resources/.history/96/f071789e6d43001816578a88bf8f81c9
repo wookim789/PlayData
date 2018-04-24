@@ -1,0 +1,21 @@
+import java.lang.System;
+import static java.lang.System.out;
+
+public class DataType {
+
+	public static void main(String[] args) {
+		
+		int a =0,b=0,c=0,d=0;
+		int aRe = a++;
+		int bRe = b--;
+		int cRe = ++c;
+		int dRe = --d;
+		
+		out.println(aRe);
+		out.println(bRe);
+		out.println(cRe);
+		out.println(dRe);
+		
+	    
+	} 
+}

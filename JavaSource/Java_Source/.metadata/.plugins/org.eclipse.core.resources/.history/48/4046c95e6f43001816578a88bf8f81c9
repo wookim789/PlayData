@@ -1,0 +1,28 @@
+import java.lang.System;
+import static java.lang.System.out;
+
+public class DataType {
+
+	public static void main(String[] args) {
+		
+		double a = 5.0, b = 2.4;
+		double c = 7.4;
+		double d = a +b;
+		
+		if(c==(a+b)) {
+			out.println("same");
+		}else {
+			out.println("not same");
+		}
+		
+		if(c==d) {
+			out.println("same");
+		}else {
+			out.println("not same");
+		}
+		
+
+		
+	    
+	} 
+}

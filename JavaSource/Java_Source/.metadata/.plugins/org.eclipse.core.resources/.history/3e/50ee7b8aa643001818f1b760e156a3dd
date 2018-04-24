@@ -1,0 +1,46 @@
+import static java.lang.System.out;
+
+import java.util.Scanner;
+
+public class MultipleP {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int first, second, startNum,finalNum,i;
+		
+		out.println("1번 수 : ");
+		first = sc.nextInt();
+		out.println("1번 수 : ");
+		second = sc.nextInt();
+		
+		if(first < second) {
+			startNum =first;
+			finalNum = second;
+			
+		}else if (first > second) {
+			startNum = second;
+			finalNum = first;
+			
+		}else {
+			startNum = finalNum = first;
+		}
+		
+		i = 1;
+		while(i < 9) {
+			int init = startNum;
+			boolean head = true;
+			while(startNum < finalNum && head == true) {
+				out.printf("%d단    ",startNum);
+				startNum++;
+			}
+			head =false;
+			startNum = init;
+			while(startNum < finalNum) {
+				out.printf("%d x %d = %d  ", startNum, i, startNum * i);
+			}
+			startNum =init;
+			out.println("");
+		}
+		
+	}
+}

@@ -1,0 +1,15 @@
+import java.lang.System;
+import static java.lang.System.out;
+
+public class DataType {
+
+	public static void main(String[] args) {
+		
+		out.println(3<4);
+		out.println(10>20);
+		out.println(12.5f <12);
+		out.println(7>=7);
+		
+	    
+	} 
+}

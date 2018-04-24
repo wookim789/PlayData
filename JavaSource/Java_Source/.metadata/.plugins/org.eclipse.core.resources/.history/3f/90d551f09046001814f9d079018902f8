@@ -1,0 +1,47 @@
+import java.util.Scanner;
+import static java.lang.System.out;
+
+public class Prime {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int first, second, min, max,j, count = 0, num = 0;
+		
+		out.println("첫 번째 수 :");
+		first = sc.nextInt();
+		
+		out.println("두 번째 수 :");
+		second = sc.nextInt();
+		
+		if(first > second) {
+			min = second;
+			max = first;
+		}else {
+			min = first;
+			max = second;
+		}
+		
+		for( ; min <= max; min++) {
+			for(j = 2; j <= min; j++ ) {
+				//out.printf("min : %d, j : %d, min & j = %d \n",min,j,min % j);
+				if(min == 2) {
+					out.printf("%3d",min);
+					num++;
+				}
+				if(min % j == 0) {	
+					break;				
+				}
+				
+			}
+			if((j == (min)) && (num% 10 != 0)) {
+				out.printf("%5d",min);
+				num++;
+			}else if((j == (min)) && (count == 10)) {
+				out.printf("\n%5d",min);
+				num++;
+			}
+		}
+		out.println("\n총 개수 : "+ num);
+		sc.close();
+	}
+}

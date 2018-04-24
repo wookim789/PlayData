@@ -1,0 +1,13 @@
+
+public class Methodclass {
+
+	public static void main(String[] args) {
+		
+		System.out.println("5 + 3 = " + printCharacter(5,3));
+		
+	}
+	static int printCharacter(int num1, int num2) {
+		
+		return num1 + num2;
+	}
+}

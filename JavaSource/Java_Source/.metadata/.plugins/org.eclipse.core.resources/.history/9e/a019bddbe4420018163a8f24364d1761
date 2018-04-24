@@ -1,0 +1,9 @@
+
+public class DataType {
+
+	public static void main(String[] args) {
+		int num1 = 1 / 2 - 3;
+		double num2 = 2.0 +1.5 *2.0;
+		
+}
+}

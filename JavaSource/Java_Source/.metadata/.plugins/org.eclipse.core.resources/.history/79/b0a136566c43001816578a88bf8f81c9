@@ -1,0 +1,17 @@
+
+public class DataType {
+
+	public static void main(String[] args) {
+		
+		int b = 1;
+		int a = b =2;
+		
+		System.out.println(a);
+		b=1;
+		
+		a = (b =2);	
+		System.out.println(a);
+
+	    
+	} 
+}

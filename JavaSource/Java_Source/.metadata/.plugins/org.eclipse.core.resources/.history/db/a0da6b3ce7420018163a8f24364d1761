@@ -1,0 +1,9 @@
+
+public class DataType {
+
+	public static void main(String[] args) {
+		System.out.println("MBC"+10+20);
+		
+		
+	}
+}

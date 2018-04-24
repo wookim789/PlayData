@@ -1,0 +1,21 @@
+import java.lang.System;
+import static java.lang.System.out;
+
+public class DataType {
+
+	public static void main(String[] args) {
+		
+		if(3==4) {
+			out.println(3==4);
+		}else {
+			out.println(3!=4);
+		}
+		
+		if(3!=4) {
+			out.println(3!=4);
+		}else {
+			out.println(3==4);
+		}
+	    
+	} 
+}

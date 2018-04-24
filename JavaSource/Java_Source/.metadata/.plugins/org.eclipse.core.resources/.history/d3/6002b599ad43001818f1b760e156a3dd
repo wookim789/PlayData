@@ -1,0 +1,59 @@
+import static java.lang.System.out;
+
+import java.util.Scanner;
+
+public class MultipleP {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int startNum, finalNum, i, init;
+		boolean head = true;
+		
+		{
+			int first, second;
+			out.println("1번 수 : ");
+			first = sc.nextInt();
+			out.println("1번 수 : ");
+			second = sc.nextInt();
+		
+			if(first < second) {
+				startNum =first;
+				finalNum = second;
+			
+			}else if (first > second) {
+				startNum = second;
+				finalNum = first;
+				
+			}else {
+				startNum = finalNum = first;
+			}
+		}
+
+		//곱셉인수 초기화
+		i = 1;
+		//구구단 본문
+		while(i < 10) {			
+			init = startNum;	
+			//몇단인지 한번만 출력
+			while(startNum <= finalNum && head == true) {
+				out.printf("  %d단                              ",startNum);
+				startNum++;
+			}
+			//값 초기화
+			head =false;
+			startNum = init;
+			out.println("");
+			
+			//계산값 출력
+			while(startNum <= finalNum) {
+				out.printf("%3d x %3d = %3d  ", startNum, i, startNum * i);
+				startNum++;
+			}
+			//값 초기화
+			startNum =init;
+			i++;
+			out.println("");
+		}
+		sc.close();
+	}
+}

@@ -1,0 +1,22 @@
+import static java.lang.System.out;
+
+import java.util.Scanner;
+
+public class MultipleP {
+
+	public static void main(String[] args) {
+		//Scanner sc = new Scanner(System.in);
+		int cnt, num = 2;
+		
+		while(num < 10) {		
+			out.printf("%d단 \n", num);	
+			cnt = 1;
+			while (cnt < 10) {			
+				out.printf("%d x %d = %d\n", num, cnt, num * cnt);
+				cnt++;
+			}		
+			num++;	
+			out.println("");			
+		}
+	}
+}

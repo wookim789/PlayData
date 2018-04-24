@@ -1,0 +1,50 @@
+import java.lang.System;
+import static java.lang.System.out;
+
+public class DataType {
+
+	public static void main(String[] args) {
+		
+		double a = 5.1, b = 2.4;
+		double c = 7.5;
+		double d = a + b;
+		double e = 5.1 +2.4;
+		out.printf("%f ",e);
+		
+		if(c==(a+b)) {
+			out.print("same  ");
+			out.print(a+" ");
+			out.print(b+" ");
+			out.println(c);
+		}else {
+			out.println("not same ");
+			out.print(a+" ");
+			out.print(b+" ");
+			out.println(c);
+		}
+	
+		if(c==d) {
+			out.print("same ");
+			out.print(c+" ");
+			out.println(d+" ");
+		}else {
+			out.print("not same ");
+			out.print(c+" ");
+			out.println(d+" ");
+		}
+		
+		if(c==e) {
+			out.println("same ");
+			out.print(c+" ");
+			out.println(e+" ");
+		}else {
+			out.println("not same");
+			out.print(c);
+			out.println(e);
+		}
+		
+
+		
+	    
+	} 
+}

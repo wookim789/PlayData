@@ -1,0 +1,9 @@
+
+public class DataType {
+
+	public static void main(String[] args) {
+		String a = "hello im hungry and i want go home";
+		String b = "아 \"집에 가고싶다.\"";
+		System.out.println(a);
+		System.out.println(b)
+}

@@ -1,0 +1,17 @@
+import static java.lang.System.out;
+
+public class DataType {
+
+	public static void main(String[] args) {
+		
+		double a += 5.1 + 2.4;
+
+		out.printf("a: %f ",a);
+
+
+		
+
+		
+	    
+	} 
+}

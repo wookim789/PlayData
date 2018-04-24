@@ -1,0 +1,11 @@
+import static java.lang.System.out;
+
+public class Utility {
+	
+	public static void print(Object answer) {
+		out.print(answer);
+	}
+	public static void println(Object answer) {
+		out.print(answer);
+	}
+}

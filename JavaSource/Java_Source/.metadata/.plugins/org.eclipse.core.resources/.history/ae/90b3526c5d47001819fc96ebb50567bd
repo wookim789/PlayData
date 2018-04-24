@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class PrimeNumber {
+
+	public static void main(String[] args) {
+		
+		int num1, num2, min, max, cnt=0;
+		int i, j;
+		
+		
+		
+		for (i=min; i<=max; i++) // ���������� ū�����̿� �����ϴ� �Ҽ��� ����
+		{
+			for (j=2; j<i; j++) // 2���� i���� ���������� i������ ���� �Ҽ����� �Ǻ��ϱ� ���� �ݺ�
+			{
+				if (i%j == 0) // i������ ���� ���̻� �Ҽ��� �ƴ�
+					break;  
+			}
+			if (i == j) // i������ ���� �Ҽ��� ���
+			{
+				System.out.printf("%5d", i); // �Ҽ� ���
+				cnt++; // �Ҽ��� ���� ī��Ʈ
+				if (cnt % 10 == 0)  // ���ٿ� 10���� ���.
+					System.out.println();
+			}
+		}
+		if (cnt % 10 != 0)
+			System.out.println(); 
+		System.out.println("�ѼҼ��� ���� = " + cnt);
+	}
+	
+	static int[] inputPrimeNumber() {
+		Scanner in = new Scanner(System.in);
+		int [] num = new int[2];
+		System.out.print("첫 번째 수 입력 => ");
+		int num1 = in.nextInt();
+		System.out.print("두 번째 수 입력 => ");
+		int num2 = in.nextInt();
+		System.out.println();
+		
+		if (num1 < num2) // �Է� ���� �μ��� ū���� �������� ����
+		{
+			min = num1;
+			max = num2;
+		}
+		else
+		{
+			min = num2;
+			max = num1;
+		}
+	}
+	static void PrimeNumber() {
+	}
+	}
+	
+	
+	
+}

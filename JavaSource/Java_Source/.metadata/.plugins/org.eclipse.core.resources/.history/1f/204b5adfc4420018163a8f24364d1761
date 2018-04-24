@@ -1,0 +1,19 @@
+import static java.lang.System.out;
+
+public class Loop {
+
+	public static void main(String[] args) {
+		
+		int cnt =1, holhap = 0, jachap = 0;
+		while(cnt <=100) {
+			if(cnt % 2==0) {
+				jachap += cnt;
+			}else {
+				holhap += cnt;
+			}
+			cnt++;
+		}
+		out.printf("1~100까지 짝수의 합 : %d\n",jachap);
+		out.printf("1~100까지 홀수의 합 : %d\n",holhap);
+	}
+}

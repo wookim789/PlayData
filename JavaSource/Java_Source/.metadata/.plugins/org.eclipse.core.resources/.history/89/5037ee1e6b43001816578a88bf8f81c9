@@ -1,0 +1,20 @@
+
+public class DataType {
+
+	public static void main(String[] args) {
+		
+		char a = 'ㄴ';
+		char a2 = 'ㅑ';
+		char a3 = 'ㅇ';
+		int b = a;
+		int b2 = a2;
+		int b3 = a3;
+		System.out.println(a);
+		System.out.println(a2);
+		System.out.println(a3);
+		System.out.println(b);
+		System.out.println(b2);
+		System.out.println(b3);
+	    
+	} 
+}

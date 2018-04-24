@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Gugu {
+
+	public static void main(String[] args) {
+		int num1, num2, min, max;
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("ù��° ���� �Է� => ");
+        num1 = scan.nextInt();
+        System.out.print("�ι�° ���� �Է� => ");
+        num2 = scan.nextInt();
+        
+        if (num1 > num2)
+        {
+        	min = num2;
+        	max = num1;
+        }
+        else
+        {
+        	min = num1;
+        	max = num2;
+        }
+        printGuGuDan(min,max);
+        scan.close();      
+	}
+	static void printGuGuDan(int min1, int max1) {
+		int i=0, j =0;
+		 System.out.println("");
+	        for (i=min1; i <= max1; i++) 
+	        {      
+		        System.out.printf("* %d�� *  ", i);
+	        }
+	        System.out.println();
+
+	        for(j = 1; j <= 9; j++)
+	        {
+	        	for(i = min1; i <= max1; i++)
+	        	{
+		        	System.out.printf("%d*%d=%2d  ", i, j, i*j);            
+		        } 
+		        System.out.println();
+	        }
+		
+	}
+}

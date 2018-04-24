@@ -1,0 +1,35 @@
+import static java.lang.System.out;
+
+public class Utility {
+	//method over loading
+	public static void print(int answer) {
+		out.print(answer);
+	}
+	public static void print(float answer) {
+		out.print(answer);
+	}
+	public static void print(double answer) {
+		out.print(answer);
+	}
+	public static void print(char answer) {
+		out.print(answer);
+	}
+	public static void print(String answer) {
+		out.print(answer);
+	}
+	public static void print(byte answer) {
+		out.print(answer);
+	}
+	public static void print(long answer) {
+		out.print(answer);
+	}
+	public static void print(boolean answer) {
+		out.print(answer);
+	}
+	public static void print(Object answer) {
+		out.print(answer);
+	}
+	public static void println(Object answer) {
+		out.print(answer);
+	}
+}

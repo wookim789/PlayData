@@ -1,0 +1,80 @@
+package panme02;
+
+import java.util.Scanner;
+
+public class PanmaeEx02 {
+	
+	final static int MAX = 100;
+	
+	public static void main(String[] args) {
+		
+		int i, total = 0, cnt = 0;
+		
+		
+		for (i=0; i<MAX; i++)
+		{
+			
+			
+			System.out.print("��ǰ�� �Է� => ");
+			irum[i] = in.next();
+			System.out.print("���� �Է� => ");
+			su[i] = in.nextInt();
+			System.out.print("�ܰ� �Է� => ");
+			danga[i] = in.nextInt();
+			
+			price[i] = su[i] * danga[i];
+			total += price[i];
+			cnt++;
+			System.out.println();
+		}
+		
+		System.out.println("\n\t       *** �Ǹ� ��Ȳ ***");
+		System.out.println("============================================");
+		System.out.println("��ǰ�ڵ�        ��ǰ��          ����           �ܰ�             �ݾ�");
+		System.out.println("============================================");
+		for (i=0; i<cnt; i++)
+		{
+			System.out.printf("%4s      %3s        %4d    %6d   %9d\n",
+				code[i], irum[i], su[i], danga[i], price[i]);
+		}
+		System.out.println("============================================");
+		System.out.printf("\t\t\t  ���Ǹž�  : %d\n", total);
+	}
+	public static void inputData(int cnt, int total) {
+		Scanner in = new Scanner(System.in);
+		
+		String code[] = new String[MAX];
+		String irum[] = new String[MAX];
+		
+		int i;
+		
+		int su[] = new int[MAX];
+		int danga[] = new int[MAX];
+		int price[] = new int[MAX];
+		
+		for (i=0; i<MAX; i++)
+		{
+			System.out.print("��ǰ�ڵ� �Է� => ");
+			code[i] = in.next();
+			if (code[i].equals("exit"))
+				break;
+			
+			System.out.print("��ǰ�� �Է� => ");
+			irum[i] = in.next();
+			System.out.print("���� �Է� => ");
+			su[i] = in.nextInt();
+			System.out.print("�ܰ� �Է� => ");
+			danga[i] = in.nextInt();
+			
+			price[i] = su[i] * danga[i];
+			total += price[i];
+			cnt++;
+			System.out.println();
+		}
+		System.out.print("��ǰ�ڵ� �Է� => ");
+		code[i] = in.next();
+		if (code[i].equals("exit"))
+			break;
+		in.close();
+	}
+}

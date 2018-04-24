@@ -1,0 +1,14 @@
+
+public class Methodclass {
+
+	public static void main(String[] args) {
+		
+		printCharacter('*',30);
+		System.out.println("hello");
+		printCharacter('-',30);
+	}
+	static int printCharacter(int num1, int num2) {
+		
+		return num1 + num2;
+	}
+}
