@@ -1,0 +1,7 @@
+# Python and Jupyter notebook install menual  
+---
+파이썬과 주피터 노트북 설치 메뉴얼  
+  
+우선 파이썬부터 설치해야 한다. 메뉴얼은 다음과 같다.  
+  
+1. [python install link](https://www.python.org/downloads/release/python-365/)
