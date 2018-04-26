@@ -29,25 +29,16 @@ replaceNanInEmvarked = dp.replaceNanInEmvarked1("Embarked")
 #,Fare,Cabin,Embarked
 
 trainFrame.PassengerId = trainFrame.PassengerId.replace(np.nan,1)
-
 trainFrame.Survived = trainFrame.Survived.replace(np.nan,1)
-
 trainFrame.Pclass = trainFrame.Pclass.replace(np.nan,3)
-
 trainFrame.Sex = trainFrame.Sex.replace(np.nan,replaceNanInSex)
 trainFrame.Sex = trainFrame.Sex.replace('female',0)
 trainFrame.Sex = trainFrame.Sex.replace('male',1)
-
 trainFrame.Age = trainFrame.Age.replace(np.nan,29)
-
 trainFrame.Fare= trainFrame.Fare.replace(np.nan,meanFare)
-
 trainFrame.Cabin = trainFrame.Cabin.replace(np.nan,"unknown")
-
 trainFrame.SibSp = trainFrame.SibSp.replace(np.nan,0)
-
 trainFrame.Parch = trainFrame.Parch.replace(np.nan,0)
-
 trainFrame.Embarked = trainFrame.Embarked.replace(np.nan,replaceNanInEmvarked)
 trainFrame.Embarked = trainFrame.Embarked.replace('S',1)
 trainFrame.Embarked = trainFrame.Embarked.replace('C',2)
