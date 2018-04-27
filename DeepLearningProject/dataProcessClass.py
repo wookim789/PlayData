@@ -2,10 +2,11 @@ import numpy as np
 import pandas as pd
 
 class dataProcess :
+    #생성자
     def __init__(self,arr):
         self.dataFrame = arr
         
-
+    #평균 내는 메소드
     def avgMethod (self,colName):
         sumNum = 0
         countNum = 0
@@ -29,6 +30,7 @@ class dataProcess :
                 if self.dataFrame.ix[i,colName] == 'female':
                     countfemale = countfemale + 1
         countmale = countAllNum - countfemale    
+        
         if countmale > countfemale :
             print("done2")  
             return(1)

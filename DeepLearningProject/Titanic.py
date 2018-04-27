@@ -20,13 +20,36 @@ testAnswerFrame = DataFrame(testAnswerFile)
 #print(trainFrame)
 
 dp = dpc.dataProcess(trainFrame)
+dptest = dpc.dataProcess(testFrame)
 
 MeanAge = dp.avgMethod("Age")
 replaceNanInSex = dp.replaceNanInSex("Sex")
 meanFare = dp.avgMethod("Fare")
 replaceNanInEmvarked = dp.replaceNanInEmvarked1("Embarked")
 
+t_MeanAge = dptest.avgMethod("Age")
+t_replaceNanInSex = dptest.replaceNanInSex("Sex")
+t_meanFare = dptest.avgMethod("Fare")
+t_replaceNanInEmvarked = dptest.replaceNanInEmvarked1("Embarked")
+
 #,Fare,Cabin,Embarked
+
+testFrame.PassengerId = testFrame.PassengerId.replace(np.nan,1)
+testFrame.Pclass = testFrame.Pclass.replace(np.nan,3)
+testFrame.Sex = testFrame.Sex.replace(np.nan,replaceNanInSex)
+testFrame.Sex = testFrame.Sex.replace('female',0)
+testFrame.Sex = testFrame.Sex.replace('male',1)
+testFrame.Age = testFrame.Age.replace(np.nan,29)
+testFrame.Fare= testFrame.Fare.replace(np.nan,meanFare)
+testFrame.Cabin = testFrame.Cabin.replace(np.nan,"unknown")
+testFrame.SibSp = testFrame.SibSp.replace(np.nan,0)
+testFrame.Parch = testFrame.Parch.replace(np.nan,0)
+testFrame.Embarked = testFrame.Embarked.replace(np.nan,replaceNanInEmvarked)
+testFrame.Embarked = testFrame.Embarked.replace('S',1)
+testFrame.Embarked = testFrame.Embarked.replace('C',2)
+testFrame.Embarked = testFrame.Embarked.replace('Q',3)
+
+trainAnswerFrame = trainFrame['Survived']
 
 trainFrame.PassengerId = trainFrame.PassengerId.replace(np.nan,1)
 trainFrame.Survived = trainFrame.Survived.replace(np.nan,1)
@@ -44,16 +67,23 @@ trainFrame.Embarked = trainFrame.Embarked.replace('S',1)
 trainFrame.Embarked = trainFrame.Embarked.replace('C',2)
 trainFrame.Embarked = trainFrame.Embarked.replace('Q',3)
 
-trainAnswerFrame = trainFrame['Survived']
-#print(trainFrame.ix[:,6])
 
+#print(trainFrame.ix[:,6])
+#train data 제거 항목
 del trainFrame['Survived']
 del trainFrame['Ticket']
 del trainFrame['Name']
 del trainFrame['Cabin']
+#test data 제거 항목
+del testFrame['Ticket']
+del testFrame['Name']
+del testFrame['Cabin']
+#testAnswer data 제거 항목
+del testAnswerFrame["PassengerId"]
 
 #keras
 print(trainFrame.shape)
+print(testFrame.shape)
 model = Sequential()
 model.add(Dense(units = 100, input_shape =(8,) , activation = 'relu'))
 model.add(Dropout(0.2))
@@ -65,8 +95,17 @@ model.compile(loss='binary_crossentropy',
               optimizer = 'adam',
               metrics=['accuracy']
              )
-model.fit(trainFrame, trainAnswerFrame, epochs=50,  validation_split = 0.2)
+model.fit(trainFrame, trainAnswerFrame, epochs=30,  validation_split = 0.2)
 
+model.evaluate(testFrame, testAnswerFrame)
 
-#loss_and_metrics = model.evaluate(x_test, y_test, batch_size=128)
-#print(trainAnswerFrame)
+predicted_Y = model.predict(testFrame)
+match = predicted_Y == testAnswerFrame
+wrong_label = np.where(predicted_Y>0.5, 1,0)
+cnt = 0
+
+taf = np.array(testAnswerFile)
+for i in range (wrong_label.shape[0]) :
+    if wrong_label[i] == taf[i] :
+        cnt = cnt + 1
+print("acc : {:d}",  (cnt/wrong_label.shape[0]))
