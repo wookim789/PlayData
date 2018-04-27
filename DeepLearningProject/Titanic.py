@@ -17,7 +17,20 @@ testAnswerFile =  pd.read_csv('C:/Users/Playdata/Desktop/Playdata/PlayData/DeepL
 trainFrame = DataFrame(trainFile)
 testFrame = DataFrame(testFile)
 testAnswerFrame = DataFrame(testAnswerFile)
-#print(trainFrame)
+print(trainFrame.describe())
+
+del trainFrame['Survived']
+del trainFrame['Ticket']
+del trainFrame['Cabin']
+#test data 제거 항목
+del testFrame['Ticket']
+del testFrame['Cabin']
+#testAnswer data 제거 항목
+del testAnswerFrame["PassengerId"]
+
+print(trainFrame.ix[:,1].value_counts())
+
+
 
 dp = dpc.dataProcess(trainFrame)
 dptest = dpc.dataProcess(testFrame)
@@ -70,16 +83,7 @@ trainFrame.Embarked = trainFrame.Embarked.replace('Q',3)
 
 #print(trainFrame.ix[:,6])
 #train data 제거 항목
-del trainFrame['Survived']
-del trainFrame['Ticket']
-del trainFrame['Name']
-del trainFrame['Cabin']
-#test data 제거 항목
-del testFrame['Ticket']
-del testFrame['Name']
-del testFrame['Cabin']
-#testAnswer data 제거 항목
-del testAnswerFrame["PassengerId"]
+
 
 #keras
 print(trainFrame.shape)
