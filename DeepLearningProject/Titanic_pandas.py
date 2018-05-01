@@ -28,9 +28,17 @@ del testFrame['Cabin']
 #testAnswer data 제거 항목
 del testAnswerFrame["PassengerId"]
 
-trainFrame.apply(lambda x : 0 if np.isnan(x) else x).fillna(0).astype(int)
-print(trainFrame.ix[:,3])
-#print(trainFrame.describe())
+
+
+trainFrame = trainFrame.replace(np.nan,0)
+
+sex = lambda x : 0 if x == 'male' else 1
+age = lambda x : 0.7 if x == 0 else 1 if x <= 19 else 0.5 if x <= 30 else 0.3 if x <=50 else 0.8
+pclass = lambda x : 0 if x == 3 else 0.5 if x == 2 else 1
+fare = lambda x : x/512.
+
+#print(trainFrame)
+print(trainFrame.describe())
 #print(trainFrame.ix[:,0].value_counts())
 
 
