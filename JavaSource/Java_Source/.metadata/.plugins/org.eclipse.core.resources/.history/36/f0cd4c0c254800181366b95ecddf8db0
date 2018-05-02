@@ -1,0 +1,18 @@
+package GoodsStocks;
+
+public class GoodsStocks {
+	public int stockNum;
+	public String goodsCode;
+	
+	public int addStock(int money) {
+		return (stockNum += money);
+	}
+	public int SubStock(int money) {
+		if(stockNum>=money)
+			return(stockNum -= money);
+		else {
+			return(-1);
+		}
+	}
+
+}

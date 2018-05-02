@@ -1,0 +1,23 @@
+package extend;
+
+public class MainExtend {
+
+	public static void main(String[] args) {
+		ChildClass obj = new ChildClass();
+		obj.accountNo = "111-22-33333";
+		obj.ownerName = "홍길동";
+		obj.carNo = "11-11-11";
+		obj.deposit(1000000);
+		
+		try {
+			int paidAmount = obj.pay("11-11-11",47000);
+			System.out.println("지불액 : " + paidAmount);
+			System.out.println("잔액 :" + obj.balance);
+		}catch ( Exception e) {
+			String msg = e.getMessage();
+			System.out.println(msg);
+		}
+
+	}
+
+}

@@ -1,0 +1,14 @@
+package GoodsStocks;
+
+public class GoodsStocks {
+	int stockNum;
+	String goodsCode;
+	
+	public int addStock(int money) {
+		return (stockNum += money);
+	}
+	public int SubStock(int money) {
+		return(stockNum -= money);
+	}
+
+}

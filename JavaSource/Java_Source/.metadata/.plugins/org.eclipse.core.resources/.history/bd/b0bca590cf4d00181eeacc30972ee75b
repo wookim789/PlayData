@@ -1,0 +1,49 @@
+package idPassword;
+import java.util.*;
+
+public class IdPassword {
+
+	public static void main(String[] args) {
+		
+		String id = "930306-1148613";
+		StringTokenizer token = new StringTokenizer(id,"-");
+		
+		int num, tot = 0, mul = 2, output = 0;
+		boolean check = false;
+		
+		while(check == false && mul<6 ) {
+			num = Integer.parseInt(token.nextToken());
+			tot += (num * mul);
+			
+			if(mul < 10 ) {
+				mul++;
+			}else {
+				check = true;
+				mul = 2;
+			}
+			
+		}
+		
+		output = 11 - (tot % 11);
+		
+		if(output == 11) {
+			if(1 == Integer.parseInt((token.nextToken()))){
+				System.out.print(id + "(o)");
+			}else {
+				System.out.print(id + "(x)");
+			}
+		}else if(output ==10) {
+			if(0 == Integer.parseInt((token.nextToken()))){
+				System.out.print(id + "(o)");
+			}else {
+				System.out.print(id + "(x)");
+			}
+		}else {
+			if(output == Integer.parseInt((token.nextToken()))){
+				System.out.print(id + "(o)");
+			}else {
+				System.out.print(id + "(x)");
+			}
+		}
+	}
+}

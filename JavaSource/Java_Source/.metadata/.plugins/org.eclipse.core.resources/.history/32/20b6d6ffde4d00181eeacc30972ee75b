@@ -1,0 +1,41 @@
+package stringOperatroEx;
+import static java.lang.System.out;
+import static java.lang.System.in;
+import java.util.*;
+
+public class Main {
+
+	static int cnt = 0 ;
+	
+	public static void main(String[] args) {
+		StringTokenizer op;
+		String oper;
+		System.out.println((int)'+');		
+		System.out.println((int)'-');	
+		System.out.println((int)'*');	
+		System.out.println((int)'/');	
+		//'+' '-' '*' '/'
+		Scanner sc = new Scanner(in);
+		
+		System.out.println("수식 입력 =>");
+		oper = sc.nextLine();
+		op = new StringTokenizer(oper,"+-/*",true);
+		
+		
+	}
+	static boolean check(StringTokenizer op) {
+		String str = op.nextToken();
+		int checknum;
+		try {
+			checknum = Integer.parseInt(str);
+		}catch(java.lang.NumberFormatException e){
+			return false;
+		}
+		if((str == "+"|| str =="-"|| str =="*"|| str == "/")){
+			return false;
+		}else
+			
+		}
+	}
+
+}

@@ -1,0 +1,7 @@
+package example;
+
+public interface Personable {
+	public abstract void input(Personable obj[]);
+	public abstract void output(Personable obj[]);
+
+}

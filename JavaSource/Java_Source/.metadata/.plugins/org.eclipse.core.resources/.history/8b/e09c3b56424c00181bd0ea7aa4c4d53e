@@ -1,0 +1,33 @@
+package interfaceClass;
+import static java.lang.System.out;
+
+
+public class SeparateVolume  implements IntefaceClass  {
+	String orderNum,title,author,nameOfpeople, dates, state;
+	
+	SeparateVolume( String orderNum,String title,String author, String nameOfpeople, String dates, String state){
+		this.orderNum =orderNum;
+		this.title = title;
+		this.author = author;
+		this.nameOfpeople= nameOfpeople;
+		this.dates = dates;
+		this.state= state;
+	}
+	
+	public void borrow() {
+		out.println("관리번호 :" + this.orderNum);
+		out.println("제목 : " + this.title);
+		out.println("저자 : " + this.author);
+		out.println(this.nameOfpeople +"님 안녕하십니까.");
+		out.print(this.dates + "일 부터 5일이 반납 기한 입니다.");
+		out.print(this.nameOfpeople +"님은 현재 "+this.state + "중 이십니다.");
+	}
+	public void returnThings() {
+		out.println("관리번호 :" + this.orderNum);
+		out.println("제목 : " + this.title);
+		out.println("저자 : " + this.author);
+		out.println(this.nameOfpeople +"님 안녕하십니까.");
+		out.print(this.dates + "일에"+ this.title +"을 반납하셨습니다.");
+	}
+
+}

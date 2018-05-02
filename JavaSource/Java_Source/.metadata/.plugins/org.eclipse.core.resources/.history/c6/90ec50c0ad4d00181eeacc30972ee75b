@@ -1,0 +1,8 @@
+package package1;
+
+import package1.package2.PackageClass2;
+
+public class PackageClass1 {
+	PackageClass2 pc2 = new PackageClass2("a","b","c");
+
+}

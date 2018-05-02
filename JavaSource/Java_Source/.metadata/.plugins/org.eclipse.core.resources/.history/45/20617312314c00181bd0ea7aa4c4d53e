@@ -1,0 +1,14 @@
+package abstractClass;
+
+public class EmailSender extends AbstactClass{
+	String sender, Recipient, contents;
+	EmailSender (String Name, String title){
+		 super(Name, title);
+	 }
+	
+	void sendMassage(String contents) {
+		
+	}
+
+	
+}

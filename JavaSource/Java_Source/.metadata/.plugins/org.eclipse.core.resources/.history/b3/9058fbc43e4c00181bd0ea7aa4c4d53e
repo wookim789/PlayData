@@ -1,0 +1,12 @@
+package interfaceClass;
+
+public class CDinfo extends ParentClass{
+	String artist;
+	String nameOfSong[];
+	CDinfo(String manNum, String title, String artist, String nameOfSong[]){
+		super(manNum,title);
+		this.artist = artist;
+		this.nameOfSong = nameOfSong;
+	}
+	
+}

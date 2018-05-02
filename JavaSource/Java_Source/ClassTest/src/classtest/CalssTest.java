@@ -1,17 +1,17 @@
 package classtest;
+import GoodsStocks.GoodsStocks;
 
 public class CalssTest {
 
 	public static void main(String[] args) {
-		StringBuffer obj;
-		obj = new StringBuffer("Hey java");
-		obj.deleteCharAt(1);
-		obj.deleteCharAt(1);
-		obj.insert(1, 'i');
 		
-		System.out.println(obj);
-		obj.insert(3,"good ");
-		System.out.println(obj);
+		GoodsStocks obj = new GoodsStocks(10000,"5123");
+				
+		Utility.print("");
+		Utility.println(obj.addStock(100000));
+		Utility.println(obj.subStock(100000));
+		Utility.println(obj.subStock(100000));
+		
 	}
 
 }

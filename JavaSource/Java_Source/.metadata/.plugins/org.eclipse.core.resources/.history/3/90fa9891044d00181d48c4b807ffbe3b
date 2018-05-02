@@ -1,0 +1,79 @@
+package example;
+
+import static java.lang.System.out;
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Personable obj1 [] = new Sunguk[100];
+		Personable obj2 [] = new PersonInfo[100];
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String hak, irum;
+		
+		
+
+		while(true) {
+			out.println("***성적****");
+			out.println("학번 : ");
+			hak = sc.nextLine();
+			
+			if(!(hak.equals("exit")))
+			{
+				out.println("이름 : ");
+				irum = sc.nextLine();
+				
+				obj1[Sunguk.cnt] = new Sunguk(hak,irum);
+				obj1[Sunguk.cnt].input();
+			}else {
+				out.println("성적 종료");
+				break;
+			}
+			
+		}
+		while(true) {
+			out.println("***정보***");
+			out.println("학번 : ");
+			hak = sc.nextLine();
+			
+			if(!(hak.equals("exit")))
+			{
+				out.println("이름 : ");
+				irum = sc.nextLine();
+				
+				obj2[PersonInfo.cnt] = new PersonInfo(hak,irum);
+				obj2[PersonInfo.cnt].input();
+			}
+			else 
+			{
+				out.println("입력 종료");
+				break;
+			}
+		}
+		out.println("\n");
+		out.println("\t\t ***성적표***");
+		out.println("====================================");
+		out.println("학번    이름    국어    영어    수학    총점    평균    등급");
+		out.println("====================================");
+		outputM(obj1, Sunguk.cnt);
+		out.println("====================================");
+		
+		out.println("\t\t ***성적표***");
+		out.println("====================================");
+		out.println("학번    이름    전화번호   주소");
+		out.println("====================================");
+		outputM(obj2, PersonInfo.cnt);
+		
+		
+	}
+	static void outputM( Personable obj [], int cnt) {
+		for(int i =0; i<cnt; i++) {
+			
+		}
+		obj[cnt].output();
+	}
+
+}

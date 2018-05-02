@@ -17,7 +17,7 @@ testAnswerFile =  pd.read_csv('C:/Users/Playdata/Desktop/Playdata/PlayData/DeepL
 trainFrame = DataFrame(trainFile)
 testFrame = DataFrame(testFile)
 testAnswerFrame = DataFrame(testAnswerFile)
-#print(trainFrame.describe())
+print(trainFrame.describe())
 
 del trainFrame['Survived']
 del trainFrame['Ticket']

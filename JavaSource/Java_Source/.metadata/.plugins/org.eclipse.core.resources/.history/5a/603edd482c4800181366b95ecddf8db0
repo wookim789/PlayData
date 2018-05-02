@@ -1,0 +1,6 @@
+import GoodsStocks.GoodsStocks;
+import Utility.*;
+
+public class ConstrExample2 {
+
+}

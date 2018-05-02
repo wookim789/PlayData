@@ -1,0 +1,63 @@
+package idPassword;
+import java.util.*;
+
+public class IdPassword {
+
+	public static void main(String[] args) {
+		
+		String id = "930306-1148613";
+		String a;
+		int num, tot = 0, mul = 2, output = 0;
+		boolean check = false;
+		
+		for(int index = 0; index <12; index ++) {
+			
+			if(check == true && mul == 6) {
+				break;
+			}
+			if(index ==6) {
+				index++;
+			}
+
+			a  = Character.toString(id.charAt(index));
+			System.out.print("a"+ a);
+			num = Integer.parseInt(a);
+			tot += (num * mul);		
+			
+			if(mul < 10 ) 
+				mul++;
+			else {
+				check = true;
+				mul = 2;
+			}
+		}
+		
+		output = 11 - (tot % 11);
+		
+		if(output == 11) {
+			if(1 == Integer.parseInt(Character.toString(id.charAt(13)))){
+				System.out.println(id + "(o)");
+				System.out.print("output : "+ output);
+			}else {
+				System.out.print(id + "(x)");
+				System.out.print("output : "+ output);
+			}
+		}else if(output ==10) {
+			if(1 == Integer.parseInt(Character.toString(id.charAt(13)))){
+				System.out.print(id + "(o)");
+				System.out.print("output : "+ output);
+			}else {
+				System.out.print(id + "(x)");
+				System.out.print("output : "+ output);
+			}
+		}else {
+			if(1 == Integer.parseInt(Character.toString(id.charAt(13)))){
+				System.out.print(id + "(o)");
+				System.out.print("output : "+ output);
+			}else {
+				System.out.print(id + "(x)");
+				System.out.print("output : "+ output);
+			}
+		}
+	}
+}

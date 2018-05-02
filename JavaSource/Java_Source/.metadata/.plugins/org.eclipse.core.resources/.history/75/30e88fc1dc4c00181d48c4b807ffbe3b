@@ -1,0 +1,6 @@
+package multiInterface;
+
+public interface Resizeable {
+	void resizee(int width , int height);
+
+}

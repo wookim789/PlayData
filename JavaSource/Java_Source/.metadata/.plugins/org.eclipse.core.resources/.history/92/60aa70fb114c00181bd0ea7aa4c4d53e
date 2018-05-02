@@ -1,0 +1,19 @@
+package extend;
+
+public class Superclass {
+	String accountNo;
+	String ownerName;
+	int balance;
+	void deposit(int amount) {
+		balance += amount;
+	}
+	
+	int withdrow(int amount)throws Exception{
+		if(balance < amount) {
+			throw new Exception("잔액 부족");
+		}
+		balance -= amount;
+		return amount;
+	}
+
+}

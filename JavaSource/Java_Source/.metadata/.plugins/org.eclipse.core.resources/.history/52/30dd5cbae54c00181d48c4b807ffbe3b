@@ -1,0 +1,25 @@
+package example;
+
+import java.util.Scanner;
+
+public class PersonInfo extends Person implements Personable{
+	Scanner sc;
+	String phone, addr;
+	int cnt;
+	
+	PersonInfo(String hakburn, String irum, String phone, String addr){
+		super(hakburn, irum);
+		this.phone = phone;
+		this.addr = addr;
+		this.cnt = 0;
+	}
+	@Override
+	public void input() {
+		
+	}
+	@Override
+	public void output() {
+		
+	}
+
+}

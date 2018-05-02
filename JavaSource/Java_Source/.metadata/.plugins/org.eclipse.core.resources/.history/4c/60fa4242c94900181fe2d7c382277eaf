@@ -1,0 +1,49 @@
+package scoreVer2;
+
+import static java.lang.System.out;
+import java.util.Scanner;
+public class CoreProcess {
+	
+	private String userOrder="";
+	private MethodClass pclass = new  MethodClass();
+	 
+	void mainMenu(MethodClass obj[]) {
+
+		while(!this.userOrder.equals("3")) {
+			
+			obj[MethodClass.nod] = new MethodClass();
+			
+			Scanner sc = new Scanner(System.in);		
+			
+			out.println("1 : 성적 입력");
+			out.println("2 : 출력 ");
+			out.println("3 : 종료");
+			out.println("4 : 학번 조회");
+			out.println("5 : 성적 수정 ");
+			out.println("6 : 성적 삭제\n");
+			
+			this.userOrder = sc.next();
+			
+			switch (this.userOrder) {
+				case "1": //제품 데이터 입력
+					pclass.input(sc,obj);
+					break;
+				case "2": // 제품 데이터 모두 출력
+					pclass.output(obj);
+					break;
+				case "3": //프로그램 종료
+					out.println("***종료***\n");
+					break;
+				case "4"://하나의 데이터 조회
+					pclass.select(sc,obj);
+					break;
+				case "5"://하나의 데이터 수정
+					pclass.modify(sc,obj);
+					break;
+				case "6"://하나의 데이터 삭제
+					pclass.delete(sc,obj);
+					break;
+			}
+		}
+	}
+}

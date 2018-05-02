@@ -1,0 +1,38 @@
+package panmever2;
+
+import static java.lang.System.out;
+
+import java.util.Scanner;
+
+public class menuclass {
+	
+	String userOrder="";
+	Panme02 pclass = new  Panme02();
+	 
+	void mainMenu(Panme02 obj[]) {
+		while(!this.userOrder.equals("3")) {
+			
+			Scanner sc = new Scanner(System.in);		
+			out.println("1 : 데이터 입력, 2 : 출력 , 3 : 종료\n");
+			this.userOrder = sc.next();
+			
+			switch (this.userOrder) {
+				case "1":
+					pclass.input(sc,obj);
+					pclass.process();
+					break;
+				case "2":
+					break;
+				case "3":
+					break;
+				case "4":
+					break;
+				case "5":
+					break;
+			}
+			
+		}
+		
+	}
+
+}

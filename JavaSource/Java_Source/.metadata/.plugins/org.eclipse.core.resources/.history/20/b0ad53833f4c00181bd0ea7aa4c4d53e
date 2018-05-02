@@ -1,0 +1,18 @@
+package interfaceClass;
+
+public class AppCDinfo extends ParentClass  implements IntefaceClass{
+	String nameOfpeople, dates, state;
+	
+	AppCDinfo(String manNum, String title, String nameOfpeople, String dates, String state){
+		super(manNum,title);
+		this.nameOfpeople= nameOfpeople;
+		this.dates = dates;
+		this.state= state;
+	}
+	void borrow() {
+		
+	}
+	void returnThings() {
+		
+	}
+}

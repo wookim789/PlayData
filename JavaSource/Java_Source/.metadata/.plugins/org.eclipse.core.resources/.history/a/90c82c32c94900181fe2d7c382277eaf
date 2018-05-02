@@ -1,0 +1,15 @@
+package scoreVer2;
+
+public class ScoreVer02 {
+
+	public static void main(String[] args) {
+		
+		CoreProcess cp = new CoreProcess();
+		MethodClass obj [] = new  MethodClass [100];
+		
+		cp.mainMenu(obj);
+		
+
+	}
+
+}

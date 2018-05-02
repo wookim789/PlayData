@@ -1,0 +1,10 @@
+package multiInterface;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Label lb = new Label("hello","굴림체" ,"green" ,"red" ,100 ,30 );
+
+	}
+
+}

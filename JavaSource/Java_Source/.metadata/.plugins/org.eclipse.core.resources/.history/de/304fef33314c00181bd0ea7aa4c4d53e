@@ -1,0 +1,17 @@
+package abstractClass;
+import static java.lang.System.out;
+
+public class MessageSender extends AbstactClass {
+	
+	 MessageSender (String Name, String title){
+		 super(Name, title);
+	 }
+	 
+	 void sendMassage(String contents) {
+		 out.println("제목 : " + super.Title);
+		 out.println("이름 : " + super.Name);
+		 out.println("내용 : " + contents);
+	 }
+
+
+}

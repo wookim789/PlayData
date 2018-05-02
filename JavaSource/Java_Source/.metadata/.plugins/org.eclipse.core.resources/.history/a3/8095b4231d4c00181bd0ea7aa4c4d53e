@@ -1,0 +1,10 @@
+package extend;
+
+public class BonusPoint extends Account {
+	
+	int bonuspoint;
+	
+	BonusP
+	
+
+}

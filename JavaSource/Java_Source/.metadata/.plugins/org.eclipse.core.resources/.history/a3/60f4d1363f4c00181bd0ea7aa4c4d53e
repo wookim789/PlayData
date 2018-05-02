@@ -1,0 +1,19 @@
+package interfaceClass;
+
+public class SeparateVolume extends ParentClass implements IntefaceClass  {
+	String nameOfpeople, dates, stated;
+	SeparateVolume(String manNum, String title, String nameOfpeople, String nameOfpeople, String stated){
+		super(manNum,title);
+		this.artist = artist;
+		this.nameOfSong = nameOfSong;
+	}
+	
+	
+	void borrow() {
+		
+	}
+	void returnThings() {
+		
+	}
+
+}

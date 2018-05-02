@@ -1,0 +1,11 @@
+package panme;
+
+public class Panme {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ClassP cp = new ClassP();
+		cp.input();
+	}
+
+}

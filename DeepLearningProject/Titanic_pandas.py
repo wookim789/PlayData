@@ -17,6 +17,7 @@ trainFrame = DataFrame(trainFile)
 testFrame = DataFrame(testFile)
 testAnswerFrame = DataFrame(testAnswerFile)
 
+
 del trainFrame['PassengerId']
 del trainFrame['Survived']
 del trainFrame['Ticket']
@@ -29,7 +30,6 @@ del testFrame['Cabin']
 del testAnswerFrame["PassengerId"]
 
 
-
 trainFrame = trainFrame.replace(np.nan,0)
 
 sex = lambda x : 0 if x == 'male' else 1
@@ -37,7 +37,8 @@ age = lambda x : 0.7 if x == 0 else 1 if x <= 19 else 0.5 if x <= 30 else 0.3 if
 pclass = lambda x : 0 if x == 3 else 0.5 if x == 2 else 1
 fare = lambda x : x/512.
 
-#print(trainFrame)
+
+print(trainFrame)
 print(trainFrame.describe())
 #print(trainFrame.ix[:,0].value_counts())
 

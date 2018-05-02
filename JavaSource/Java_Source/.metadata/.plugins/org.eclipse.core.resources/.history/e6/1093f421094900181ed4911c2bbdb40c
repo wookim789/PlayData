@@ -1,0 +1,13 @@
+package panme;
+
+import java.util.Scanner;
+
+public class Panme {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MenuClass mc = new MenuClass();
+		Scanner sc = new Scanner(System.in);
+		mc.menu(sc);
+	}
+
+}

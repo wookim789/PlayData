@@ -1,0 +1,19 @@
+package extend;
+
+public class MainExtend {
+
+	public static void main(String[] args) {
+		CheckingAccount obj = new CheckingAccount("111-22-33333","홍길동",1000000,"11-11-11");
+		
+		try {
+			int paidAmount = obj.pay("11-11-11",1300000);
+			System.out.println("지불액 : " + paidAmount);
+			System.out.println("잔액 :" + obj.balance);
+		}catch ( Exception e) {
+			String msg = e.getMessage();
+			System.out.println(msg);
+		}
+
+	}
+
+}

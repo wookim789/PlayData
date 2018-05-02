@@ -1,0 +1,22 @@
+package panme;
+import java.util.Scanner;
+import static java.lang.System.out;
+
+public class MenuClass {
+	public void menu() {
+		
+		
+		System.out.println("1 : 데이터 입력, 2 : 출력 , 3 : 종료");
+		String answer = sc.next();
+		
+		while(!answer.equals("3")) {
+			if(answer.equals("1")) {
+				 ClassP inputclass = new ClassP();
+				 Scanner sc = new Scanner(System.in);
+				 inputclass.input(sc);
+				 sc.close();
+			}
+		}
+	}
+}    
+  

@@ -1,0 +1,48 @@
+package example;
+
+import static java.lang.System.out;
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Sunguk sg [] = new Sunguk[100];
+		PersonInfo pif [] = new PersonInfo[100];
+		Scanner sc = new Scanner(System.in);
+		String hak, hak2, irum, irum2;
+		boolean a =false;
+		
+		while(a == false) {
+			
+			out.println("학번 입력 : ");
+		    hak = sc.next();
+			
+			if(!hak.equals("exit")) {
+				out.println("이름 입력");
+				irum = sc.nextLine(); 
+				
+				sg[Sunguk.cnt] = new Sunguk (hak,irum);
+				sg[Sunguk.cnt].input();
+				
+			}else {
+				out.println("학번 입력 : ");
+				
+				hak2 = sc.nextLine();
+				
+				if(!hak2.equals("exit")) {
+					out.println("이름 입력");
+					irum2 = sc.nextLine(); 
+					
+					pif[PersonInfo.cnt] = new PersonInfo(hak2,irum2);
+					pif[PersonInfo.cnt].input();
+				}
+				else {
+					a = true;
+				}
+		}	
+	  }
+	}
+	static void ouputM( Personable obj []) {
+	}
+
+}

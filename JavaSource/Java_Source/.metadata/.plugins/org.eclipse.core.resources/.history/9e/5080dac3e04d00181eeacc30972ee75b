@@ -1,0 +1,65 @@
+package stringOperatroEx;
+import static java.lang.System.out;
+import static java.lang.System.in;
+import java.util.*;
+
+public class Main {
+
+	static int cnt = 1 ;
+	
+	public static void main(String[] args) {
+		int tot=0 , num=0;
+		StringTokenizer op;
+		String oper;
+		System.out.println((int)'+');		
+		System.out.println((int)'-');	
+		System.out.println((int)'*');	
+		System.out.println((int)'/');	
+		//'+' '-' '*' '/'
+		Scanner sc = new Scanner(in);
+		
+		System.out.println("수식 입력 =>");
+		oper = sc.nextLine();
+		op = new StringTokenizer(oper,"+-/*",true);
+		
+		if(check(op)) {
+			op = new StringTokenizer(oper,"+-/*",true);
+			for(int i = 1; i < cnt ; i ++) {
+				if( i % 2 == 1) {
+					tot = Integer.parseInt(op);
+				}
+			}
+		}
+		
+	}
+	static boolean check(StringTokenizer op) {
+		while(op.hasMoreTokens()) {
+			String str = op.nextToken();
+			int checknum = 0;
+			
+			if(cnt % 2 == 1) {
+				try {
+					System.out.println("숫자 변환 " + cnt);
+					checknum = Integer.parseInt(str);
+					cnt++;
+				}catch(java.lang.NumberFormatException e){
+					System.out.println("숫자 변환 실패 " + cnt);
+					cnt = 1;
+					return false;
+				}
+				System.out.println("숫자 변환 성공 " + cnt);
+			}else {
+				if((str != "+"&& str !="-"&& str !="*"&& str != "/")){
+					System.out.println("잘못된 연산자" + str);
+					cnt = 1;
+					return false;
+				}else {
+					cnt++;
+				}
+			}
+		}
+		System.out.println("정삭 적인 수식");
+		return true;
+	}
+
+}

@@ -1,0 +1,10 @@
+package score;
+
+public class MainScore {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,19 @@
+package idPassword;
+import java.util.*;
+
+public class IdPassword {
+
+	public static void main(String[] args) {
+		String id = "930306-1148613";
+		StringTokenizer token = new StringTokenizer(id,"-");
+		
+		int num;
+		
+		while(token.hasMoreElements()) {
+			num = Integer.parseInt(token.nextToken());
+		}
+		
+
+	}
+
+}

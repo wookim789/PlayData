@@ -1,0 +1,58 @@
+package idPassword;
+import java.util.*;
+
+
+public class IdPassword {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String id = sc.nextLine();
+		
+		String a;
+		int num, tot = 0, mul = 2, output = 0;
+
+		for(int index = 0; index < 13; index ++) {
+			
+			if(index == 6) {
+				index++;
+			}
+
+			a  = Character.toString(id.charAt(index));
+			num = Integer.parseInt(a);
+			tot += (num * mul);		
+			
+			mul++;
+			
+			if(mul ==10 ) 
+				mul = 2;
+		}
+		output = 11 - (tot % 11);
+		
+		if(output == Integer.parseInt(Character.toString(id.charAt(13)))){
+			System.out.println(id + "(o)");
+			System.out.print("output : "+ output);
+		}else {
+			System.out.println(id + "(x)");
+			System.out.print("output : "+ output);
+		}
+	}
+	boolean check_input(String id) {
+		int i=0;
+		if(id.charAt(6)!='-') {
+			return false;
+		}
+		while(true) {
+			if(i != 6) {
+				if(id.charAt(i)<0 ||id.charAt(i)>9) {
+					i++;
+					continue;
+				}else {
+					return false;
+				}
+			}else {
+				i++;
+			}
+			
+		}
+	}
+}

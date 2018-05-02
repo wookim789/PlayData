@@ -1,0 +1,7 @@
+package enumEx;
+
+public class Main {
+	ClothClass obj = new ClothClass("123123","코트","재료",Season.SPRINH);
+	System.out.print("코드 : " + obj.code);
+	
+}

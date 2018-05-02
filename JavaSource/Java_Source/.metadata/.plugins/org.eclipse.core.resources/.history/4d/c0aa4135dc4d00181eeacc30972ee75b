@@ -1,0 +1,15 @@
+package stringOperatroEx;
+import static java.lang.System.out;
+import static java.lang.System.in;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		System.out.print((int)'+');		
+		System.out.print((int)'-');	
+		System.out.print((int)'*');	
+		System.out.print((int)'/');	
+	}
+
+}

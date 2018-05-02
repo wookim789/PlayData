@@ -1,0 +1,37 @@
+package idPassword;
+import java.util.*;
+
+public class IdPassword {
+
+	public static void main(String[] args) {
+		
+		String id = "930306-1148613";
+		StringTokenizer token = new StringTokenizer(id,"-");
+		
+		int num;
+		int tot =0;
+		int mul = 2;
+		boolean check = false;
+		
+		while(token.hasMoreElements()) {
+			num = Integer.parseInt(token.nextToken());
+			tot += (num * mul);
+			
+			if(mul < 10 ) {
+				mul++;
+			}else {
+				check = true;
+				mul = 2;
+			}
+			
+			if( check == false && mul ==5) {
+				break;
+			}
+			
+			
+		}
+		
+
+	}
+
+}

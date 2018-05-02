@@ -1,0 +1,16 @@
+package classtest;
+import GoodsStocks.*;
+import Utility.*;
+
+public class CalssTest {
+
+	public static void main(String[] args) {
+		GoodsStocks obj = new GoodsStocks();
+		obj.stockNum = 10000;
+		
+
+		obj.insert(3,"good ");
+
+	}
+
+}

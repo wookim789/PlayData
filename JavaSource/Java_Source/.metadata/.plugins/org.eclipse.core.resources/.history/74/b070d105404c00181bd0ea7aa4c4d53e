@@ -1,0 +1,20 @@
+package interfaceClass;
+
+public class SeparateVolume  implements IntefaceClass  {
+	String orderNum,title,author,nameOfpeople, dates, state;
+	
+	SeparateVolume( String orderNum,String title,String author, String nameOfpeople, String dates, String state){
+		this.nameOfpeople= nameOfpeople;
+		this.dates = dates;
+		this.state= state;
+	}
+	
+	
+	void borrow() {
+		
+	}
+	void returnThings() {
+		
+	}
+
+}

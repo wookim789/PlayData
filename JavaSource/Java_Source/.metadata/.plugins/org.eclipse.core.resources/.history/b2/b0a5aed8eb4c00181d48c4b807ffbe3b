@@ -1,0 +1,55 @@
+package example;
+
+import static java.lang.System.out;
+
+import java.util.Scanner;
+
+public class PersonInfo extends Person implements Personable{
+	Scanner sc;
+	String phone, addr;
+	public static int cnt =0;
+	
+	PersonInfo(String hakburn, String irum, String phone, String addr){
+		super(hakburn, irum);
+		this.phone = phone;
+		this.addr = addr;
+		this.cnt = 0;
+	}
+	
+	@Override
+	public void input() {
+		this.sc = new Scanner(System.in);
+		
+		out.println("학번 입력");
+		this.hakbun = sc.nextLine(); 
+		
+		if(this.hakbun == "exit") {
+			return;
+		}
+		out.println("이름 입력");
+		this.irum = sc.nextLine(); 
+		
+		out.println("전화 번호 입력");
+		this.phone = sc.nextLine(); 
+		out.println("주소 입력");
+		this.addr = sc.nextLine(); 
+
+		
+		cnt++;
+		return;
+	}
+	@Override
+	public void output() {
+		out.println("\t\t ***성적표***");
+		out.println("====================================");
+		out.println("학번    이름    전화번호   주소");
+		out.println("====================================");
+		for(int i = 0; i < cnt; i++) {
+			out.printf("%4s %3s %3s %3s \n",
+					this.hakbun, this.irum, this.phone, this.addr);
+		}
+		
+		out.println("====================================");
+	}
+
+}

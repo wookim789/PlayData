@@ -1,0 +1,14 @@
+package enumEx;
+
+public class ClothClass {
+	String code, name, material;
+	
+	Season season;
+	
+	ClothClass(String code,String name,String material, Season season){
+		this.code = code;
+		this.name = name;
+		this.material = material;
+		this.season = season; 
+	}
+}

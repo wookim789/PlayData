@@ -1,0 +1,11 @@
+package package1.package2;
+
+public class PackageClass2 {
+	String a, b, c;
+	
+	protected PackageClass2(String a,String b,String c){
+		this.a = a;
+		this.b = b;
+		this.c = c;
+	}
+}

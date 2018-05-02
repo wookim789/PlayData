@@ -1,0 +1,17 @@
+package extend;
+
+public class CheckingAccount extends Account{
+	String carNo;
+	
+	CheckingAccount(String accountNo,String ownerName,int balance){
+		
+	}
+	
+	int pay(String carNo, int amount) throws Exception{
+		if(!carNo.equals(this.carNo)||(balance<amount)) {
+			throw new Exception("지불 불가");
+		}
+		return withdraw(amount);
+	}
+
+}

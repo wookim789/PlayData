@@ -1,0 +1,57 @@
+package idPassword;
+import java.util.*;
+
+public class IdPassword {
+
+	public static void main(String[] args) {
+		
+		String id = "930306-1148613";
+		char a;
+		int num, tot = 0, mul = 2, output = 0;
+		boolean check = false;
+		
+		for(int index = 0; index <12; index ++) {
+			
+			if(check == true && mul == 6) {
+				break;
+			}
+			if(index ==6) {
+				index++;
+			}
+
+			a = id.charAt(index);
+			num = Integer.parseInt(id, id.charAt(index));
+			tot += (num * mul);		
+			System.out.print(num);
+			
+			if(mul < 10 ) 
+				mul++;
+			else {
+				check = true;
+				mul = 2;
+			}
+		}
+		
+		output = 11 - (tot % 11);
+		
+		if(output == 11) {
+			if(1 == Integer.parseInt(id,id.charAt(13))){
+				System.out.print(id + "(o)");
+			}else {
+				System.out.print(id + "(x)");
+			}
+		}else if(output ==10) {
+			if(1 == Integer.parseInt(id,id.charAt(13))){
+				System.out.print(id + "(o)");
+			}else {
+				System.out.print(id + "(x)");
+			}
+		}else {
+			if(1 == Integer.parseInt(id,id.charAt(13))){
+				System.out.print(id + "(o)");
+			}else {
+				System.out.print(id + "(x)");
+			}
+		}
+	}
+}

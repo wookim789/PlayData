@@ -1,0 +1,45 @@
+package interfaceClass;
+import static java.lang.System.out;
+
+import java.util.Scanner;
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);		
+		
+		out.println("===============================");
+		out.println("\t안녕하십니까");
+		out.println("다음 데이터를 입력해 주십시오");
+		out.println("발행번호 : ");
+		String ordernum = sc.nextLine();
+		out.println("책 제목 : ");
+		String title = sc.nextLine();
+		out.println("저자 : ");
+		String author = sc.nextLine();
+		out.println("대출인 : ");
+		String nameOfPeople = sc.nextLine();
+		out.println("대출 일 : ");
+		String dates = sc.nextLine();
+		out.println("===============================");
+		
+		SeparateVolume obj1= new SeparateVolume (ordernum, title, author, nameOfPeople, dates);
+		AppCDinfo obj2 = new AppCDinfo (ordernum, title, nameOfPeople, dates);
+		out.println("===============================");
+		borrow(obj1);
+		out.println("===============================");
+		
+		borrow(obj2);
+		out.println("===============================");
+		
+	}
+	
+	static void borrow(IntefaceClass obj) {
+		obj.borrow();
+	}
+	static void returnThings(IntefaceClass obj) {
+		obj.returnThings();
+	}
+
+}

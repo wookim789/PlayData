@@ -1,0 +1,9 @@
+package Teacher;
+
+public class PanmeEx02 {
+	boolean input(Panmae obj[],int cnt) {
+		Scanner in = new Scanner(System.in);
+		
+	}
+
+}

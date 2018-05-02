@@ -1,0 +1,26 @@
+package interfaceClass;
+import static java.lang.System.out;
+
+public class AppCDinfo extends ParentClass  implements IntefaceClass{
+	String nameOfpeople, dates, state;
+	
+	AppCDinfo(String manNum, String title, String nameOfpeople, String dates, String state){
+		super(manNum,title);
+		this.nameOfpeople= nameOfpeople;
+		this.dates = dates;
+		this.state= state;
+	}
+	public void borrow() {
+		out.println("관리번호 :" + super.manNum);
+		out.println("제목 : " + super.title);
+		out.println(this.nameOfpeople +"님 안녕하십니까.");
+		out.print(this.dates + "일 부터 5일이 반납 기한 입니다.");
+		out.print(this.nameOfpeople +"님은 현재 "+this.state + "중 이십니다.");
+	}
+	public void returnThings() {
+		out.println("관리번호 :" + super.manNum);
+		out.println("제목 : " + super.title);
+		out.println(this.nameOfpeople +"님 안녕하십니까.");
+		out.print(this.dates + "일에"+ super.title +"을 반납하셨습니다.");
+	}
+}

@@ -1,0 +1,11 @@
+package panmever2;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Panme02 obj [] = new Panme02[100];
+		
+
+	}
+
+}

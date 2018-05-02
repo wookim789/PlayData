@@ -1,0 +1,18 @@
+package exceptionclass;
+import  Utility.*;
+public class ExecptionClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Account obj = new Account("777","대박",10);
+		
+		try {
+			int amount = obj.withdraw(1000000);
+			 Utility.print("인출액" + amount);
+		}catch(Exception e) {
+			
+		}
+
+	}
+
+}

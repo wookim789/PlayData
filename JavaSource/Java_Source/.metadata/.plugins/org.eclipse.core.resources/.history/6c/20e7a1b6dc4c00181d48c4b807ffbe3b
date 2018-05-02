@@ -1,0 +1,10 @@
+package multiInterface;
+
+public class Label implements Changeable {
+	String text, font, foreground, background;
+	int width	, height;
+	
+	Label(String text, String font, String foreground, String background, int width, int height)
+	
+
+}

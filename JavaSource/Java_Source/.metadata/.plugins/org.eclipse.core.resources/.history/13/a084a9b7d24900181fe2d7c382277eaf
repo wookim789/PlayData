@@ -1,0 +1,107 @@
+package scoreVer2;
+
+import static java.lang.System.out;
+
+import java.util.Scanner;
+
+public class ScoreVer02 extends MethodClass{
+
+	public static void main(String[] args) {
+		
+		
+		MethodClass obj [] = new  MethodClass [100];
+		
+		String userOrder="";
+		MethodClass pclass = new  MethodClass();
+		 
+		while(!userOrder.equals("3")) {
+				
+			obj[MethodClass.nod] = new MethodClass();
+				
+			Scanner sc = new Scanner(System.in);		
+				
+			out.println("1 : 성적 입력");
+			out.println("2 : 출력 ");
+			out.println("3 : 종료");
+			out.println("4 : 학번 조회");
+			out.println("5 : 성적 수정 ");
+			out.println("6 : 성적 삭제\n");
+				
+			userOrder = sc.next();
+				
+			switch (userOrder) {
+				case "1": //제품 데이터 입력
+					out.print("학번 : \n");
+					String check = sc.next();
+					
+					for(int i = 0; i < MethodClass.nod ; i ++) {
+						if(check.equals(obj[i].code)) {
+							out.print("학번 중복\n");
+							return;
+						}
+					}
+					obj[MethodClass.nod].code = check;
+					out.print("이름 : \n");
+					obj[MethodClass.nod].name = sc.next();
+					
+					try {
+						out.print("국어 : \n");
+						obj[MethodClass.nod].kor = Integer.parseInt(sc.next());
+						out.print("영어 : \n");
+						obj[MethodClass.nod].eng = Integer.parseInt(sc.next());
+						out.print("수학 : \n");
+						obj[MethodClass.nod].mat = Integer.parseInt(sc.next());
+						obj[MethodClass.nod].tot = obj[MethodClass.nod].kor + obj[MethodClass.nod].eng + obj[MethodClass.nod].mat;
+						obj[MethodClass.nod].avg = obj[MethodClass.nod].tot / 3.f;
+						gradeMethod(MethodClass.nod, obj);
+						MethodClass.nod++;
+						return;
+						
+					}catch(java.lang.NumberFormatException e){
+						out.print("점수는 숫자만 입력 가능합니다 => 초기 화면으로\n");
+						return;
+					}
+				case "2": // 제품 데이터 모두 출력
+					out.println("\n\t***성적표***");
+					out.println("===================================");
+					out.println("학번     이름       국어        영어       수학      총합       평균       등급  ");
+					
+					for(int i = 0; i < MethodClass.nod; i++) {
+						printScore(i,obj);
+						}
+					out.println("===================================");
+					out.printf("                    총 평균 : %s\n", process(obj));	
+					break;
+					
+				case "3": //프로그램 종료
+					out.println("***종료***\n");
+					break;
+				case "4"://하나의 데이터 조회
+					out.println("조회할 학생의 학번 입력: ");
+					
+					String number = sc.next();
+					for(int i = 0; i < MethodClass.nod; i++) {
+						if(number.equals(obj[i].code)) {
+							out.println("\n\t***성적표***");
+							out.println("==============================================");
+							out.println("학번     이름       국어        영어       수학      총합       평균       등급  ");			
+							printScore(i, obj);
+							out.println("==============================================");
+							out.printf("                    총 평균 : %s\n", process(obj));	
+							return;
+							}
+						}
+					out.print("해당 학번의 학생이 없습니다.\n");
+					return;
+					
+				case "5"://하나의 데이터 수정
+					pclass.modify(sc,obj);
+					break;
+				case "6"://하나의 데이터 삭제
+						pclass.delete(sc,obj);
+					break;
+			}
+		}
+	}
+
+}
