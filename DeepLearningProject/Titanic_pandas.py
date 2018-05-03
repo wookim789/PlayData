@@ -38,6 +38,14 @@ sex = lambda x : 0 if x == 'male' else 1
 age = lambda x : 0.7 if x == 0 else 1 if x <= 19 else 0.5 if x <= 30 else 0.3 if x <=50 else 0.8
 pclass = lambda x : 0 if x == 3 else 0.5 if x == 2 else 1
 fare = lambda x : x / 512.
+embarked = lambda x : 1 if x =='S'  else 0.7 if x =='Q'  else 0.5
+
+def name (self, trainFrame) :
+    checkString = trainFrame.Name
+    for i in range (trainFrame.Name.shape[0]):
+        if 'Mr' in checkString[i] :
+            
+         
 
 
 print(trainFrame)
@@ -47,16 +55,19 @@ print(trainFrame.describe())
 
 # #,Fare,Cabin,Embarked
 
-testAnswerFrame.Pclass = testAnswerFrame.Pclass.apply(pclass)
-testFrame.Sex = testFrame.Sex.apply(sex)
-testFrame.Age = testFrame.Age.apply(age)
-testFrame.Fare= testFrame.Fare.apply(fare)
-
 
 trainFrame.Pclass = trainFrame.Pclass.apply(pclass)
 trainFrame.Sex = trainFrame.Sex.apply(sex)
 trainFrame.Age = trainFrame.Age.apply(age)
 trainFrame.Fare= trainFrame.Fare.apply(fare)
+trainFrame.Embarked = trainFrame.Embarked.apply(embarked) 
+
+testFrame.Pclass = testFrame.Pclass.apply(pclass)
+testFrame.Sex = testFrame.Sex.apply(sex)
+testFrame.Age = testFrame.Age.apply(age)
+testFrame.Fare= testFrame.Fare.apply(fare)
+testFrame.Embarked = testFrame.Embarked.apply(embarked)
+
 
 
 # #print(trainFrame.ix[:,6])
