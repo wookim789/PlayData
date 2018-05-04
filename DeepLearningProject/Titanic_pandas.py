@@ -17,7 +17,6 @@ trainFrame = DataFrame(trainFile)
 testFrame = DataFrame(testFile)
 testAnswerFrame = DataFrame(testAnswerFile)
 
-
 trainAnswerFrame = trainFrame['Survived']
 
 del trainFrame['PassengerId']
@@ -39,20 +38,10 @@ age = lambda x : 0.7 if x == 0 else 1 if x <= 19 else 0.5 if x <= 30 else 0.3 if
 pclass = lambda x : 0 if x == 3 else 0.5 if x == 2 else 1
 fare = lambda x : x / 512.
 embarked = lambda x : 1 if x =='S'  else 0.7 if x =='Q'  else 0.5
+name = lambda x : 0 if 'Mr.' in x else 0.5 if 'Dr.' in x else 0.6 if  'Master.'in x  else 0.8 if ('Mrs.' in x )or('Miss' in x )or ('Lady' in x or 'Ms' in x) else 0 
 
-def name (self, trainFrame) :
-    checkString = trainFrame.Name
-    for i in range (trainFrame.Name.shape[0]):
-        if 'Mr' in checkString[i] :
-            
-         
-
-
-print(trainFrame)
-print(trainFrame.describe())
+#print(trainFrame.describe())
 #print(trainFrame.ix[:,0].value_counts())
-
-
 # #,Fare,Cabin,Embarked
 
 
@@ -61,18 +50,18 @@ trainFrame.Sex = trainFrame.Sex.apply(sex)
 trainFrame.Age = trainFrame.Age.apply(age)
 trainFrame.Fare= trainFrame.Fare.apply(fare)
 trainFrame.Embarked = trainFrame.Embarked.apply(embarked) 
+trainFrame.Name = trainFrame.Name.apply(name)
 
 testFrame.Pclass = testFrame.Pclass.apply(pclass)
 testFrame.Sex = testFrame.Sex.apply(sex)
 testFrame.Age = testFrame.Age.apply(age)
 testFrame.Fare= testFrame.Fare.apply(fare)
 testFrame.Embarked = testFrame.Embarked.apply(embarked)
+testFrame.Name = testFrame.Name.apply(name)
 
-
-
+print(trainFrame)
 # #print(trainFrame.ix[:,6])
 # #train data 제거 항목
-
 
 #keras
 # print(trainFrame.shape)
@@ -81,24 +70,25 @@ model = Sequential()
 model.add(Dense(units = 100, input_shape =(8,) , activation = 'relu'))
 model.add(Dropout(0.2))
 model.add(Dense(units = 60, activation = 'relu'))
-model.add(Dropout(0.6))
+model.add(Dropout(0.2))
 model.add(Dense(units=1, activation='sigmoid'))
 
 model.compile(loss='binary_crossentropy',
                optimizer = 'adam',
                metrics=['accuracy']
               )
-model.fit(trainFrame, trainAnswerFrame, epochs=30,  validation_split = 0.2)
+model.fit(trainFrame, trainAnswerFrame, epochs = 30,  validation_split = 0.2)
 
 model.evaluate(testFrame, testAnswerFrame)
-
-predicted_Y = model.predict(testFrame)
+model.summary()
+predicted_Y = model.predict(testFrame.as_matrix())
 match = predicted_Y == testAnswerFrame
 wrong_label = np.where(predicted_Y>0.5, 1,0)
+
 cnt = 0
 
 taf = np.array(testAnswerFile)
 for i in range (wrong_label.shape[0]) :
     if wrong_label[i] == taf[i] :
         cnt = cnt + 1
-print("acc : {:d}",  (cnt/wrong_label.shape[0]))
+print("acc : {:d}",  (cnt/wrong_label.shape[0]))    

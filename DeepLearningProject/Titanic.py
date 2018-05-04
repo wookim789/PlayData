@@ -19,12 +19,15 @@ testFrame = DataFrame(testFile)
 testAnswerFrame = DataFrame(testAnswerFile)
 print(trainFrame.describe())
 
+trainAnswerFrame = trainFrame['Survived']
 del trainFrame['Survived']
 del trainFrame['Ticket']
 del trainFrame['Cabin']
-#test data 제거 항목
+del trainFrame['Name']
+#test data 제거 항목 
 del testFrame['Ticket']
 del testFrame['Cabin']
+del testFrame['Name']
 #testAnswer data 제거 항목
 del testAnswerFrame["PassengerId"]
 
@@ -54,7 +57,7 @@ testFrame.Sex = testFrame.Sex.replace('female',0)
 testFrame.Sex = testFrame.Sex.replace('male',1)
 testFrame.Age = testFrame.Age.replace(np.nan,29)
 testFrame.Fare= testFrame.Fare.replace(np.nan,meanFare)
-testFrame.Cabin = testFrame.Cabin.replace(np.nan,"unknown")
+#testFrame.Cabin = testFrame.Cabin.replace(np.nan,"unknown")
 testFrame.SibSp = testFrame.SibSp.replace(np.nan,0)
 testFrame.Parch = testFrame.Parch.replace(np.nan,0)
 testFrame.Embarked = testFrame.Embarked.replace(np.nan,replaceNanInEmvarked)
@@ -62,17 +65,16 @@ testFrame.Embarked = testFrame.Embarked.replace('S',1)
 testFrame.Embarked = testFrame.Embarked.replace('C',2)
 testFrame.Embarked = testFrame.Embarked.replace('Q',3)
 
-trainAnswerFrame = trainFrame['Survived']
 
 trainFrame.PassengerId = trainFrame.PassengerId.replace(np.nan,1)
-trainFrame.Survived = trainFrame.Survived.replace(np.nan,1)
+#trainFrame.Survived = trainFrame.Survived.replace(np.nan,1)
 trainFrame.Pclass = trainFrame.Pclass.replace(np.nan,3)
 trainFrame.Sex = trainFrame.Sex.replace(np.nan,replaceNanInSex)
-trainFrame.Sex = trainFrame.Sex.replace('female',0)
+trainFrame.Sex = trainFrame.Sex.replace('female',0)#z
 trainFrame.Sex = trainFrame.Sex.replace('male',1)
 trainFrame.Age = trainFrame.Age.replace(np.nan,29)
 trainFrame.Fare= trainFrame.Fare.replace(np.nan,meanFare)
-trainFrame.Cabin = trainFrame.Cabin.replace(np.nan,"unknown")
+#trainFrame.Cabin = trainFrame.Cabin.replace(np.nan,"unknown")
 trainFrame.SibSp = trainFrame.SibSp.replace(np.nan,0)
 trainFrame.Parch = trainFrame.Parch.replace(np.nan,0)
 trainFrame.Embarked = trainFrame.Embarked.replace(np.nan,replaceNanInEmvarked)
