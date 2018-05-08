@@ -38,7 +38,7 @@ age = lambda x : 0.7 if x == 0 else 1 if x <= 19 else 0.5 if x <= 30 else 0.3 if
 pclass = lambda x : 0 if x == 3 else 0.5 if x == 2 else 1
 fare = lambda x : x / 512.
 embarked = lambda x : 1 if x =='S'  else 0.7 if x =='Q'  else 0.5
-name = lambda x : 0 if 'Mr.' in x else 0.5 if 'Dr.' in x else 0.6 if  'Master.'in x  else 0.8 if ('Mrs.' in x )or('Miss' in x )or ('Lady' in x or 'Ms' in x) else 0 
+name = lambda x : 0 if 'Mr.' in x else 0.5 if 'Dr.' in x else 0.6 if  'Master.'in x  else 0.8 if ('Mrs.' in x )or('Miss' in x )or ('Lady' in x )or('Ms' in x) else 0 
 
 #print(trainFrame.describe())
 #print(trainFrame.ix[:,0].value_counts())
@@ -67,10 +67,24 @@ print(trainFrame)
 # print(trainFrame.shape)
 # print(testFrame.shape)
 model = Sequential()
+model.add(Dense(units = 200, input_shape =(8,) , activation = 'relu'))
+model.add(Dropout(0.2))
+model.add(Dense(units = 200, input_shape =(8,) , activation = 'relu'))
+model.add(Dropout(0.2))
 model.add(Dense(units = 100, input_shape =(8,) , activation = 'relu'))
 model.add(Dropout(0.2))
-model.add(Dense(units = 60, activation = 'relu'))
+model.add(Dense(units = 100, input_shape =(8,) , activation = 'relu'))
 model.add(Dropout(0.2))
+model.add(Dense(units = 50, input_shape =(8,) , activation = 'relu'))
+model.add(Dropout(0.2))
+
+
+# model.add(Dense(units = 100, activation = 'relu'))
+# model.add(Dropout(0.2))
+# model.add(Dense(units = 50, activation = 'relu'))
+# model.add(Dropout(0.2))
+# model.add(Dense(units = 25, activation = 'relu'))
+# model.add(Dropout(0.2))
 model.add(Dense(units=1, activation='sigmoid'))
 
 model.compile(loss='binary_crossentropy',
@@ -82,13 +96,19 @@ model.fit(trainFrame, trainAnswerFrame, epochs = 30,  validation_split = 0.2)
 model.evaluate(testFrame, testAnswerFrame)
 model.summary()
 predicted_Y = model.predict(testFrame.as_matrix())
+
 match = predicted_Y == testAnswerFrame
+
 wrong_label = np.where(predicted_Y>0.5, 1,0)
+#wrong_label.as_matrix
+print(wrong_label)
 
-cnt = 0
+wrong_label.colums[0] : "PassengerId"
+wrong_label.colums[1] : "Survived"
+# cnt = 0
 
-taf = np.array(testAnswerFile)
-for i in range (wrong_label.shape[0]) :
-    if wrong_label[i] == taf[i] :
-        cnt = cnt + 1
-print("acc : {:d}",  (cnt/wrong_label.shape[0]))    
+# taf = np.array(testAnswerFile)
+# for i in range (wrong_label.shape[0]) :
+#     if wrong_label[i] == taf[i] :
+#         cnt = cnt + 1
+# print("acc : {:d}",  (cnt/wrong_label.shape[0]))    
