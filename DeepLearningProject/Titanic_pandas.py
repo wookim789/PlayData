@@ -28,7 +28,7 @@ del testFrame['PassengerId']
 del testFrame['Ticket']
 del testFrame['Cabin']
 #testAnswer data 제거 항목
-del testAnswerFrame["PassengerId"]
+del testAnswerFrame["Survived"]
 
 
 trainFrame = trainFrame.replace(np.nan,0)
@@ -39,8 +39,8 @@ pclass = lambda x : 0 if x == 3 else 0.5 if x == 2 else 1
 fare = lambda x : x / 512.
 embarked = lambda x : 1 if x =='S'  else 0.7 if x =='Q'  else 0.5
 name = lambda x : 0 if 'Mr.' in x else 0.5 if 'Dr.' in x else 0.6 if  'Master.'in x  else 0.8 if ('Mrs.' in x )or('Miss' in x )or ('Lady' in x )or('Ms' in x) else 0 
-
-#print(trainFrame.describe())
+sibsp = lambda x : x / 8 
+print(trainFrame.describe())
 #print(trainFrame.ix[:,0].value_counts())
 # #,Fare,Cabin,Embarked
 
@@ -51,6 +51,7 @@ trainFrame.Age = trainFrame.Age.apply(age)
 trainFrame.Fare= trainFrame.Fare.apply(fare)
 trainFrame.Embarked = trainFrame.Embarked.apply(embarked) 
 trainFrame.Name = trainFrame.Name.apply(name)
+trainFrame.SibSp = trainFrame.SibSp.apply(sibsp)
 
 testFrame.Pclass = testFrame.Pclass.apply(pclass)
 testFrame.Sex = testFrame.Sex.apply(sex)
@@ -58,6 +59,7 @@ testFrame.Age = testFrame.Age.apply(age)
 testFrame.Fare= testFrame.Fare.apply(fare)
 testFrame.Embarked = testFrame.Embarked.apply(embarked)
 testFrame.Name = testFrame.Name.apply(name)
+testFrame.SibSp = testFrame.SibSp.apply(sibsp)
 
 print(trainFrame)
 # #print(trainFrame.ix[:,6])
@@ -77,21 +79,13 @@ model.add(Dense(units = 100, input_shape =(8,) , activation = 'relu'))
 model.add(Dropout(0.2))
 model.add(Dense(units = 50, input_shape =(8,) , activation = 'relu'))
 model.add(Dropout(0.2))
-
-
-# model.add(Dense(units = 100, activation = 'relu'))
-# model.add(Dropout(0.2))
-# model.add(Dense(units = 50, activation = 'relu'))
-# model.add(Dropout(0.2))
-# model.add(Dense(units = 25, activation = 'relu'))
-# model.add(Dropout(0.2))
 model.add(Dense(units=1, activation='sigmoid'))
 
 model.compile(loss='binary_crossentropy',
                optimizer = 'adam',
                metrics=['accuracy']
               )
-model.fit(trainFrame, trainAnswerFrame, epochs = 30,  validation_split = 0.2)
+model.fit(trainFrame, trainAnswerFrame, epochs = 30 ,  validation_split = 0)
 
 model.evaluate(testFrame, testAnswerFrame)
 model.summary()
@@ -100,11 +94,19 @@ predicted_Y = model.predict(testFrame.as_matrix())
 match = predicted_Y == testAnswerFrame
 
 wrong_label = np.where(predicted_Y>0.5, 1,0)
-#wrong_label.as_matrix
-print(wrong_label)
 
-wrong_label.colums[0] : "PassengerId"
-wrong_label.colums[1] : "Survived"
+testAnswerFrame["Survived"] = wrong_label
+
+#print(testAnswerFrame)
+# del testAnswerFrame[""]
+testAnswerFrame.to_csv("C:/Users/Playdata/Desktop/gender_submission.csv",index = False)
+
+# wrong_label.colums[0] : "PassengerId"
+# wrong_label.colums[1] : "Survived"
+print(pd.read_csv("C:/Users/Playdata/Desktop/gender_submission.csv"))
+
+
+
 # cnt = 0
 
 # taf = np.array(testAnswerFile)
