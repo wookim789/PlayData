@@ -1,0 +1,113 @@
+package winforFinal;
+
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+
+import scoreGUI.ActionEventClass1;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		JFrame frame = new JFrame("성적 그래픽 처리");
+		frame.setLocation(500,0);
+		frame.setPreferredSize(new Dimension(800,1000));
+		
+		//메인 판넬
+		Container contentPanel = frame.getContentPane();
+		
+		//그래프 판넬 
+		JPanel graph = new JPanel();
+		
+		//텍스트 필드와 버튼 판넬
+		JPanel ui = new JPanel();
+		
+		//텍스트 필드
+		JTextField num = new JTextField(3);
+		JTextField name = new JTextField(3);
+		JTextField kor = new JTextField(3);
+		JTextField eng = new JTextField(3);
+		JTextField mat = new JTextField(3);
+		//버튼필드
+		JButton B_draw1 = new JButton("추가");
+		JButton B_draw2 = new JButton("수정");
+		JButton B_draw3 = new JButton("삭제");
+		JButton B_draw4 = new JButton("그래프 그리기");
+		//라벨필드
+		JLabel Lnum = new JLabel("학번");
+		JLabel Lname = new JLabel("이름");
+		JLabel Lkor = new JLabel("국어");
+		JLabel Leng = new JLabel("영어");
+		JLabel Lmat = new JLabel("수학");
+		//JTextField num,JTextField name, JTextField kor,JTextField eng ,JTextField mat,JButton B_draw1 
+		//컨트롤 판넬
+		JPanel PNcontrol = new JPanel();
+		PNcontrol.add(Lnum);
+		PNcontrol.add(num);
+		PNcontrol.add(Lname);
+		PNcontrol.add(name);
+		PNcontrol.add(Lkor);
+		PNcontrol.add(kor);
+		PNcontrol.add(Leng);
+		PNcontrol.add(eng);
+		PNcontrol.add(Lmat);
+		PNcontrol.add(mat);
+		
+		PNcontrol.add(B_draw1);
+		PNcontrol.add(B_draw2);
+		PNcontrol.add(B_draw3);
+		PNcontrol.add(B_draw4);
+		
+		//메인 판넬에 컨트롤 판넬 추가
+		contentPanel.add(PNcontrol, BorderLayout.SOUTH);
+		
+		//테이블 + 그래프 판넬
+
+		
+		//테이블 라벨
+		String colNames[] = {"학번", "이름","국어","영어","수학","총점","평균","학점"};	
+		//데이터 테이블
+		DefaultTableModel model = new DefaultTableModel(colNames,0);
+		JTable table = new JTable(model);
+		//스크롤 판넬 - 데이터 테이블 메인 판넬에 삽입
+		JScrollPane scrollPanel = new JScrollPane(table);
+		scrollPanel.setPreferredSize(new Dimension(400, 200));
+
+		
+		//그래프 클래스 객체
+		DrawClass dc = new DrawClass();
+		
+		//테이블 삽입
+		contentPanel.add(scrollPanel, BorderLayout.NORTH);
+		//그래프 삽입
+		contentPanel.add(dc, BorderLayout.CENTER);
+		
+		//버튼 이벤트
+		
+		ActionListener inserEventB = new InsertEvent(num, name, kor, eng ,mat, table);
+		ActionListener UpdataEventB = new UpdataEvent(num, name, kor, eng ,mat, table);
+		ActionListener DeleteEventB = new DeleteEvent(table,num);
+		ActionListener GraphEventimplementsB = new GraphEvent(kor,eng ,mat,dc);
+		
+		B_draw1.addActionListener(inserEventB);
+		B_draw2.addActionListener(UpdataEventB);
+		B_draw3.addActionListener(DeleteEventB);
+		B_draw4.addActionListener(GraphEventimplementsB);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.pack();
+		frame.setVisible(true);
+
+	}
+
+}

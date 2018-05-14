@@ -1,0 +1,25 @@
+import static java.lang.System.out;
+
+import java.util.Scanner;
+
+public class MultipleP {
+
+	public static void main(String[] args) {
+		//Scanner sc = new Scanner(System.in);
+		int cnt = 1, num = 2;
+		
+		while(num < 10) {
+			while (cnt < 10) {
+				out.printf("%d단 \n", num);
+				out.printf("%d x %d = %d\n", num, cnt, num * cnt);
+				cnt++;
+			}
+			cnt = 1;
+			out.println("");
+			num++;
+		}
+		
+
+	}
+
+}

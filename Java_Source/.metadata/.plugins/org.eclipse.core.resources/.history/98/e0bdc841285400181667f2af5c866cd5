@@ -1,0 +1,36 @@
+package panel;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
+public class ModifyClass implements ActionListener{
+	JTextField text1, text2, text3, text4, text5;
+	JButton button1;
+	JTable table;
+	String grade;
+	
+	ModifyClass(JTable table,JTextField text1,JTextField text2,JTextField text3,JTextField text4,JTextField text5, JButton button1){
+		this.table = table;
+		this.text1 = text1;
+		this.text2 = text2;
+		this.text3 = text3;
+		this.text4 = text4;
+		this.text5 = text5;
+		this.button1 = button1;
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		for(int i = 0; i < table.getRowCount(); i++) {
+			
+			if(table.getValueAt(i, 0).equals(text1.getText())) {
+				ActionListener al = new InsertClass(table,text1,text2,text3,text4,text5 );
+				button1.addActionListener(al);
+			}	
+		}
+	}
+}

@@ -1,0 +1,49 @@
+package scoreGUI;
+
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.Dimension;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class Main {
+
+	public static void main(String[] args) {
+		//출력화면 설정
+		JFrame frame = new JFrame("성적 그래픽 처리");
+		frame.setLocation(500,200);
+		frame.setPreferredSize(new Dimension(400,300));
+		
+		//메인판넬
+		Container contentPanel = frame.getContentPane();
+		
+		//그래프 판넬
+		JPanel graph = new JPanel();
+		
+		//텍스트 필드와 버튼 판넬
+		JPanel ui = new JPanel();
+		//텍스트 필드
+		JTextField kor = new JTextField();
+		JTextField eng = new JTextField();
+		JTextField mat = new JTextField();
+		//버튼필드
+		JButton B_draw = new JButton();
+		
+		ui.add(kor);
+		ui.add(eng);
+		ui.add(mat);
+		ui.add(B_draw);
+		
+		contentPanel.add(ui,BorderLayout.SOUTH);
+;		
+		//화면 출력
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.pack();
+		frame.setVisible(true);
+
+	}
+
+}

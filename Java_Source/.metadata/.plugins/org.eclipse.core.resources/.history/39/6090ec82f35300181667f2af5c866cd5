@@ -1,0 +1,30 @@
+package winform;
+
+import java.awt.Container;
+import java.awt.Dimension;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+
+public class WinFormMain {
+
+	public static void main(String[] args) {
+		JFrame frame = new JFrame("Hello Java Programing");
+		Container contentPane = frame.getContentPane();
+		JLabel label = new JLabel("Hello Java",SwingConstants.CENTER);
+		JTextField text = new JTextField();
+		JButton button = new JButton("확인");
+		
+		contentPane.add(label);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.pack();
+		frame.setVisible(true);
+		
+		frame.setLocation(900, 400);
+		frame.setPreferredSize(new Dimension(300,200));
+	}
+}

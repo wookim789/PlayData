@@ -1,0 +1,36 @@
+package winforFinal;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
+public class UpdataEvent implements ActionListener {
+	int ikor,ieng,imat,itot;
+	float favg1;
+	int iavg2;
+	boolean graphRendering;
+	String arr[];
+	JTextField num,name,kor,eng,mat;
+	JTable table;
+	InsertEvent ie;
+	
+	UpdataEvent(JTextField num,JTextField name, JTextField kor,JTextField eng ,JTextField mat, JTable table ){
+		ie = new InsertEvent(num, name, kor, eng ,mat, table);
+		this.name = name;
+		this.num = num;
+		this.kor = kor;
+		this.eng = eng;
+		this.mat = mat;
+		this.table = table;
+		arr = new String [8];
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		ie.insertData();
+		
+	}
+
+}

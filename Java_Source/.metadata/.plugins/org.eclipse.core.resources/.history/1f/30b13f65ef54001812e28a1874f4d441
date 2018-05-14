@@ -1,0 +1,74 @@
+package winforFinal;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
+public class InsertEvent implements ActionListener{
+	int ikor,ieng,imat,itot;
+	float favg1;
+	int iavg2;
+	boolean graphRendering;
+	String arr[];
+	JTextField num,name,kor,eng,mat;
+	JButton B_draw1;
+
+	InsertEvent(JTextField num,JTextField name, JTextField kor,JTextField eng ,JTextField mat,JButton B_draw1 ){
+		this.num = num;
+		this.name = name;
+		
+	
+		arr = new String [8];
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		
+	}
+	
+	public void insertData() {
+		arr[0] = this.num.getText();
+		arr[1] = this.name.getText();
+		try {
+			this.ikor = Integer.parseInt(kor.getText());
+			this.ieng = Integer.parseInt(eng.getText());
+			this.imat = Integer.parseInt(mat.getText());
+			
+			this.itot = ikor + ieng + imat;
+			this.favg1 = itot/3.f;
+			this.iavg2 = itot/3;
+			
+			arr[2] = kor.getText();
+			arr[3] = eng.getText();
+			arr[4] = mat.getText();
+			arr[5] = Integer.toString(itot);
+			arr[6] = Float.toString(favg1);
+			
+		}catch(Exception e) {
+			System.out.print("캐스트 실패");
+		}
+	}
+	
+	public void grade() {
+		int grade = this.iavg2/10;
+		switch(grade) {
+		case 10:
+		case 9:
+			arr[7] = "수";
+			break;
+		case 8 :
+			arr[7] = "우";
+			break;
+		case 7 :
+			arr[7] = "미";
+			break;
+		case 6:
+			arr[7] = "양";
+			default :
+				
+		}
+	}
+
+}

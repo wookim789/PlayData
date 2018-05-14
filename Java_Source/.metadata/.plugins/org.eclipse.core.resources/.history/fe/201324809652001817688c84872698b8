@@ -1,0 +1,11 @@
+package scoreHashMap;
+
+public class ScoreClass {
+	String num;
+	String name;
+	String kor;
+	String eng;
+	String mat;
+	String tot;
+	String avg;
+}

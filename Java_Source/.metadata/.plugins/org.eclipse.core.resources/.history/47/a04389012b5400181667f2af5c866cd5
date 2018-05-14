@@ -1,0 +1,25 @@
+package panel;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
+public class DeleteClass  implements ActionListener{
+	JTextField text1;
+	JTable table;
+	String grade;
+	
+	DeleteClass(JTable table,JTextField text1){
+		this.table = table;
+		this.text1 = text1;
+	
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+	}
+	
+}

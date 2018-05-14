@@ -1,0 +1,68 @@
+package winforFinal;
+
+import java.awt.Container;
+import java.awt.Dimension;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		JFrame frame = new JFrame("성적 그래픽 처리");
+		frame.setLocation(500,200);
+		frame.setPreferredSize(new Dimension(800,1000));
+		
+		//메인 판넬
+		Container contentPanel = frame.getContentPane();
+		
+		//그래프 판넬 
+		JPanel graph = new JPanel();
+		
+		//텍스트 필드와 버튼 판넬
+		JPanel ui = new JPanel();
+		
+		//텍스트 필드
+		JTextField num = new JTextField(3);
+		JTextField name = new JTextField(3);
+		JTextField kor = new JTextField(3);
+		JTextField eng = new JTextField(3);
+		JTextField mat = new JTextField(3);
+		//버튼필드
+		JButton B_draw1 = new JButton("추가");
+		JButton B_draw2 = new JButton("수정");
+		JButton B_draw3 = new JButton("삭제");
+		JButton B_draw4 = new JButton("그래프 그리기");
+		//라벨필드
+		JLabel Lnum = new JLabel("학번");
+		JLabel Lname = new JLabel("이름");
+		JLabel Lkor = new JLabel("국어");
+		JLabel Leng = new JLabel("영어");
+		JLabel Lmat = new JLabel("수학");
+		
+		//컨트롤 판넬
+		JPanel PNcontrol = new JPanel();
+		PNcontrol.add(Lnum);
+		PNcontrol.add(num);
+		PNcontrol.add(Lname);
+		PNcontrol.add(name);
+		PNcontrol.add(Lkor);
+		PNcontrol.add(kor);
+		PNcontrol.add(Leng);
+		PNcontrol.add(eng);
+		PNcontrol.add(Lmat);
+		PNcontrol.add(mat);
+		contentPanel.add(PNcontrol);
+
+		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.pack();
+		frame.setVisible(true);
+
+	}
+
+}

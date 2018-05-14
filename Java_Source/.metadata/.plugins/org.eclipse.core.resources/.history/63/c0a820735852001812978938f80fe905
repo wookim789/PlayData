@@ -1,0 +1,11 @@
+package miniProject;
+
+public class DataClass { // �ܼ��� data�� ������� Ŭ����
+	String data1;		// �����ʹ� �ʵ忡 �����Ѵ�
+	String data2;
+	String data3;
+	String data4;
+	String data5;
+	String data6;
+	String data7;
+}

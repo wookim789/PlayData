@@ -1,0 +1,75 @@
+package panel;
+
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+
+public class PanelEX {
+
+	public static void main(String[] args) {
+		//프레임
+		JFrame frame = new JFrame("참가자 명단 프로그램");
+		frame.setPreferredSize(new Dimension(500,400));
+		frame.setLocation(500,400);
+		//메인 컨테이너 페널
+		Container contentPane = frame.getContentPane();
+		
+		//데이터
+		String colNames[] = {"학번", "이름","나이","국어","영어","수학","총점","평균","학점"};	
+		
+		//데이터 테이블
+		DefaultTableModel model = new DefaultTableModel(colNames,0);
+		JTable table = new JTable(model);
+		//TableModel tm = table.getModel();
+		
+		//스크롤 판넬
+		JScrollPane scrollPande = new JScrollPane(table);
+		contentPane.add(scrollPande, BorderLayout.CENTER);
+		
+		//버튼
+		JPanel panel = new JPanel();
+		
+		JTextField text1 = new JTextField(3);
+		JTextField text2 = new JTextField(3);
+		JTextField text3 = new JTextField(3);
+		JTextField text4 = new JTextField(3);
+		JTextField text5 = new JTextField(3);
+		
+		JButton button1 = new JButton("추가");
+		JButton button2 = new JButton("수정");
+		JButton button3 = new JButton("삭제");
+			
+		panel.add(new JLabel("학번"));
+		panel.add(text1);
+		panel.add(new JLabel("이름"));
+		panel.add(text2);
+		panel.add(new JLabel("국어"));
+		panel.add(text3);
+		panel.add(new JLabel("영어"));
+		panel.add(text4);
+		panel.add(new JLabel("수학"));
+		panel.add(text5);
+		panel.add(button1);
+		panel.add(button2);
+		panel.add(button3);
+		contentPane.add(panel, BorderLayout.SOUTH);
+		
+		ActionListener al = new InsertClass(table,text1,text2,text3,text4,text5 );
+		button1.addActionListener(al);
+
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.pack();
+		frame.setVisible(true);
+
+	}
+}

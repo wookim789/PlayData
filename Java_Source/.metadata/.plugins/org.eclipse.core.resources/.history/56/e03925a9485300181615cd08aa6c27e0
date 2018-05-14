@@ -1,0 +1,10 @@
+package thread;
+
+public class ThreadEX {
+	Thread thread = new DigitThread();
+	thread.start();
+	for(char ch = 'a'; ch<='z'; ch++) {
+		System.out.print(ch);
+	}
+	
+}

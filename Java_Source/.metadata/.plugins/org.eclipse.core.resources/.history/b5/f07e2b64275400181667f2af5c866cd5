@@ -1,0 +1,29 @@
+package panel;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
+public class ModifyClass implements ActionListener{
+	JTextField text1, text2, text3, text4, text5;
+	JTable table;
+	String grade;
+	
+	ModifyClass(JTable table,JTextField text1,JTextField text2,JTextField text3,JTextField text4,JTextField text5){
+		this.table = table;
+		this.text1 = text1;
+		this.text2 = text2;
+		this.text3 = text3;
+		this.text4 = text4;
+		this.text5 = text5;
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		for()
+		
+	}
+
+}

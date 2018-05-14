@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<launchPerspectives/>\r\n
+org.eclipse.debug.ui.consoleBackground=30,30,30
+org.eclipse.debug.ui.errorColor=96,139,78
+org.eclipse.debug.ui.inColor=200,200,200
+org.eclipse.debug.ui.outColor=200,200,200
+pref_state_memento.org.eclipse.debug.ui.DebugVieworg.eclipse.debug.ui.DebugView=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<DebugViewMemento org.eclipse.debug.ui.BREADCRUMB_DROPDOWN_AUTO_EXPAND\="false"/>
+preferredTargets=default\:default|

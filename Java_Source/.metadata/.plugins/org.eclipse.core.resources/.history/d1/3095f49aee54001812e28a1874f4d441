@@ -1,0 +1,38 @@
+package winforFinal;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
+public class InsertEvent implements ActionListener{
+	int ikor,ieng,imat,itot;
+	float favg1;
+	int iavg2;
+	boolean graphRendering;
+	String arr[];
+	JTextField num,name,kor,eng,mat;
+	JButton B_draw1;
+
+	InsertEvent(JTextField num,JTextField name, JTextField kor,JTextField eng ,JTextField mat,JButton B_draw1 ){
+		this.num = num;
+		this.name = name;
+		this.ikor = Integer.parseInt(kor.getText());
+		this.ieng = Integer.parseInt(eng.getText());
+		this.imat = Integer.parseInt(mat.getText());
+		this.itot = ikor + ieng + imat;
+		this.favg1 = itot/3.f;
+		this.iavg2 = itot/3;
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		
+	}
+	
+	public void insertData() {
+		
+	}
+
+}

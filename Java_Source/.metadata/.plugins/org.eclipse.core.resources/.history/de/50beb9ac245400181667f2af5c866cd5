@@ -1,0 +1,37 @@
+package panel;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+
+public class ActionClass implements ActionListener{
+	JTextField text1, text2, text3, text4, text5;
+	JTable table;
+	ActionClass(JTable table, JTextField text1,JTextField text2,JTextField text3,JTextField text4,JTextField text5){
+		this.table = table;
+		this.text1 = text1;
+		this.text2 = text2;
+		this.text3 = text3;
+		this.text4 = text4;
+		this.text5 = text5;
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		String arr[] = new String [3];
+		arr[0] = text1.getText();
+		arr[1] = text2.getText();
+		arr[2] = text3.getText();
+		arr[3] = text4.getText();
+		arr[4] = text5.getText();
+		DefaultTableModel model = (DefaultTableModel)table.getModel();
+		model.addRow(arr);
+		text1.setText("");
+		text2.setText("");
+		text3.setText("");
+		text4.setText("");
+		text5.setText("");
+		}
+}

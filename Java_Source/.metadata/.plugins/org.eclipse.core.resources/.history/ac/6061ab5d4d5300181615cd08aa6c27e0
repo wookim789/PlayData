@@ -1,0 +1,10 @@
+package threadEX2;
+
+public class Thread1 extends Thread {
+	public void runt() {
+		for(int cnt = 0; cnt <26; cnt++) {
+			System.out.print(cnt);
+		}
+	}
+
+}

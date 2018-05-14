@@ -1,0 +1,45 @@
+package scoreGUI;
+
+import java.awt.Color;
+import java.awt.Graphics;
+
+import javax.swing.JPanel;
+
+public class Drawing extends JPanel {
+	float numCol, kor, eng, mat, tot;
+	float avg;	
+	boolean b_click;
+
+	public void setData(float kor, float eng, float mat, boolean b_click ){
+		this.kor = kor;
+		this.eng = eng;
+		this.mat = mat;
+		this.tot = kor + eng + mat;
+		this.avg = tot/3.f;
+		this.b_click = b_click ;
+	}
+	
+	public void paint(Graphics g) {
+		System.out.println("페인트");
+		System.out.println(this.kor);
+		g.clearRect(0, 0, getWidth(), getHeight());
+		
+		for(int i = 0; i < 11; i++) {
+			g.drawLine(100,  100 + i * 50 , 600, 100 +  i * 50);
+			numCol = 10 * i;
+			g.drawString(Integer.toString(numCol), 75, 600 - 50 * i );
+		}
+		g.drawLine(100, 600, 100, 70);
+		g.drawString("국어", 150, 630);
+		g.drawString("수학", 350, 630);
+		g.drawString("영어", 550, 630);
+		
+		g.setColor(Color.RED);
+		if(this.b_click != true) {
+			System.out.println("리페인트");
+			g.fillRect(150, 100, 50, 500 - kor * 6);
+			g.fillRect(350, 100, 50, 500 - eng * 6);
+			g.fillRect(550, 100, 50, 500 - mat * 6);
+		}
+	}
+}

@@ -1,0 +1,21 @@
+package linklist;
+
+import java.util.LinkedList;
+
+public class LinkedListEX {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		LinkedList <String> list = new LinkedList<String>();
+		list.add("피카츄");
+		list.add("라이츄");
+		list.add("파이리");
+		list.set(0, "삐까츄");
+		list.remove(1);
+		//int num = list.size();
+		for(String a : list) {
+			System.out.print(a);
+		}
+	}
+}

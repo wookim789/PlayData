@@ -1,0 +1,22 @@
+package systemExit;
+
+import Utility.Ut;
+
+public class SystmeEXIT {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		if(args.length !=2) {
+			Ut.print("usage : <><>");
+			System.exit(1);
+		}
+		try {
+			int num1 = Integer.parseInt(args[0]);
+			int num2 = Integer.parseInt(args[1]);
+			int sum = num1 +num2;
+			Ut.print("sum = " + sum);
+		}
+
+	}
+
+}

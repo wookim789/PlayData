@@ -1,0 +1,21 @@
+package server3;
+
+public class Client {
+
+	public static void main(String[] args) {
+		Scoket socket = null;
+		
+		try {
+			socket = new Socket("",9001);
+			Thread thread1 = new SenderThread(socket);
+			Thread thread2 = new ReceiverTread(socket);
+			thread1.start();
+			thread2.start();
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+	}
+
+}

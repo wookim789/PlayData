@@ -1,0 +1,98 @@
+package panel;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+
+public class InsertClass implements ActionListener{
+	JTextField text1, text2, text3, text4, text5;
+	JTable table;
+	String grade;
+	String arr[];
+	
+	InsertClass(JTable table, JTextField text1,JTextField text2,JTextField text3,JTextField text4,JTextField text5){
+		this.table = table;
+		this.text1 = text1;
+		this.text2 = text2;
+		this.text3 = text3;
+		this.text4 = text4;
+		this.text5 = text5;
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+			checkOverlap();
+		}
+	
+	public void checkOverlap() {
+		
+			for(int i = 0; i < table.getRowCount(); i++) {
+				
+				if(table.getValueAt(i, 0).equals(text1.getText())) {
+					text1.setText("중복");
+					text2.setText("");
+					text3.setText("");
+					text4.setText("");
+					text5.setText("");
+					System.out.print("학번 중복");
+					return;
+				}
+			}
+			insertM();
+			insertToTable(arr);
+	}
+
+	public void insertM() {
+
+		this.arr = new String [8];
+		arr[0] = text1.getText();
+		arr[1] = text2.getText();
+		arr[2] = text3.getText();
+		arr[3] = text4.getText();
+		arr[4] = text5.getText();
+		
+		int tot = Integer.parseInt(arr[2])+ Integer.parseInt(arr[3]) + Integer.parseInt(arr[4]);
+		float avg = tot/3.f;
+		gradeM(avg);
+		
+		arr[5] = Integer.toString(tot);
+		arr[6] = Float.toString(avg);
+		arr[7] = this.grade;
+	}
+	
+	public void insertToTable(String arr[]) {
+		DefaultTableModel model = (DefaultTableModel)table.getModel();
+		model.addRow(arr);
+		
+		text1.setText("");
+		text2.setText("");
+		text3.setText("");
+		text4.setText("");
+		text5.setText("");
+	}
+	
+	public void gradeM(float avg) {
+		int grade = (int)avg/10;
+		switch(grade) {
+		case 10:
+		case 9:
+			this.grade = "수";
+			break;
+		case 8:
+			this.grade = "우";
+			break;
+		case 7:
+			this.grade = "미";
+			break;
+		case 6:
+			this.grade = "양";
+			break;
+		default :
+			this.grade = "가";
+			break;
+		}
+	}
+}

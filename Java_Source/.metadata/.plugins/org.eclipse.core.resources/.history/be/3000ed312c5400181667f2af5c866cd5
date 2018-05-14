@@ -1,0 +1,32 @@
+package panel;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
+public class DeleteClass  implements ActionListener{
+	JTextField text1;
+	JTable table;
+	
+	DeleteClass(JTable table,JTextField text1){
+		this.table = table;
+		this.text1 = text1;
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		for(int i = 0; i < table.getRowCount(); i++) {
+			if(table.getValueAt(i, 0).equals(this.text1.getText())) {
+				table.remove(i);
+				text1.setText("");
+				return;
+			}
+		}
+		System.out.print("해당 데이터 없음");
+		return;
+	}
+	
+}

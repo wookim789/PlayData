@@ -1,0 +1,15 @@
+package accountEX;
+
+public class CalThread extends Thread{
+	DataClass dc;
+	
+	public void run() {
+		synchronized(dc) {
+				for(int cnt = 0; cnt < 12; cnt++) {
+					dc.ac1.stock = Integer.toString((Integer.parseInt((dc.ac1.stock)) - 1000000));
+					System.out.print("ac1 계좌에서 1000000 인출");
+					dc.ac2.stock = Integer.toString((Integer.parseInt((dc.ac2.stock)) + 1000000));
+				}
+		}
+	}
+}

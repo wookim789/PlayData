@@ -1,0 +1,8 @@
+package accountEX;
+
+public class CalThread extends Thread{
+	DataClass dc;
+	public void run() {
+		
+	}
+}

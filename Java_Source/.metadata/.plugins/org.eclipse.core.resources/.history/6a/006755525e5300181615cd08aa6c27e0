@@ -1,0 +1,13 @@
+package accountEX;
+
+public class PrintThread extends Thread{
+	DataClass dc;
+	
+	PrintThread(DataClass dc){
+		this.dc = dc;
+	}
+	public void run() {
+		
+	}
+
+}

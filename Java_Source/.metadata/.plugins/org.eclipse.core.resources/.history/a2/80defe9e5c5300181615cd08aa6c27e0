@@ -1,0 +1,6 @@
+package accountEX;
+
+public class DataClass {
+	Account ac1;
+	Account ac2;
+}

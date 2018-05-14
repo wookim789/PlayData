@@ -1,0 +1,48 @@
+package panel;
+
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
+public class PanelEX {
+
+	public static void main(String[] args) {
+		JFrame frame = new JFrame("참가자 명단 프로그램");
+		frame.setPreferredSize(new Dimension(500,400));
+		frame.setLocation(500,400);
+		Container contentPane = frame.getContentPane();
+		String colNames[] = {"이름", "나이","성별"};
+		
+		Object data[][] = {};
+		
+		DefaultTableModel model = new DefaultTableModel(colNames,0);
+		JTable table = new JTable(model);
+		TableModel tm = table.getModel();
+		JScrollPane scrollPande = new JScrollPane(table);
+		contentPane.add(scrollPande, BorderLayout.CENTER);
+		JTextField text1 = new JTextField();
+		JTextField text2 = new JTextField();
+		JTextField text3 = new JTextField();
+		JButton button = new JButton("출력");
+		ActionListener al = new ActionClass(data);
+		button.addActionListener(al);
+		contentPane.add(button, BorderLayout.SOUTH);
+		
+		contentPane.add(text1);
+		contentPane.add(text2);
+		contentPane.add(text3);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.pack();
+		frame.setVisible(true);
+
+	}
+}

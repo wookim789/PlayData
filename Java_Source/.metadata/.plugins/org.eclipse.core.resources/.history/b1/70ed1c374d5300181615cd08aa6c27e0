@@ -1,0 +1,8 @@
+package threadEX2;
+
+public class Thread1 extends Thread {
+	public void runt() {
+		
+	}
+
+}

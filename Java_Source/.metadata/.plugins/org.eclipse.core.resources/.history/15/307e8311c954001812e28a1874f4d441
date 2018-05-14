@@ -1,0 +1,27 @@
+package scoreGUI;
+
+import java.awt.Container;
+import java.awt.Dimension;
+
+import javax.swing.JFrame;
+
+public class Main {
+
+	public static void main(String[] args) {
+		//출력화면 설정
+		JFrame frame = new JFrame("성적 그래픽 처리");
+		frame.setLocation(500,200);
+		frame.setPreferredSize(new Dimension(400,300));
+		
+		//메인판넬
+		Container contentPanel = frame.getContentPane();
+		
+		
+		//화면 출력
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.pack();
+		frame.setVisible(true);
+
+	}
+
+}

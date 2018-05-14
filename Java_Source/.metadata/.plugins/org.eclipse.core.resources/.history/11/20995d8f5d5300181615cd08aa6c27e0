@@ -1,0 +1,13 @@
+package accountEX;
+
+public class CalThread extends Thread{
+	DataClass dc;
+	
+	public void run() {
+		synchronized(dc) {
+				for(int cnt = 0; cnt < 12; cnt++) {
+					dc.ac1.acNum = Integer.toString((Integer.parseInt((dc.ac1.stock)) - 1000000));
+				}
+		}
+	}
+}

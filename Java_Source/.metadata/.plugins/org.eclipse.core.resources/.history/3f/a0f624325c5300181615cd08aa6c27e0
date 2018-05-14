@@ -1,0 +1,7 @@
+package accountEX;
+
+public class Account {
+	String name;
+	String acNum;
+	String stock;
+}

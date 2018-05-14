@@ -1,0 +1,11 @@
+package winforFinal;
+
+import javax.swing.JTextField;
+
+import scoreGUI.Drawing;
+
+public class GraphEventimplements implements ActionListener{
+	JTextField kor, eng, mat;
+	int ko ,en, ma;
+	Drawing dw;
+}

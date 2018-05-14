@@ -1,0 +1,20 @@
+package accountEX;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Account ac1 = new Account("이몽룡","1102020","200000000");
+		Account ac2 = new Account("성춘향","1102222","100000000");
+		
+		DataClass dc = new DataClass(ac1,ac2);
+		
+		CalThread ct = new CalThread(dc);
+		PrintThread pt = new PrintThread(dc);
+		
+		ct.start();
+		pt.start();
+		
+
+	}
+
+}
