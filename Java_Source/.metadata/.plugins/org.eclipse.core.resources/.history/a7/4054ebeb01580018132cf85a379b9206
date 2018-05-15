@@ -1,0 +1,7 @@
+package server5;
+
+import javax.swing.JPanel;
+
+public class DrawClass extends JPanel {
+
+}

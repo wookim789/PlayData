@@ -1,0 +1,14 @@
+package server4;
+
+import java.awt.List;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class PerClientThread extends Thread{
+	static List<PrintWriter> list= Collections.synchronizedList(new ArrayList<PrintWriter>());
+	public void run() {
+		
+	}
+
+}

@@ -1,0 +1,42 @@
+package server5;
+
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+
+public class Server implements  Runnable{
+	private static ServerSocket ss = null;
+	private static Socket s = null;
+	static ArrayList <ChatThread> chList = new ArrayList<ChatThread>();
+	
+	public static void start() {
+		 try {
+			 ss = new ServerSocket (8888);
+			 System.out.println("server start");
+			 
+			 while(true) {
+				s = ss.accept(); 
+				ChatThread ct = new ChatThread();
+				chList.add(ct);
+				ct.start();
+			 }
+		 }catch(Exception e) {
+			 System.out.println("server erorr : 24");
+		 }
+	}
+	public static void main(String[] args) {
+		Server server = new Server ();
+		server.start();
+		
+	}
+
+
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+}

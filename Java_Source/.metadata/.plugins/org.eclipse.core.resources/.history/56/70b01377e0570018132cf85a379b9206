@@ -1,0 +1,40 @@
+package server4;
+
+import java.net.ServerSocket;
+import java.net.Socket;
+
+import server3.ReceiverThread;
+import server3.SenderThread;
+
+public class Server {
+
+	public static void main(String[] args) {
+		//서버 소켓
+		ServerSocket serverSocket = null;
+		//서버에 유저가 접속시 연결되는 소켓 생성
+		Socket socket = null;
+		
+		try {
+			serverSocket = new ServerSocket(9001);
+			socket = serverSocket.accept();
+			while(true) {
+				Thread thread = new PerClientThread(socket);
+				thread.start();
+			}
+			
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		finally {
+			try {
+				serverSocket.close();
+			}catch(Exception ignored) {}
+			
+		}
+
+	}
+
+	}
+
+}

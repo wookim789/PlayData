@@ -12,12 +12,15 @@
 <fullyQualifiedTypeName name="javax.swing.SwingConstants"/>
 <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
 <fullyQualifiedTypeName name="javax.swing.JPanel"/>
-<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="org.omg.CORBA.portable.InputStream"/>
 <fullyQualifiedTypeName name="java.net.Socket"/>
 <fullyQualifiedTypeName name="org.omg.CORBA.portable.OutputStream"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.io.OutputStream"/>
 </qualifiedTypeNameHistroy>

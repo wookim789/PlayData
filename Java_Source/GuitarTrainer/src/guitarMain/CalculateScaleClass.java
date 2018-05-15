@@ -119,59 +119,162 @@ public class CalculateScaleClass {
 		this.majorPentaScale[3] = this.scale[4];
 		this.majorPentaScale[4] = this.scale[6]-1;
 	}
+	
 	public void majorScaleSearch() {
 		this.root = this.scale[0];
 		this.num = this.root;
-		int twoCount = 0;
+		int cnt = 0;
 		int threeCount = 0;
 		//아래로 찾기
-		for(int i = 0; this.num > 0; i++) 
+		while(  this.num > 0) 
 		{
-			if((twoCount == 0 && threeCount == 0)||
-			   (twoCount == 2 && threeCount == 0)) 
-			{
-				majSearch.addFirst(this.num - 1);
-				
-				if(twoCount == 0 ) {
-					twoCount++;
-				}else if(threeCount ==0) {
-					threeCount++;
+			if(cnt == 5) {
+				cnt = 0;
+			}
+			if((cnt == 0)||(cnt == 2 ))
+			{	
+				cnt++;
+		
+				if(this.num > 0) {
+					majSearch.addFirst(this.num - 1);
+				}else {
+					break;
 				}
 				
-			}else if(twoCount < 2) {
-				majSearch.addFirst(this.num - 2);
-				twoCount++;
+			}else  {
+				if(this.num > 0) {
+					majSearch.addFirst(this.num - 2);
+				}else {
+					break;
+				}
+				if(cnt < 6) {
+					cnt++;
+				}else {
+					cnt = 0;
+				}
 				
-			}else if(threeCount < 3){
-				majSearch.addFirst(this.num - 2);
-				threeCount++;
 			}
 		}
 		
-		for(int i = 0; this.num < 49; i++) 
+		while( this.num < 49) 
 		{
-			if((twoCount == 0 && threeCount == 0)||
-			   (twoCount == 2 && threeCount == 0)) 
-			{
-				majSearch.addFirst(this.num - 1);
-				
+			if(twoCount ==2 && threeCount == 3) {
+				twoCount = 0;
+				threeCount = 0;
+			}
+			if((twoCount == 2 && threeCount == 0)||
+			   (twoCount == 2 && threeCount == 3)) 
+			{	
 				if(twoCount == 0 ) {
 					twoCount++;
 				}else if(threeCount ==0) {
 					threeCount++;
 				}
+				if(this.num < 49) {
+					majSearch.addFirst(this.num + 1);
+				}else {
+					break;
+				}
 				
 			}else if(twoCount < 2) {
-				majSearch.addFirst(this.num - 2);
+				if(this.num < 49) 
+					majSearch.addFirst(this.num + 2);
+				else
+					break;
+				
 				twoCount++;
 				
 			}else if(threeCount < 3){
-				majSearch.addFirst(this.num - 2);
+				if(this.num > 0) 
+					majSearch.addFirst(this.num - 2);
+				else 
+					break;
+				
 				threeCount++;
 			}
 		}
 	}
 	
+	public void minorScaleSearch() {
+		this.root = this.scale[0];
+		this.num = this.root;
+		int twoCount = 0;
+		int threeCount = 0;
+		//아래로 찾기
+		while (this.num > 0) 
+		{
+			if(twoCount ==2 && threeCount == 5) {
+				twoCount = 0;
+				threeCount = 0;
+			} 
+			if((twoCount == 2 && threeCount == 0)||
+			   (twoCount == 2 && threeCount == 2)||
+			   (twoCount == 2 && threeCount == 5)) 
+			{	
+				if(threeCount < 5) {
+					threeCount++;
+				}
+				if(this.num > 0) {
+					majSearch.addFirst(this.num - 1);
+				}else {
+					break;
+				}
+				
+			}else if(twoCount < 2) {
+				if(this.num > 0) {
+					majSearch.addFirst(this.num - 2);
+				}else {
+					break;
+				}
+				twoCount++;
+				
+			}else if(threeCount < 5){
+				if(this.num > 0) {
+					majSearch.addFirst(this.num - 2);
+				}else {
+					break;
+				}
+				threeCount++;
+			}
+	}
+		for(int i = 0; this.num < 49; i++) 
+		{
+			if( twoCount ==1 && threeCount == 4){
+				twoCount = 0;
+				threeCount = 0;
+			}
+			if((twoCount == 2 && threeCount == 0)||
+			   (twoCount == 2 && threeCount == 3)) 
+			{	
+				if(twoCount == 0 ) {
+					twoCount++;
+				}else if(threeCount ==0) {
+					threeCount++;
+				}
+				if(this.num < 49) {
+					majSearch.addFirst(this.num + 1);
+				}else {
+					break;
+				}
+				
+			}else if(twoCount < 2) {
+				if(this.num < 49) 
+					majSearch.addFirst(this.num + 2);
+				else
+					break;
+				
+				twoCount++;
+				
+			}else if(threeCount < 3){
+				if(this.num > 0) 
+					majSearch.addFirst(this.num - 2);
+				else 
+					break;
+				
+				threeCount++;
+			}
+		}
+	}
 }
 
 

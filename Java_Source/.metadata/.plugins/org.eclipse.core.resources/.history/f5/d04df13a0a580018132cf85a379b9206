@@ -1,0 +1,92 @@
+package server5;
+
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Container;
+import java.awt.Dimension;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+
+
+
+
+public class Client {
+
+static private Container mainPanel;
+static private JFrame frame;
+static private JPanel tab, logIntab, logOuttab, msgPanel, msgInsert ;
+static private JScrollPane scrollPanel;
+
+static private CardLayout clayout;
+
+static private JLabel logInLabel, logOutLabel;
+static private JTextField logInTextBox, msgText, msgInsertText;
+static private JButton logInButton, logOutButton, exitButton;
+
+static private String userName;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		userName = null;
+		
+		frame = new JFrame("멀티 채팅");
+		frame.setLocation(800,300);
+		frame.setPreferredSize(new Dimension(400,500));
+		frame.setResizable(false);
+		
+		//main panel
+		mainPanel =  frame.getContentPane();
+		
+		//tab ui
+		tab = new JPanel();
+			clayout = new CardLayout();
+			tab.setLayout(clayout);
+		
+			logIntab = new JPanel(new BorderLayout());	
+			logInLabel = new JLabel("대화명");
+			logInButton = new JButton("확인");
+			logInTextBox = new JTextField();	
+			logIntab.add(logInLabel,BorderLayout.WEST);
+			logIntab.add(logInButton,BorderLayout.EAST);
+			logIntab.add(logInTextBox,BorderLayout.CENTER);
+		
+			logOuttab = new JPanel(new BorderLayout());
+			logOutLabel = new JLabel("대화명 :");
+			logOutButton = new JButton("로그아웃");	
+			logOuttab.add(logOutLabel,BorderLayout.WEST);
+			logOuttab.add(logOutButton,BorderLayout.EAST);
+				
+		tab.add(logIntab,"login");
+		tab.add(logOuttab,"logout");
+		
+		//Text ui
+		msgPanel = new JPanel(new BorderLayout());
+		msgText = new JTextField(30);
+		scrollPanel = new JScrollPane(msgText);	
+		scrollPanel.setPreferredSize(new Dimension(50, 50));
+		msgPanel.setLayout(new BorderLayout());
+		msgPanel.add(scrollPanel, BorderLayout.CENTER);
+		
+		//Text Insert ui
+		msgInsert = new JPanel();
+		exitButton = new JButton("종료");
+		msgInsertText = new JTextField();
+		msgInsert.setLayout(new BorderLayout());
+		msgInsert.add(exitButton);
+		msgInsert.add(msgInsertText);
+		
+		mainPanel.add(tab,BorderLayout.NORTH);
+		mainPanel.add(msgPanel,BorderLayout.CENTER);
+		mainPanel.add(msgInsert,BorderLayout.SOUTH);
+	
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.pack();
+		frame.setVisible(true);
+	}
+
+}

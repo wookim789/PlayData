@@ -1,0 +1,91 @@
+package server5;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+
+public class Server {
+	private static ServerSocket ss = null;
+	private static Socket s = null;
+	static ArrayList <ChatThread> chList = new ArrayList<ChatThread>();
+	
+	public static void start() {
+		 try {
+			 ss = new ServerSocket (8888);
+			 System.out.println("server start");
+			 
+			 while(true) {
+				s = ss.accept(); 
+				ChatThread ct = new ChatThread();
+				chList.add(ct);			
+			 }
+		 }catch(Exception e) {
+			 System.out.println("server erorr : 24");
+		 }
+	}
+	public static void main(String[] args) {
+		Server server = new Server ();
+		server.start();
+		
+
+		
+	}
+	
+	public class ChatThread extends Thread {
+		String msg;
+		String [] rmsg;
+		
+		private BufferedReader inMsg = null;
+		private PrintWriter outMsg = null;
+		
+		@Override
+		public  void run() {
+			try {
+				inMsg = new BufferedReader(new InputStreamReader(s.getInputStream()));
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			try {
+				outMsg = new PrintWriter(s.getOutputStream(), true);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			boolean status = true;
+			while(status) {
+					try {
+						msg = inMsg.readLine();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					rmsg = msg.split("/");
+					
+					if(rmsg[1].equals("logout")) {
+						chList.remove(this);
+						msgSendAll("server/" + rmsg[0]+ "님이 종료 했습니다.");
+						status = false;
+					}
+					else if(rmsg[1].equals("login")) {
+						msgSendAll("server/" + rmsg[0]+ "님이 로그인 했습니다.");
+					}
+					else {
+						msgSendAll(msg);
+					}
+			}
+//			this.interrupt();
+//			System.out.println("##" +  this.getName() + "stop");
+			
+		}
+		void msgSendAll(String msg) {
+			for(ChatThread ct : chList) {
+				ct.outMsg.println(msg);
+			}
+		}
+	}
+}

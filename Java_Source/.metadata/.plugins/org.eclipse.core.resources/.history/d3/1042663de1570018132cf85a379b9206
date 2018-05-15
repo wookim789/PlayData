@@ -1,0 +1,16 @@
+package server4;
+
+import java.net.Socket;
+
+public class SenderThread extends Thread {
+	
+	Scoket socket;
+	String name;
+	
+	SenderThread(Socket socket, String name){
+		this.socket = socket;
+		this.name = name;
+	}
+	
+
+}

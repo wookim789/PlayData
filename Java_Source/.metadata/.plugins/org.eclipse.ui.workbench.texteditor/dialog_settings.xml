@@ -6,12 +6,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="button1" key="selection"/>
+		<item value="id" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="id"/>
 			<item value="button1"/>
 			<item value="static int nod"/>
 			<item value="size"/>
@@ -19,7 +20,6 @@
 			<item value=" process"/>
 			<item value="tot"/>
 			<item value="sumcost"/>
-			<item value="Panme02.numberOfData++;"/>
 		</list>
 		<list key="replacehistory">
 		</list>
