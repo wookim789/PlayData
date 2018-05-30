@@ -18,7 +18,7 @@ public class Panme02 {
 			out.println("제품 코드 입력 :");
 			String check= sc.next();
 			
-			if(Panme02.numberOfData==0) {//데이터를 처음 입력하면 바로 저장
+			if(Panme02.numberOfData == 0) {//데이터를 처음 입력하면 바로 저장
 				obj[Panme02.numberOfData].code = check;
 			}else {
 				for(int k = 0; k < Panme02.numberOfData; k++) {//제품 코드만 한 하여 

@@ -1,11 +1,13 @@
 package panmever2;
 import static java.lang.System.out;
+
 import java.util.Scanner;
 
 public class menuclass {
 	
 	String userOrder="";
 	Panme02 pclass = new  Panme02();
+	DataBaseClass dbc = new DataBaseClass();
 	 
 	void mainMenu(Panme02 obj[]) {
 
@@ -21,23 +23,23 @@ public class menuclass {
 			
 			switch (this.userOrder) {
 				case "1": //제품 데이터 입력
-					pclass.input(sc,obj);
+					 dbc.insert();
 					Panme02.numberOfData++;
 					break;
 				case "2": // 제품 데이터 모두 출력
-					pclass.output(obj);
+					 dbc.selectAll();
 					break;
 				case "3": //프로그램 종료
 					out.println("***종료***\n");
 					break;
 				case "4"://하나의 데이터 조회
-					pclass.select(sc,obj);
+					dbc.select();
 					break;
 				case "5"://하나의 데이터 수정
-					pclass.modify(sc,obj);
+					dbc.update();
 					break;
 				case "6"://하나의 데이터 삭제
-					pclass.delete(sc,obj);
+					dbc.delete();
 					break;
 			}
 		}
