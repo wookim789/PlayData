@@ -20,8 +20,6 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 
-
-
 public class Client implements ActionListener, Runnable {
 
 static private Container mainPanel;
@@ -36,8 +34,8 @@ static private JTextField logInTextBox,  msgInsertText;
 static private JTextArea msgText;
 static private JButton logInButton, logOutButton, exitButton;
 
-static private String userName,id,ip = "192.168.0.110";
-static public Socket socket;
+static private String userName,id,ip = "127.0.0.1";
+static private Socket socket;
 static private boolean status;
 static private BufferedReader inMsg = null;
 static private PrintWriter outMsg = null;
@@ -104,7 +102,6 @@ Client(String ip){
 	msgInsert.add(msgInsertText,BorderLayout.CENTER);
 	
 
-	
 	mainPanel.add(tab,BorderLayout.NORTH);
 	mainPanel.add(msgPanel,BorderLayout.CENTER);
 	mainPanel.add(msgInsert,BorderLayout.SOUTH);
@@ -118,7 +115,7 @@ Client(String ip){
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Client client = new Client("192.168.0.110");
+		Client client = new Client("127.0.0.1");
 	}
 
 	@Override
@@ -132,6 +129,7 @@ Client(String ip){
 		}else if(obj == logInButton ) {
 			System.out.println("로그인");
 			clayout.show(tab, "logout");
+			System.out.println("탭모습 바꾸기");
 			id = logInTextBox.getText();
 			logInLabel.setText("대화명 : ");
 			logOutLabel.setText("대화명 : "+ id);
@@ -161,7 +159,7 @@ Client(String ip){
 	
 	public void connectServer() {
 		try {
-			socket = new Socket("192.168.0.103",8888);
+			socket = new Socket("127.0.0.1",8888);
 			
 			inMsg = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			outMsg = new PrintWriter(socket.getOutputStream(),true);
@@ -170,7 +168,7 @@ Client(String ip){
 			thread.start();
 			System.out.println("서버 연결 성공");
 			
-		}catch(Exception e) {
+		}catch(Exception ignored) {
 			
 		}
 	}

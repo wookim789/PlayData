@@ -10,6 +10,7 @@ public class ScoreClass {
 	String avg;
 	String grade;
 	
+	
 	ScoreClass(String num){
 		this.num = num;
 	}

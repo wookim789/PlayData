@@ -11,7 +11,7 @@ public class ClientEx {
 		Socket socket = null; 
 		
 		try {                  //loopback address 내 컴에서 내부적으로 사용하기 위한 주소
-			socket = new Socket("127.9.0.1",9000);
+			socket = new Socket("127.0.0.1",9000);
 			InputStream in = socket.getInputStream();
 			OutputStream out = socket.getOutputStream();
 			String str = "hello, server";

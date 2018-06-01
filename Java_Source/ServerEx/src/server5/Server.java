@@ -13,6 +13,13 @@ public class Server {
 	public  Socket s = null;
 	static ArrayList <ChatThread> chList = new ArrayList<ChatThread>();
 	
+	
+	public static void main(String[] args) {
+		Server server = new Server ();
+		server.start();
+		
+	}
+	
 	public void start() {
 		
 			 try {
@@ -38,15 +45,8 @@ public class Server {
 				
 				ct.start();
 			 }
-		 
-		 
 	}
 	
-	public static void main(String[] args) {
-		Server server = new Server ();
-		server.start();
-		
-	}
 	
 	public  class ChatThread extends Thread {
 		String msg;
@@ -61,16 +61,12 @@ public class Server {
 			boolean status = true;
 			try {
 				inMsg = new BufferedReader(new InputStreamReader(s.getInputStream()));
+				outMsg = new PrintWriter(s.getOutputStream(), true);
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			try {
-				outMsg = new PrintWriter(s.getOutputStream(), true);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
 			
 			while(status) {
 					try {

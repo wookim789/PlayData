@@ -31,6 +31,8 @@ public class menuclass {
 					break;
 				case "3": //프로그램 종료
 					out.println("***종료***\n");
+					dbc.exit();
+					
 					break;
 				case "4"://하나의 데이터 조회
 					dbc.select();

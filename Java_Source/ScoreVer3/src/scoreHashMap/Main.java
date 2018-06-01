@@ -14,6 +14,7 @@ public class Main {
 		  String i;
 	      Scanner sc = new Scanner(in);      
 	      MethodClass mt =  new MethodClass();  //메소드 클래스의 객체 생성. 해당 객체를 mt가 가르킴
+	      DataClass dbc = new DataClass();
 	      HashMap<String, ScoreClass> dc = new HashMap<String, ScoreClass>();
 	      breakpoint:
 	      while(true) {
@@ -34,8 +35,10 @@ public class Main {
 	            case "1":
 	               while (!answer.equals("exit"))  // 입력을 연속으로 받기위한 while문 exit 입력시 해당 루프 종료
 	               {
-	                  mt.input(sc,dc);            //메소드 호출
-	                  out.println("입력 종료 시 : exit ");
+//	                  mt.input(sc,dc);            //메소드 호출
+	                  dbc.insert();
+	                  
+	                  out.print("입력 종료 시 : exit \n");
 	                  answer = sc.nextLine();
 	               }
 	               break;
@@ -46,12 +49,13 @@ public class Main {
 	               
 	               try 
 	               {
-	            	   out.println("데이터 목록");
-	            	  Set<String> keySetdata = dc.keySet();
-	         	      for(String a : keySetdata) {
-	         	         out.print(a+" ");                   //printMEthode 메소드 호출
-	         	      }
-	         	       System.out.println(""); 
+	            	   dbc.select();
+//	            	   out.println("데이터 목록");
+//	            	  Set<String> keySetdata = dc.keySet();
+//	         	      for(String a : keySetdata) {
+//	         	         out.print(a+" ");                   //printMEthode 메소드 호출
+//	         	      }
+//	         	       System.out.println(""); 
 	            	   i = sc.nextLine();     
 	            	   mt.search(i, dc, sc);                //메소드 호출
 	               } catch(java.lang.NumberFormatException e) {
@@ -60,7 +64,8 @@ public class Main {
 	               break;         
 	               
 	            case "3":
-	               mt.output(dc);
+//	               mt.output(dc);
+	               dbc.selectAll();
 	               break;         
 	               
 	            case"4":
@@ -69,14 +74,15 @@ public class Main {
 	               
 	               try 
 	               {
-	            	   out.println("데이터 목록");
-		               Set<String> keySetdata = dc.keySet();
-		         	   for(String a : keySetdata) {
-		         	       out.print(a+" ");                   //printMEthode 메소드 호출
-		         	   }
-		         	   out.println("");   
-	            	   i = sc.nextLine();      
-	            	   mt.modify(i, dc, sc);               //메소드 호출
+	            	   dbc.update();
+//	            	   out.println("데이터 목록");
+//		               Set<String> keySetdata = dc.keySet();
+//		         	   for(String a : keySetdata) {
+//		         	       out.print(a+" ");                   //printMEthode 메소드 호출
+//		         	   }
+//		         	   out.println("");   
+//	            	   i = sc.nextLine();      
+//	            	   mt.modify(i, dc, sc);               //메소드 호출
 	               } catch(java.lang.NumberFormatException e) {
 	                   out.println("숫자 입력.");
 	               }
@@ -88,15 +94,16 @@ public class Main {
 	           
 	               try 
 	               {
-	            	   out.println("데이터 목록");
-		               Set<String> keySetdata = dc.keySet();
-		         	   for(String a : keySetdata) {
-		         	       out.print(a+" ");                   //printMEthode 메소드 호출
-		         	   }
-		         	   out.println(""); 
-		         	   out.println("수정할 데이터 입력 : ");
-	            	   i = sc.nextLine();      
-	            	   mt.delete(i,dc);                  //메소드 호출
+	            	   dbc.delete();
+//	            	   out.println("데이터 목록");
+//		               Set<String> keySetdata = dc.keySet();
+//		         	   for(String a : keySetdata) {
+//		         	       out.print(a+" ");                   //printMEthode 메소드 호출
+//		         	   }
+//		         	   out.println(""); 
+//		         	   out.println("수정할 데이터 입력 : ");
+//	            	   i = sc.nextLine();      
+//	            	   mt.delete(i,dc);                  //메소드 호출
 	               } 
 	               catch(java.lang.NumberFormatException e) 
 	               {

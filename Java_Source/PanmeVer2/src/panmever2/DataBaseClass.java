@@ -1,8 +1,7 @@
 package panmever2;
 
-
-
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -41,7 +40,7 @@ public class DataBaseClass {
 			Class.forName(driver);
 			con = DriverManager.getConnection(url, "SCOTT", "123456");
 			
-			cstmt = con.prepareCall("{call call_insert(?,?,?,?,?)}");
+			cstmt = con.prepareCall("{call call_insertP(?,?,?,?,?)}");
 			cstmt.setString(1, code);
 			cstmt.setString(2, name);
 			cstmt.setInt(3, num);
@@ -74,7 +73,7 @@ public class DataBaseClass {
 			
 			Class.forName(driver);
 			con = DriverManager.getConnection(url, "scott", "123456");
-			cstmt = con.prepareCall("{call call_delete(?)}");
+			cstmt = con.prepareCall("{call call_deleteP(?)}");
 			cstmt.setString(1, code);
 			cstmt.executeUpdate();
 			
@@ -110,13 +109,15 @@ public class DataBaseClass {
 			
 			Class.forName(driver);
 			con = DriverManager.getConnection(url, "SCOTT", "123456");
-			cstmt = con.prepareCall("{call call_update(?,?,?)}");
-			cstmt.setString(1,name);
-			cstmt.setInt(2,num);
-			cstmt.setInt(3,cost);
-			
+			cstmt = con.prepareCall("{call  call_updateP(?,?,?,?,?)}");
+			cstmt.setString(1,code);
+			cstmt.setString(2,name);
+			cstmt.setInt(3,num);
+			cstmt.setInt(4,cost);
+				
 			tot = num * cost;
-			cstmt.setInt(4,tot);
+			cstmt.setInt(5,tot);
+			
 			cstmt.executeUpdate();
 
 			System.out.println("데이터 베이스 내용 갱신 성공!");
@@ -138,27 +139,29 @@ public class DataBaseClass {
 	}
 	public void selectAll() {
 		try {
-			
+	
 			Class.forName(driver);
 			con = DriverManager.getConnection(url, "SCOTT", "123456");
-
-			cstmt = con.prepareCall("{call call_select(?)}");
+			
+			cstmt = con.prepareCall("{call call_selectAllP(?)}");
 			cstmt.registerOutParameter(1, OracleTypes.CURSOR);
 			cstmt.executeQuery();
 			
 			rs = (ResultSet)cstmt.getObject(1);
-			
+			System.out.println("rs=" + rs);
 			System.out.println("code\tname\tnum\tcost\ttotal");
 			System.out.println("--------------------------------------");
-			while(rs.next()) {
-				System.out.print(rs.getString("code") + "\t");
+
+			while(rs.next()) 
+			{	System.out.print(rs.getString("code") + "\t");
 				System.out.print(rs.getString("name") + "\t");
 				System.out.print(Integer.toString(rs.getInt("num")) + "\t");
 				System.out.print(Integer.toString(rs.getInt("cost")) + "\t");
 				System.out.print(Integer.toString(rs.getInt("tot")) + "\n");
+				
 			}
 		}catch(Exception e) {
-			System.out.println("데이터베이스 연결 실패!");
+			System.out.println("데이터베이스 연결 실패!" + e.getMessage());
 			e.printStackTrace();
 		}
 		finally {
@@ -173,23 +176,31 @@ public class DataBaseClass {
 	}
 	public void select() {
 		try {
+			br = new BufferedReader (new InputStreamReader(System.in));
+			System.out.println("해당 테이블  조회 .....");
+			
+			System.out.println("코드 입력");
+			code = br.readLine();
+			
 			Class.forName(driver);
 			con = DriverManager.getConnection(url, "SCOTT", "123456");
 			
-			cstmt = con.prepareCall("{call call_select(?)}");
-			cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+			cstmt = con.prepareCall("{call call_selectP(?,?)}"); //call 다음 call_selectp는 db에 등록되있는 프로시저 식별자다!
+			cstmt.setString(1, code);
+			cstmt.registerOutParameter(2, OracleTypes.CURSOR);
 			cstmt.executeQuery();
 			
-			rs = (ResultSet)cstmt.getObject(1);
+			rs = (ResultSet)cstmt.getObject(2);
 			
 			System.out.println("code\tname\tnum\tcost\ttotal");
 			System.out.println("--------------------------------------");
+			//System.out.println(rs.next());
 			while(rs.next()) {
-				System.out.println(rs.getString("code") + "\t");
-				System.out.println(rs.getString("name") + "\t");
-				System.out.println(rs.getString("num") + "\t");
-				System.out.println(rs.getString("cost") + "\t");
-				System.out.println(rs.getString("tot") + "\n");
+				System.out.print(rs.getString("code") + "\t");
+				System.out.print(rs.getString("name") + "\t");
+				System.out.print(rs.getString("num") + "\t");
+				System.out.print(rs.getString("cost") + "\t");
+				System.out.print(rs.getString("tot") + "\n");
 			}
 		}catch(Exception e) {
 			System.out.println("데이터베이스 연결 실패!");
@@ -205,5 +216,14 @@ public class DataBaseClass {
 			}
 		}
 	}
-
+	
+	public void exit()  {
+		try {
+			if(br != null) br.close();
+		}
+		catch(IOException e) {
+			System.out.println("io exception");
+		}
+		
+	}
 }
