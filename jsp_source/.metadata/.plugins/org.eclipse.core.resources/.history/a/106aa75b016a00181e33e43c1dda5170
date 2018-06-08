@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<style>
+		
+	</style>
+</head>
+<body>
+	<img src = "../images/bono.jpg" alt = "보노보노" width = "600" height = "700 "/>
+	
+	<div id = "s_left">왼쪽</div>
+	<div id = "s_center">가운데</div>
+	<div id = "s_right">오른쪽</div>
+</body>
+</html>

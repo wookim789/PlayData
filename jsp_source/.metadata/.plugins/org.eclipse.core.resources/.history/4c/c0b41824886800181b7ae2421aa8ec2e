@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border ="1">
+		
+				<td>thead 태그 내부</td>
+				<td>thead 태그 내부</td>
+
+				<td>
+					thead 태그 내부</td>
+				</td>
+			
+				<td>
+					thead 태그 내부</td>
+				</td>
+		
+				<td>
+					thead 태그 내부</td>
+				</td>
+		
+	</table>
+</body>
+</html>

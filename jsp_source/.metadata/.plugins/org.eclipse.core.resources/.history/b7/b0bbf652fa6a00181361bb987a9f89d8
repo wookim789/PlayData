@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Guitar kim</title>
+</head>
+<body>
+	<header id ="logoHead">
+		<h1>Guitar Kim</h1>
+		<style>
+			#keyNav{
+				margin : 0 20px 100% 0;
+			}
+			.line{
+				height :2px;
+				background : black;
+				width : 80%;
+				position:absolute;
+				
+			}
+			.varline{
+				background :black;
+				position:absolute;
+			}
+			
+			.line:nth-child(1){
+				top:300px;
+				left:660px;
+			}
+			.line:nth-child(2){
+				top:200px;
+				left:200px;
+			}
+			.line:nth-child(3){
+				top:250px;
+				left:200px;
+			}
+			.line:nth-child(4){
+				top:300px;
+				left:200px;
+			}
+			.line:nth-child(5){
+				top:350px;
+				left:200px;
+			}
+			.line:nth-child(6){
+				top:400px;
+				left:200px;
+			}
+			
+		</style>
+	</header>
+	
+	<section>
+		<nav id = "keyNav">
+			<h2>KEY</h2> <!-- 리스트 안에 키  -->
+				<input list = "keyList" name = "keyList">
+				<datalist id = "keyList">
+					<option value = "C">
+					<option value = "C#">
+					<option value = "D">
+					<option value = "D#">
+					<option value = 'E'>
+					<option value = 'F'>
+					<option value = 'F#'>
+					<option value = 'G'>
+					<option value = 'G#'>
+					<option value = 'A'>
+					<option value = 'A#'>
+					<option value = 'B'>			
+				</datalist>
+			<h2>Sacle</h2> <!-- 리스트 안에 키  -->
+				<input list = "ScaleList" name = "SclaeList">
+				<datalist id = "ScaleList">
+					<option value = "major">
+					<option value = "minor">
+					<option value = "pantatonic">
+					<option value = "minor pantatonic">
+				</datalist>
+		</nav>
+	</section>
+	
+	<section>
+		<article>
+			<p> <!--기타줄 그리기-->
+				<hr class="line">
+				<hr class="line">
+				<hr class="line">
+				<hr class="line">
+				<hr class="line">
+				<hr class="line">
+				
+				<hr class="varline" width = "3" size= '220'>
+				<hr class="varline" width = "3" size= '220'>
+				<hr class="varline" width = "3" size= '220'>
+				<hr class="varline" width = "3" size= '220'>
+				<hr class="varline" width = "3" size= '220'>
+				<hr class="varline" width = "3" size= '220'>
+				<hr class="varline" width = "3" size= '220'>
+				<hr class="varline" width = "3" size= '220'>
+				<hr class="varline" width = "3" size= '220'>
+				<hr class="varline" width = "3" size= '220'>
+				<hr class="varline" width = "3" size= '220'>
+				<hr class="varline" width = "3" size= '220'>
+				<hr class="varline" width = "3" size= '220'>
+				<hr class="varline" width = "3" size= '220'>
+				<hr class="varline" width = "3" size= '220'>
+				<hr class="varline" width = "3" size= '220'>
+				<hr class="varline" width = "3" size= '220'>
+				<hr class="varline" width = "3" size= '220'>
+				<hr class="varline" width = "3" size= '220'>
+				<hr class="varline" width = "3" size= '220'>
+				<hr class="varline" width = "3" size= '220'>
+				<hr class="varline" width = "3" size= '220'>
+				 
+							
+			</p>
+		</article>
+	</section>
+	
+	<footer>
+	
+	</footer>
+</body>
+</html>

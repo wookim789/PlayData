@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv = "Content-Type" content ="text/html; charset = euc-kr">
+<title>Insert title here</title>
+<!-- <link rel = "stylesheet" href = "./style.css" type = "text/css"> -->
+</head>
+<body>
+	<header id = "page_header">
+		<h1>HTML5</h1>
+	</header>
+	
+	<nav>
+		<ul>
+			<li><a href = "#">HTML API</a></li>
+			<li><a href = "#">CSS#</a></li>
+			<li><a href = "#">PhoneGap</a></li>
+		</ul>
+	</nav>
+	<section id = "posts">
+		<article class = "post">
+			<header>	
+				<h1>
+					Lorem ipsum dolor sit amet
+				</h1> 
+			</header>
+		
+			<p>
+				Lorem ipsum dolor sit amet, consectetur elit.
+			</p>
+		</article>
+		
+		<article>
+			<h1>Lorem ipsum dolor sit amet</h1>
+			<h1>Lorem ipsum dolor sit amet, consectetur</h1>
+		</article>
+	</section>
+	<footer>
+		<span>서울 특별시 강서구 내발산동</span>
+	</footer>
+</body>
+</html>

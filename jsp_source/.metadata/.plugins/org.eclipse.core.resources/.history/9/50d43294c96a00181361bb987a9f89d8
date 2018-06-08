@@ -1,0 +1,49 @@
+@charset "EUC-KR";
+
+html, body, form, fieldset, legend, ol, li{
+	margin:0;
+	padding:0;
+}
+body{
+	background : #ffffff;
+	color : #111111;
+	font-family:¸¼Àº°íµñ, ±¼¸², µ¸¿ò;
+	padding : 20px;	
+}
+form{
+	background : #FDDBF9;
+	-moz-border-radius:5px;
+	-webkit-border0radius:5px;
+	-khtml-border-radius:5px;
+	border-radius:5px;
+}
+form fieldset : Last-of-type{
+	margin-bottom:0;
+}
+
+form legend{
+	color : #0B0B0B;
+	font-szie : 16px;
+	font-weight : bold;
+	padding-bottom:10px;
+}
+form > fieldset > legend:before{
+	content : counter(fieldsets)". ";
+	counter-increment:fieldsets;	
+}
+form ol li{
+	background : #aaaaaa;
+	backgroun : rgba(255,255,255,.3);
+	border-color:#e3ebc3;
+	border-color:rgba(255,255,255.6);
+	border-style:solid;
+	border-width:2px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	-khtml-border-radius:5px;
+	border-radius:5px;
+	line-height:30px;
+	list-style:none;
+	padding:5px 10px;
+	margin-bottom:2px;
+}

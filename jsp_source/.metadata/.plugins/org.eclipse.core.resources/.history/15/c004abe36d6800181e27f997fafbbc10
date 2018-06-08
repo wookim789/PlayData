@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF8">
+	<title>Outer Java Script</title>
+	<script src = "javaScript.js"></script>
+
+</head>
+<body>
+
+</body>
+</html>

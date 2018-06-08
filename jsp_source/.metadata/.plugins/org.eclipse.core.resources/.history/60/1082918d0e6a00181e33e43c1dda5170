@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		<h1>HTML 기본</h1>
+	</div>
+	
+	<div>
+		<ul>
+			<li><a href = "#'>메뉴 - 1</a></li>
+			<li><a href = "#">메뉴 - 1</a></li>
+			<li><a href = "#">메뉴 - 1</a></li>
+		</ul>
+	</div>
+
+</body>
+</html>

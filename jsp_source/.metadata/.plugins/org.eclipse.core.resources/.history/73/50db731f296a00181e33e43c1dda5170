@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<audio src = "ando - cocosum.mp3" controls = "controls"></audio>
+	
+	<vdieo width = "640" controls ="controls">
+		<source src = "" type="video/mp4"/>
+
+</body>
+</html>

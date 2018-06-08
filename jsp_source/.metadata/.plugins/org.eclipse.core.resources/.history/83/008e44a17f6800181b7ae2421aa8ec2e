@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<a href = "http://hanbit.co.kr" tratget = "_blank">한빛 미디어</a><br/>
+	<a href = "http://naver.com">네이버</a><br/>
+	<a href = "http://daum.net">다음</a><br/>
+	<a href = "./Hello.html" target = "_blank">./Hello.html</a>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form>
+		<label for = "email">email</label>
+		<input id = "email" type= "email" placeholder = "example@domain.com" required><br/>
+		<label for = 'url'>url</label>
+		<input id = 'url' placeholder = 'http://www.domain.com'><br/>
+		<label for = 'date' >date</label>
+		<input id = 'date' type = 'date'><br/>
+		<label for = 'num'>number</label>
+		<input id = 'num' type = 'number' min = '1' max = '5' value = '1'><br/>
+		<label for ="range">range</label><br/>
+		<input id = 'range' type = 'range' min = '1' max = '5' value = '1'><br/>
+		<label for = 'search'>search</label>
+		<input id = 'search' type = 'search' placeholder = '검색 키워드 입력'><br/>
+		<label for = 'color'>color</label>
+		<input id = 'color' type = 'color'><br/>
+	</form>
+
+	<fieldset>
+		<legend>입력양식</legend>
+		<table>
+			<tr>
+				<td><label for = "name">이름</label></td>
+				<td><input id = "name" type = "text"></td>
+			</tr>
+			<tr>
+				<td><label for="mail">이메일</label><td>
+				<td><input id = "mail" type = "email"></td>
+			
+			</tr>
+		</table>
+	</fieldset>
+
+
+
+
+	<select><!--  multiple = "multiple"> -->
+		<optgroup label = "분식 메뉴">
+			<option>김밥</option>
+			<option>떡볶이</option>
+			<option>순대</option>
+			<option>어묵</option>
+		</optgroup>
+			
+		<optgroup label ="음료 메뉴">
+			<option>쿨피스 자두</option>
+			<option>쿨피스 파인애플</option>
+			<option>사이다</option>
+			<option>콜라</option>
+		</optgroup>
+		
+	</select>
+</body>
+</html>

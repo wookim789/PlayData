@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border = "1", bgcolor = "105080">
+		<tr>
+			<th colspan = "6">시간표</th>
+		</tr>
+		<tr>
+			<th>시간</th>
+			<th>월</th>
+			<th>화</th>
+			<th>수</th>
+			<th>목</th>
+			<th>금</th>
+		</tr>
+		
+		<tr><td>1교시</td></tr>
+		<tr><td>2교시</td></tr>
+		<tr><td>3교시</td></tr>
+		<tr><td>4교시</td></tr>
+		<tr><td>5교시</td></tr>
+		<tr><td>6교시</td></tr>
+		<tr><td>7교시</td></tr>
+		<tr><td>8교시</td></tr>
+		
+		<tr>
+			<th rowspan = "2"></th>
+			<td>아삼</td>
+		</tr>
+		<tr><td>실론</td></tr>
+		<tr><td>다질링</td></tr>
+		<tr><td>닐기리</td></tr>
+	</table>
+
+</body>
+</html>

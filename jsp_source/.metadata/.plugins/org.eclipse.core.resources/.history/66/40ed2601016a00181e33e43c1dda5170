@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<style>
+		#s_left{
+			width : 200px;
+			height : 700px;
+			background-color:yellow;
+			float:left;
+		}
+		#s_center{
+			width : 600px;
+			height : 700px;
+			background-color:yellow;
+			float:left;
+		}
+		#s_right{
+			width : 300px;
+			height : 700px;
+			background-color:yellow;
+			float:left;
+		}
+	</style>
+</head>
+<body>
+	<img src = "../images/bono.jpg" alt = "보노보노" width = "600" height = "700 "/>
+	
+	<div id = "s_left">왼쪽</div>
+	<div id = "s_center">가운데</div>
+	<div id = "s_right">오른쪽</div>
+</body>
+</html>

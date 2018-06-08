@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	
+</head>
+<body>
+	<div class ="box-container">
+		<div class = "box" style = "float : left">박스1</div>
+		<div class = "box" style = "float : right">박스2</div>
+		<div style = "clear : both"></div>
+	</div>
+</body>
+</html>

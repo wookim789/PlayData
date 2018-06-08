@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<fieldset>
+		<legend>회원 기본 정보</legend>
+		<table>
+			<tr>
+				<td><label for = "id">아이디</label></td>
+				<td><label for = "password">비밀번호</label></td>
+				<td><label for = "checkPassword">비밀번호 확인</label></td>
+				<td><label for = "name">이름</label></td>
+				<td><label for = "age">나이</label></td>
+				<td><label for = "brith">생일</label></td>
+				<td><label for = "email">이메일</label></td>
+				<td><label for = "phone">핸드폰</label></td>
+			
+			</tr>
+		</table>
+	</fieldset>
+
+</body>
+</html>

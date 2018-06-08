@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<header>
+		<h1>HTML 기본</h1>
+	</header>
+	
+	<nav>
+		<ul>
+			<li><a href = "#"> 메뉴 - 1</a></li>
+			<li><a href = "#"> 메뉴 - 2</a></li>
+			<li><a href = "#"> 메뉴 - 3</a></li>
+		</ul>
+	</nav>
+	<section>
+		<article>
+			<h1>Lorem ipsum dolor sit amet</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur elit.</p>
+		</article>
+		<div>
+			<h1>Lorem ipsum dolor sit amet</h1>
+			<h1>Lorem ipsum dolor sit amet, consectetur</h1>
+		</div>
+	</section>
+	<div>
+		<span>서울 특별시 강서구 내발산동</span>
+	</div>
+</body>
+</html>

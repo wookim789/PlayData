@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<style>
+		ul{ overflow : hidden;}
+		li{
+			list-style : none;
+			float : left; padding : 15px;
+		}
+		li:first-child {border-radius:10px 0 0 10px;}
+		li:last-chile{border-radius:0 10px 10px 0;}
+		
+		li:nth-child(2n) {background-color:#FF0003;}
+		li:nth-chile(2n+1){background-color:#800000;}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+	</ul>
+</body>
+</html>

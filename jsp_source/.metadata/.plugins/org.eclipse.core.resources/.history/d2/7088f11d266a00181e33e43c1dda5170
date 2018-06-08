@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link rel="stylesheet" href="./style.css" type="text/css">
+<style>
+.boxx-container{
+	width:350px;
+	border:2px solid #09c;
+	background-color :#d7f5ff;
+}
+.box-container .box{
+	width : 350px;
+	border : 2px solid #09c;
+	bakground-color : #d7f5ff;
+}
+	
+</style>
+
+</head>
+<body>
+	<div class ="box-container">
+		<div class = "box" style = "float : left">박스1</div>
+		<div class = "box" style = "float : right">박스2</div>
+		<div style = "clear : both"></div>
+	</div>
+</body>
+</html>

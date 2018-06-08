@@ -1,0 +1,50 @@
+@charset "EUC-KR";
+
+body{
+	width:960px;
+	margin:15px auto;
+	font-family:"맑은 고딕", "나눔고딕", Arial, "MS Ttrebuchet",
+}
+p
+{
+	margin : 0 0 20px 0;  /* 위 오른쪽 아래 왼 시계방향 */
+}
+
+p, li{
+	line-height :20px;
+}
+
+header#page_header{
+	width:100%;
+}
+header#page_headr nav ul, #page_footer nav ul{ /*  nav 띄고 ul -> 해당 header의 하위 태그들을 찾으라는 뜻*/
+	list_style : none;
+	margin:0;
+	padding : 0;
+}
+#page_header nav ul li, footer#page_footer nav ul li{
+	padding : 0;
+	margin : 0 20px 0 0;
+	display: inline;
+}
+section#posts{
+	float:left;
+	width:74%;
+}
+section#posts aside{
+	float : right;
+	width:35%;
+	margin-left:5%;
+	font-size:20px;
+	line-height:40px;
+}
+section#sidebar{
+	float:left;
+	width:25%;
+}
+footer#page_footer{
+   clear: both;
+   width: 100%;
+   display: block;
+   text-align: center;
+}

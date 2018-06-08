@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>이력서</title>
+		<style>
+			td{
+				text-align : center;
+				height : 20px;
+				width : 100px;
+			}
+		</style>
+		
+	</head>
+
+
+	<body>
+		<h1>이력서</h1>
+		<table border = "1">
+
+			<tr>
+			<td rowspan ="4",  colspan = "3">사진</td>
+			<td rowspan = "2">성명</td>
+			<td colspan = "1">한글</td>
+			<td><p style ="text-align : right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(인)</p></td>
+			<td>주민등록번호</td>
+			<td colspan ="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>			
+			</tr>
+			
+			<tr>
+				<td>한자</td>
+				<td></td>
+				<td>생 년 월 일</td>
+				<td colspan = "2"></td>
+			</tr>
+				
+			<tr>
+				<td>현주소</td>
+				<td colspan = "4"></td>
+			</tr>
+			
+			<tr>
+				<td>전화번호</td>
+				<td colspan ="2"></td>
+				<td>email</td>
+				<td colspan = "2"></td>
+			</tr>
+			
+			<tr>
+				<td rowspan = "2">호 주</td>
+				<td colspan = "2">성명</td>
+				<td>본인과의 관계</td>
+				<td>직장명</td>
+				<td colspan = "2">직위</td>
+				<td colspan = "2">주소</td>			
+			</tr>
+			
+			<tr>
+				<colspan = "2"> </td>
+				<td></td>
+				<td></td>
+				<td colspan = "2"></td>
+				<td colspan = "2"></td>
+			</tr>
+			
+			<tr>
+				<td>년</td>
+				<td>월</td>
+				<td>일</td>
+				<td>학력 및 경력 사항</td>
+				<td colspan ="4">발령청</td>
+			</tr>
+			
+			<tr>
+				<td> </td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			
+		</table>
+	</body>
+</html>

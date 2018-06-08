@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>HTML TEXT Basic Page</title>
+</head>
+<body>
+	<a href = "http://hanbit.co.kr">한빛 미디어</a><br>
+	<a href = "http://naver.com">네이버</a><br>
+	<a href = "http://daum.com">다음</a>
+</body>
+</html>

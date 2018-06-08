@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<fieldset>
+		<legend>회원 기본 정보</legend>
+		<table>
+			<ol>
+				<li>
+					<tr>
+						<td><label for = "id">아이디</label></td>
+						<td><input id = "id" tpye = "text"></td>
+					</tr>	
+				</li>
+				<li>
+					<tr>
+						<td><label for = "password">비밀번호</label></td>
+						<td><input id = "password" tpye = "text"></td> 
+					</tr>
+				</li>
+				<li>
+					<tr>
+						<td><label for = "checkPassword">비밀번호 확인</label></td>
+						<td><input id = "checkPassword" tpye = "text"></td> 
+					</tr>
+				</li>
+				<li>
+					<tr>
+						<td><label for = "name">이름</label></td>
+						<td><input id = "name" tpye = "text"></td> 
+					</tr>
+				</li>
+				<li>
+					<tr>
+						<td><label for = "age">나이</label></td>
+						<td><input id = "age" tpye = "text"></td> 
+					</tr>
+				</li>
+				<li>
+					<tr>
+						<td><label for = "brith">생일</label></td>
+						<td><input id = "brith" tpye = "text"></td> 
+					</tr>
+				</li>
+				<li>
+					<tr>
+						<td><label for = "email">이메일</label></td>
+						<td><input id = "email" tpye = "text"></td> 
+					</tr>
+				</li>
+				<li>
+					<tr>
+						<td><label for = "phone">핸드폰</label></td>
+						<td><input id = "phone" tpye = "text"></td> 
+					</tr>
+				</li>
+		</ol>
+		
+			
+			
+			
+			
+			
+		
+		
+			
+		</table>
+	</fieldset>
+
+</body>
+</html>

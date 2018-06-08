@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>이력서</title>
+		<style>
+			td{
+				text-align : center;
+				height : 20px;
+				width : 100px;
+			}
+		</style>
+		
+	</head>
+
+
+	<body>
+		<h1>이력서</h1>
+		<table border = "1">
+
+			<tr>
+			<td rowspan ="4",  colspan = "3"><img src ="data:image/jpeg;base64,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"></td>
+			<td rowspan = "2">성명</td>
+			<td colspan = "1">한글</td>
+			<td><p style ="text-align : right">(인)</p></td>
+			<td>주민등록번호</td>
+			<td colspan ="2"></td>			
+			</tr>
+			
+			<tr>
+				<td>한자</td>
+				<td></td>
+				<td>생 년 월 일</td>
+				<td colspan = "2"></td>
+			</tr>
+				
+			<tr>
+				<td>현주소</td>
+				<td colspan = "4"></td>
+			</tr>
+			
+			<tr>
+				<td>전화번호</td>
+				<td colspan ="2"></td>
+				<td>email</td>
+				<td colspan = "2"></td>
+			</tr>
+			
+			<tr>
+				<td rowspan = "2">호 주</td>
+				<td colspan = "2">성명</td>
+				<td>본인과의 관계</td>
+				<td>직장명</td>
+				<td colspan = "2">직위</td>
+				<td colspan = "2">주소</td>			
+			</tr>
+			
+			<tr>
+				<td colspan = "2"></td>
+				<td></td>
+				<td></td>
+				<td colspan = "2"></td>
+				<td colspan = "3"></td>
+			</tr>
+			
+			<tr>
+				<td>년</td>
+				<td>월</td>
+				<td>일</td>
+				<td>학력 및 경력 사항</td>
+				<td colspan ="4">발령청</td>
+			</tr>
+			
+			<tr>
+				<td> </td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td td colspan ="4"></td>
+			</tr>
+			
+		</table>
+	</body>
+</html>

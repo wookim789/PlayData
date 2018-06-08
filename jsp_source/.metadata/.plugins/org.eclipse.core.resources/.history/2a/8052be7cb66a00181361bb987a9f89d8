@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<select><!--  multiple = "multiple"> -->
+		<optgroup>
+			<option>김밥</option>
+			<option>떡볶이</option>
+			<option>순대</option>
+			<option>어묵</option>
+		</optgroup>
+			<option>쿨피스 자두</option>
+			<option>쿨피스 파인애플</option>
+			<option>사이다</option>
+			<option>콜라</option>
+		<optgroup>
+		
+		</optgroup>
+		
+	</select>
+</body>
+</html>

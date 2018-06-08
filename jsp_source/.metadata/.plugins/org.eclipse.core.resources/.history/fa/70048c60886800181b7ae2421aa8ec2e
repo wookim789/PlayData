@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border ="1">
+		<thead>
+			<tr>
+				<th></th>
+				<th>월</th>
+				<th>화</th>
+				<th>수</th>
+				<th>목</th>
+				<th>금</th>
+				<th>토</th>
+				<th>일</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1교시</td>
+				<td>영어</td>
+				<td>국어</td>
+				<td>과학</td>
+				<td>미술</td>
+				<td>기술</td>
+		
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

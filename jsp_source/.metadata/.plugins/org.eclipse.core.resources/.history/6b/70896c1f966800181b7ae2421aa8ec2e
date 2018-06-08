@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>td{ color : "white";}</style>
+</head>
+<body>
+	<table border = "1", bgcolor = "1000ff">
+		<tr>
+			<th colspan = "6">시간표</th>
+		</tr>
+		<tr>
+			<th>시간</th>
+			<th>월</th>
+			<th>화</th>
+			<th>수</th>
+			<th>목</th>
+			<th>금</th>
+		</tr>
+		
+		<tr>
+			<td>1교시</td>
+			<td rowspan = "2"> Java</td>
+			<td></td>
+			<td></td>
+			<td rowspan ="3">데이터<br>베이스</td>
+			<td rowspan = "2">Java</td>
+		</tr>
+		<tr><td>2교시</td>
+			<td></td>
+			<td rowspan = "2">HTML</td>
+		</tr>
+		
+		<tr>
+			<td>3교시</td>
+			<td></td>
+			<td rowspan = "3">Java</td>
+			<td></td>
+		</tr>
+		
+		<tr>	
+			<td>4교시</td>
+			<td  rowspan = "4"> HTML</td>
+			<td></td>
+			<td></td>
+			<td rowspan = "3">데이터<br>베이스</td>
+		</tr>
+
+		<tr>
+			<td>5교시</td> 
+			<td></td>
+			<td></td>
+		</tr>
+			
+		<tr>
+			<td>6교시</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		
+		<tr>
+			<td>7교시</td>
+			<td></td>
+			<td rowspan="2">JSP</td>
+			<td></td>
+			<td></td>
+			
+		</tr>
+		<tr>
+			<td>8교시</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			
+		</tr>
+		
+		
+	</table>
+
+</body>
+</html>
