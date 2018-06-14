@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<script>
+		var array = ['a','b','c'];
+		
+		array[0] = '가';
+		var i;
+		for( i= 0; i < array.length; i++){
+			alert(array[i]);
+		}
+		while(i < 10){
+			
+			alert(i);
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<script>
+		window.onload = function(){
+			var a = document.getElementById('header');
+			a.style.color = 'orange';
+			a.style.background = 'red';
+			a.innerHTML = 'From JavaScript';
+		}
+	</script>
+</head>
+<body>
+	<h1 id = 'header'>Header</h1>
+</body>
+</html>

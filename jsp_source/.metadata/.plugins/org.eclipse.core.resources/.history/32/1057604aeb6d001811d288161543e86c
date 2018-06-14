@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script>
+		window.onload = function (){
+			//querySelector은 태그를 매개변수로 받는다
+			var header = document.querySelector('h1');
+			
+			header.style.background.color = 'red';
+			header.style.color = 'red';
+			header.innerHTML = 'From JavaScript';
+		}
+	</script>
+</head>
+<body>
+	<h1>g</h1>
+	<h1>g</h1>
+	<h1>g</h1>
+</body>
+</html>

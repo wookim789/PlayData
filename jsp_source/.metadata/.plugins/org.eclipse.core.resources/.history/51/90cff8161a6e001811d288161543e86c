@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script>
+		function big_image(){
+			window.open('./img/beerChick.jpg','newW','top=50, left=50, widrh=700, height = 700');
+		}
+	</script>
+</head>
+<body>
+<pre>
+	<img src = './img/kfc.jpg' width= '100' height = '100' onmouseover ='big_image();'>
+		although loneliness has always been a friend of mine
+</pre>
+</body>
+</html>

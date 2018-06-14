@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<style>
+		#container{
+			width:500px; height:300px;
+			border :3px; solid black;
+			overflow:hidden;
+			position:relative;
+		}
+		.circle{
+			position:absolute;
+			width:100px; height:100px;
+			border-radius:50% 50%;
+		}
+		#red {
+			background:red;
+			left:20px; top:20px;
+		}
+		#green{
+			background:green;
+			right:20px; bottom:20px;
+		}
+		#yellow{
+			background:yellow;
+			left:20px; bottom:20px;
+		}
+	</style>
+</head>
+<body>
+	<h1 >Dummy text</h1>
+	<div id = "container">
+		<div id = "red" class= "circle"></div>
+		<div id = "green" class= "circle"></div>
+		<div id = "blue" class= "circle"></div>
+		<div id = "yellow" class= "circle"></div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script>
+		window.onload = function(){
+			var button = document.getElementById('but');
+			button.onclick = function(){
+				alert('click');
+			};
+		};
+	</script>
+</head>
+<body>
+	<button id ='button'>버튼</button>
+</body>
+</html>

@@ -1,0 +1,7 @@
+
+@media screen{
+	
+	body{
+		backgorund-color:red;
+	}
+}

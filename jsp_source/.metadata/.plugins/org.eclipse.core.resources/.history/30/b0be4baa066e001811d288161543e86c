@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<script type="text/javascript">
+		window.onload = function(){
+			var button = document.getElementById('but');
+			
+			button.onclick = function(){
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<a id= 'but' href = 'https://www.google.co.kr/search?q=%EC%BF%A0%EC%BF%A0%EC%84%AC%EC%B9%98%ED%82%A8&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiCmuGEt83bAhVK6LwKHfFiAJ4Q_AUICigB&biw=1536&bih=759#imgrc=vwRuY4NljTLeMM:'>버튼</a>
+</body>
+</html>

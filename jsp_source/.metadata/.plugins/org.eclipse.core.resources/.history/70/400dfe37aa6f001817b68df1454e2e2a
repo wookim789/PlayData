@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src = "https://code.jquery.com/jquery-3.3.1.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+			$('img').attr('alt','jq 라이브러리 사용한 속성 지정');
+			$('img').attr('src','song.jpg');
+			$('img').attr('width','100');
+		});
+	</script>
+</head>
+<body>
+	<img/>
+	<img/>
+	<img/>
+</body>
+</html>

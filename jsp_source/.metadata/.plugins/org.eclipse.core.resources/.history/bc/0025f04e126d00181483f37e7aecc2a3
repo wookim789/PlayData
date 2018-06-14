@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<link rel = "stylesheet" href = "./BoxCss.css" type = "text/css"> 
+</head>
+<body>
+
+	<div class = 'box'>1</div>
+	<div class = 'box'>2</div>
+
+</body>
+</html>

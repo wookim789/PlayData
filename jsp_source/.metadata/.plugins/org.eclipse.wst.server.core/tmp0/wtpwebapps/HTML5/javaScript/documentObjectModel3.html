@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script>
+	//dom1 문제 해결방법2 
+	//window의 onload 이벤트를 이용
+	//onload 이벤트는 html 문서가 전부 로드 된 이후 실행되는 이벤트이다. > dom객체들이 전부 생성된 이후
+	//태그는 전부 dom 이다.
+		window.onload = function (){
+			document.querySelector('h1').style.backgroundColor = 'red';
+			document.querySelector('h2').style.color = 'red';
+		}
+	</script>
+	
+</head>
+<body>
+	<h1>Process - 1</h1>
+	<h2>Process - 2</h2>
+</body>
+</html>

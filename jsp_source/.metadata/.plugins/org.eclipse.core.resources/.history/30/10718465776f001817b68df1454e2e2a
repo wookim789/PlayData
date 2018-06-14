@@ -1,0 +1,45 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+  
+   <head> 
+    <script type="text/javascript">
+    <![CDATA[
+     var seoul = new Array("강남구", "서초구","종로구","중구","노원구");
+     var kyunggi = new Array("수원시","성남시","고양시","안성시","용인시");
+     function select_city(form1)
+    {
+     if(form1.city.selectedIndex == 1)
+     {
+      for(var i=0;i<5;i++) {
+       form1.gu.options[i].text = seoul[i]; }
+      }
+     else if(form1.city.selectedIndex == 2){
+     for(var i=0;i<5;i++) {
+     form1.gu.options[i].text = kyunggi[i]; }
+      }
+     }
+    ]]>
+    </script>
+</head>
+  <body>
+    <form name="form1">
+     select객체 예제<br />
+     지역을 선택하세요.<br /><br />
+     시.도 <select name="city" onchange="select_city(this.form);">
+     <option >지역을 선택하세요</option>
+     <option >서울</option>
+     <option >경기</option>
+    </select>
+    &nbsp;&nbsp;&nbsp;
+    시.구 <select name="gu">
+     <option >선택하세요</option>
+     <option ></option>
+     <option ></option>
+     <option ></option>
+     <option ></option>
+     <option ></option>
+    </select>
+   </form>
+   </body>
+  </html>

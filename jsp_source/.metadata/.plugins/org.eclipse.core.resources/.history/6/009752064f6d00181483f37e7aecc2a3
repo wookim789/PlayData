@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script>
+		//alert('hi');
+		var a = prompt('test....');
+		alert(a *100);
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

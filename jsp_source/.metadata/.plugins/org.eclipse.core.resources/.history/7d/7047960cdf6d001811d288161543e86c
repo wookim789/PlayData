@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<script>
+		var object = {
+				name : 'obj1',
+				i : 0,
+				j : 0,
+				
+				add : function (a,b){ return a + b;};
+				
+		}
+		alert(object.add(3,5));
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script>
+		window.onload = function(){
+			var image = document.getElementById('image');
+			
+			image.src = 'http://placehold.it/300x200';
+			image.width = 300;
+			image.height = 200;
+		};
+	</script>
+</head>
+<body>
+	<img id = 'image /'
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script>
+		//alert('hi');
+		var a = prompt('test....');
+		var b = a *100;
+		alert('b');
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

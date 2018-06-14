@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src = "https://code.jquery.com/jquery-3.3.1.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+			$('.box').css('float','left');
+			$('.box').css('margin',10);
+			$('.box').css('width',100);
+			$('.box').css('height',100);
+			$('.box').css('backgroundColor','red');
+		})
+	</script>
+</head>
+<body>
+
+</body>
+</html>l>

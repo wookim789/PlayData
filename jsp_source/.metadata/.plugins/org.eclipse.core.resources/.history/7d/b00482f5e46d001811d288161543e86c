@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	
+	<script>
+	//적용안되는 자바스크립트. 이유는 -?
+	//실행 순서에 대한 이해가 필요함
+	//html은 위에서 아래로 실행되는 구조
+	//이때 스크립트에서 사용한 h1, h2객체는 생성되지 않았기 때문에 해당 스크립트가 실행되지 않음.
+		document.querySelector('h1').style.backgroundColor = 'red';
+		document.querySelector('h2').style.color = 'red';
+	</script>
+</head>
+<body>
+	<h1>Process - 1</h1>
+	<h2>Process - 2</h2>
+</body>
+</html>

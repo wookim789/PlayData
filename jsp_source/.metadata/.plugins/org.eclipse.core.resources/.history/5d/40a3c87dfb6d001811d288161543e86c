@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script>
+		window.onload = function(){
+			var imagea = document.getElementById('image');
+			
+			imagea.width = 300;
+			imagea.height = 200;
+		}
+	</script>
+</head>
+<body>
+	<img id = 'image'/>
+</body>
+</html>

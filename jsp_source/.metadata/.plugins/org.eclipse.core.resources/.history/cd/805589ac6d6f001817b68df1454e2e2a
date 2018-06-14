@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+   <head> 
+    <script type="text/javascript">
+  <![CDATA[
+    function check()
+    {
+     if(confirm("submit2로 이동합니다.")) {
+      document.form1.submit();
+     } else {
+      return false;
+     }
+    }
+ ]]>
+ </script>
+ </head>
+
+   <body>
+    <form name="form1" action="submit2.html" onsubmit="return check();">
+     Form 객체 예제<br />
+     submit를 확인하면 submit2.html로 이동합니다.<br /><br />
+     <input type="submit" value="확인" />
+    </form>
+   </body>
+  </html>

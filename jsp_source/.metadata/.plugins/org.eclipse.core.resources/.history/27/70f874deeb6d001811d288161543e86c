@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script>
+		window.onload = function (){
+			//querySelector은 태그를 매개변수로 받는다
+			//하지만 맨 처음 h1만 적용된다는점.
+			//이를 해결하기 위해 다음을 사용한다
+			//var header = document.querySelector('h1');
+			//재 할당
+			var headers = document.querySelectorAll('h1');
+			
+			headers.style.background = 'red';
+			headers.style.color = 'white';
+			headers.innerHTML = 'From JavaScript';
+		}
+	</script>
+</head>
+<body>
+	<h1>g</h1>
+	<h1>g</h1>
+	<h1>g</h1>
+</body>
+</html>

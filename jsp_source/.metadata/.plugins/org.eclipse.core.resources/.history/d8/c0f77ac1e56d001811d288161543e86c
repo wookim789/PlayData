@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script>
+		window.onload = function (){
+			document.querySelector('h1').style.backgroundColor = 'red';
+			document.querySelector('h2').style.color = 'red';
+		}
+	</script>
+	
+</head>
+<body>
+	<h1>Process - 1</h1>
+	<h2>Process - 2</h2>
+</body>
+</html>

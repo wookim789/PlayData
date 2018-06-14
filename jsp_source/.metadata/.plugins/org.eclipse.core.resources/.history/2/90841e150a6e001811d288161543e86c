@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script>
+			var fir = prompt('시작 단');
+			var sec = prompt('마지막 단');
+		
+			var answer;
+			window.onload = function(){
+				
+			document.write('<table>');
+			for(var j = 1; j <10; j++){
+				document.write('<tr>');		
+
+				for(var i = fir; i < =sec; i++){
+					document.write( '<td>' + i + ' x ' + j + ' = ' + i * j + '</td>');
+				}			
+				document.write('</tr>');
+			}
+			document.write('</table>');
+		</script>
+</head>
+<body>
+	
+</body>
+</html>

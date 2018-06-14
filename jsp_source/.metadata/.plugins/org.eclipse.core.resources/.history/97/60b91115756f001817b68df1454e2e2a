@@ -1,0 +1,29 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+  <meta charset="UTF-8">
+   <head> 
+    <script type="text/javascript">
+
+     function select()
+     {
+      alert(document.form1.fruit.options(document.form1.fruit.selectedIndex).value +"를 선택하셨습니다.");
+      }
+
+    </script>
+   </head>
+   <body>
+    <form name="form1">
+     Select 객체 예제<br />
+     과일 선택이 변경되면 선택된 과일을 경고창에 출력한다.<br /><br />
+     과일 <select name="fruit" onchange="select();">
+       <option value="">과일을 선택하세요</option>
+       <option value="사과">사과</option>
+       <option value="딸기">딸기</option>
+       <option value="복숭아">복숭아</option>
+     </select>
+     &nbsp;&nbsp;&nbsp;
+    </form>
+   </body>
+  </html>
+   

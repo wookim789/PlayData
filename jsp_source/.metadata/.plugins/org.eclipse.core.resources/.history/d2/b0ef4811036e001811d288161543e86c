@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		window.onload = function(e){
+			var event;
+			if(e){
+				event = e;
+				alert('a')
+			}else{
+				event = window.event;
+			}
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

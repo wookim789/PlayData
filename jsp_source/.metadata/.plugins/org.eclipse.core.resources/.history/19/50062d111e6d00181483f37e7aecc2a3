@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<style>
+		body{
+			width : 500px;
+			margin : 10px auto;
+		}
+		
+		#middle{ overflow: hiddem;}
+		#left{float : left; width:150px; background:red;}
+		#right{float:right;width:350px;background:blue;}
+		
+		#top{background:green;}
+		#bottom{background:purple;}
+	</style>
+</head>
+<body>
+	<h1>Lorem ipsum</h1>
+	<div id = 'top'>lorem ipsum dolor sit amet, consectetur</div>
+	<div id = 'middle'>
+		<div id = 'left'>lorem ipsum dolor sit amet</div>
+		<div id = 'right'>lorem ipsum dolor sit amet, consectetur elit</div>
+	</div>
+	<div id = 'bottom'>lorem ipsum dolor sit amet, consectier</div>
+</body>
+</html>

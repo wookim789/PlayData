@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<link rel='stylesheet' href ='./screen.css' media = 'screen'/>
+	<link rel = 'stylesheet' href = './print.css' media = 'print'/>
+</head>
+<body>
+
+	<h1>lorem ipsum asdasfaszdfs</h1>
+	<p>asdgasdgasdgasegasegasegasegasegasega</p>
+</body>
+</html>

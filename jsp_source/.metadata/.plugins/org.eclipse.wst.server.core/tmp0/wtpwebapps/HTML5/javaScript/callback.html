@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<script>
+		//익명함수를 파라미터로 받아 
+		//익명함수 callback()사용
+		function callTenTimes(callback){
+			for( var i = 0; i <10; i++){
+				callback();
+			}
+			
+		}
+		//익명함수 선언
+		var callback = function(){
+			alert('함수 호출');
+		}
+		
+		//
+		callTenTimes(callback);
+		//---------------------------------------------------------------------
+		//callback 함수 사용식
+		function callTenTimes2(callback){
+			for(var i = 0; i <10; i++){
+				callback();
+			}
+			
+		}
+		callTenTimes2( function(){alert('callback')} )
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>

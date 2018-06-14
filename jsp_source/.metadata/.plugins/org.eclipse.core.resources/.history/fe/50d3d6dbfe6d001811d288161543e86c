@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<script>
+		startTime = function(){
+			var playTime = setInterval(function(){
+				var clock = document.getElementById('clock');
+				var now = new Date();
+				clock.innerHTML = now.toString();
+				},1000);
+		};
+		
+		stopTime = function(){
+			clearInterval(playTime);
+		};
+		
+	</script>
+</head>
+<body>
+	<button onclick = 'startTime();'>시작</button>
+	<button onclick = 'stopTime();'>정지</button>
+	<br/><br/>
+	<h1 id = 'clock'></h1>
+</body>
+</html>

@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Insert title here</title>
+<meta name = 'viewport' content = 'user-scalable=no,initial-scale=1, maximum-scale =1'/>
+	<style>
+		@media screen and(max-width:767px){
+			body{background-color:red;}
+		}
+		@media screen and(min-width:768px)and (max-width:959px){
+			body{background-color:green;}
+		}
+		@media screen and(min-width:960px){
+			body{background-color:blue;}
+		}
+		
+	</style>
+</head>
+<body>
+	<h1>hoejaojhawiojhaowejhai</h1>
+	<p>asgaksdgkajsdgkjasdig</p>
+</body>
+</html>

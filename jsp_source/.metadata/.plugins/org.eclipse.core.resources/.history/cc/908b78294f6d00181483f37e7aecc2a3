@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script>
+		var date = new date();
+		
+		var year = date.getFullYear();
+		var month = data.getMonth() + 1;
+		var day = date.getDay();
+		var hours = date.getHour();
+		var minutes = date.getMinutes();
+		var seconds = date.getSeconds();
+		
+		document.write(year + 'year' + month + 'month' + day + 'day');
+		document.write(hours + 'hours' +  minutes + 'minutes' + seconds+'seconds' );
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

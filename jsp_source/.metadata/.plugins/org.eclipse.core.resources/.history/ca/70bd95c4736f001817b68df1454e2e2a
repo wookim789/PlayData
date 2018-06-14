@@ -1,0 +1,15 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+   <head> 
+    <script type="text/javascript">
+    <![CDATA[
+     function select()
+     {
+      alert(document.form1.fruit.options(document.form1.fruit. selectedIndex).value +
+      "를 선택하셨습니다.");
+      }
+    //]]>
+    </script>
+   </head>
+   <body>

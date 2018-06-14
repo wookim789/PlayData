@@ -1,0 +1,32 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+  <meta charset="UTF-8">
+   <head> 
+    <script type="text/javascript">
+    <![CDATA[
+      function check(form)
+     {
+     var prt="";
+     for(var i=0;i<form1.hobby.length;i++) {
+       if(form1.hobby[i].checked == true) {
+      prt = prt + form1.hobby[i].value + "\n"; }}
+      alert(prt);
+     }
+     //]]>
+    </script>
+   </head>
+   <body>
+    <form name="form1">
+      checkbox객체 예제<br />
+      관심분야를 선택하세요<br /><br />
+      스포츠 <input type="checkbox" name="hobby" value="스포츠" /> &nbsp;&nbsp;
+      음악 <input type="checkbox" name="hobby" value="음악" /> &nbsp;&nbsp;
+      독서 <input type="checkbox" name="hobby" value="독서" /> &nbsp;&nbsp;
+      게임 <input type="checkbox" name="hobby" value="게임" /> &nbsp;&nbsp;
+      여행 <input type="checkbox" name="hobby" value="여행" /> <br />
+       <input type="button" value="확인" onclick="check(this.form);" />
+     </form>
+   </body>
+  </html>
+   

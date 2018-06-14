@@ -1,0 +1,8 @@
+@charset "EUC-KR";
+
+@media print{
+	
+	body{
+		background-color:green;
+	}
+}

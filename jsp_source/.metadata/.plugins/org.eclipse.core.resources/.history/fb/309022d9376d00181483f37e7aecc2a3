@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<style>
+		ul{
+			list-style-type:none;
+			margin:0;
+			padding:0;
+			overflow:hidden;
+			background-color:#333333;	
+		}
+		lis a, .dropbtn{
+			display:block;
+			color:white;
+			text-align:center;
+			padding:14px 16px;
+			text-decoration:none;
+		}
+		li a:hover, .dropdown:hover .dropbtn{
+			background-color : red;
+		}
+		
+		.dropdown-content{
+			display:none;
+			position:absolute;
+			background-color:#f9f9f9;
+			min-width:150px;
+			box-shadow:8px 8px 5px rgba(0,0,0,0.2);
+			z-index:1;
+		}
+		.dropdown-content a {
+			color:black;
+			padding:12px 16px;
+			text-decoration:none;
+			display:block;
+			text-align:left;
+		}
+		.dropdown-content a:hover{
+			background-color:#f1f1f1
+		}
+		.dropdown:hover .dropdown-content{
+			display:block;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li class = 'dropdown'>
+			<a href = '#home'>Home</a>
+			<div class = 'dropdown-content'>
+				<a href = '#'>Home 1</a>
+				<a href = '#'>Home 2</a>
+				<a href = '#'>Home 3</a>
+			</div>
+		</li>
+		
+		<li class ="dropdown">
+			<a href = '#news'>News</a>
+			<div class ='dropdown-content'>
+				<a href='#'>news 1</a>
+				<a href='#'>news 2</a>
+				<a href='#'>news 3</a>
+			</div>
+		</li>
+		
+		<li class='dropdown'>
+			<a href ='#link' class ='dropbtn'>Dropdown</a>
+			<div c;ass = 'dropdown-contetn'>
+				<a href = '#'>Link</a>
+				<a href = '#'>Link</a>
+				<a href = '#'>Link</a>
+			</div>
+		
+	</ul>
+</body>
+</html>

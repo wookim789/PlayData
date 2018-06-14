@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		window.onload = function(e){
+			var event;
+			if(e){
+				//최근 엔진
+				event = e;
+				alert('a');
+			}else{
+				//레거시 웹 엔진
+				event = window.event;
+				alert('b');
+			}
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

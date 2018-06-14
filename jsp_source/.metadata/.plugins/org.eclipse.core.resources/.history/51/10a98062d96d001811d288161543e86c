@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<script>
+		var function1 = function(){ alter('1')}
+		var function2 = function(){ alter('2')}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

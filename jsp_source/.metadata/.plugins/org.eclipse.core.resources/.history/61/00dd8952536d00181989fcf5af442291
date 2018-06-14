@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<script>
+		var array = ['a','b','c'];
+		
+		array[0] = '가';
+		
+		for(var i = 0; i < 3; i++)
+		alter(array[i]});
+	</script>
+</head>
+<body>
+
+</body>
+</html>

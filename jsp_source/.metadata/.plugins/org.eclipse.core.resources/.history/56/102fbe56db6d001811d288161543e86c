@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<script>
+		//익명함수
+		var  function1 = function(){ alert('1')};
+		var  function2 = function(){ alert('2')};
+		
+		
+		
+		//명시적 함수
+		function abc (){
+			alert('a');
+		}
+		function cde()
+		{
+			alert('b');
+		}	
+		abc();
+		cde();
+		function1();
+		function2();
+	</script>
+</head>
+<body>
+
+</body>
+</html>

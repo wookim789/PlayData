@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>Insert title here</title>
+   <style>
+      ul {
+         list-style-type: none;   /*본래는 디스크/서클/스퀘어. 근데 none이면 없어짐*/
+         margin: 0;
+         padding: 0;
+         overflow: hidden;
+         background-color: #333333;
+      }
+      li {
+         float: left;
+      }
+
+      li a, .dropbtn {          
+         display: block;     
+         color: white;
+         text-align: center;
+         padding: 14px 16px;
+         text-decoration: none;      
+      }
+      
+      li a:hover, .dropdown:hover .dropbtn {
+         background-color: red;
+         
+      }
+      
+      li.dropdown{
+       display: block;
+      }
+      
+      .dropdown-content {
+         display: none;      /*  화면에 보이지 않겟다 */
+         position: absolute;
+         background-color: #f9f9f9;
+         min-width: 150px;
+         box-shadow: 8px 8px 5px rgba(0,0,0,0.2);
+         z-index: 1;   
+      }
+      
+      .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+      }
+      
+      .dropdown-content a:hover {
+         background-color:#f1f1f1;
+      }
+      
+      .dropdown:hover .dropdown-content {
+         display: block;
+      }
+
+   </style>
+</head>
+<body>
+  
+   <ul>
+      <li class="dropdown">
+         <a href="#home">HOME</a>
+         <div class="dropdown-content">
+            <a href="#">HOME 1</a>
+            <a href="#">HOME 2</a>
+            <a href="#">HOME 3</a>
+         </div>         
+      </li>     
+      <li class="dropdown">
+         <a href="#news">NEWS</a>
+         <div class="dropdown-content">
+            <a href="#">NEWS 1</a>
+            <a href="#">NEWS 2</a>
+            <a href="#">NEWS 3</a>
+         </div>
+      </li>
+      <li class="dropdown">
+         <a href="#Link" class="dropbtn">Dropdown</a>
+         <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+         </div>
+      </li>
+   </ul>
+   
+</body>
+</html>

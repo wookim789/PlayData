@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>Insert title here</title>
+   <script type="text/javascript">
+      function imgChange(num) {
+         document.images[0].src="./img/beerChick" + num + ".jpg";
+      }
+   </script>
+</head>
+<body>
+    image객체 예제<br /> 
+     그림 위에 마우스를 올리면 다른 이미지로 변경된다.<br /><br /> 
+
+     &nbsp; &nbsp; &nbsp; &nbsp; 
+
+     <img src="./img/kfc.jpg" onmouseover="imgChange(1);" 
+      onmouseout="imgChange(0);" /> 
+</body>
+</html>

@@ -1,0 +1,8 @@
+@charset "EUC-KR";
+
+@media screen{
+	
+	body{
+		backgorund-color:red;
+	}
+}

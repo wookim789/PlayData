@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script>
+		var date = new Date();
+		
+		var year = date.getFullYear();
+	      var month = date.getMonth() + 1;
+	      var day = date.getDay();
+	      var hours = date.getHours();
+	      var minutes = date.getMinutes();
+	      var seconds = date.getSeconds();
+	      
+	      document.write(year + "년" + month + "월" + day + "일");
+	      document.write(hours + "시" + minutes + "분" + seconds + "초");
+
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>
