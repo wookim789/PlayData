@@ -6,6 +6,7 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="pullLeft"/>
 		</list>
 		<list key="replacehistory">
 		</list>

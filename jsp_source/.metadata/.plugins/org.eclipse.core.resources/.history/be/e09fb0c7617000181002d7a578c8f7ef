@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src = "https://code.jquery.com/jquery-3.3.1.js"></script>
+	
+	<script>
+	function scroll_follow(id){
+			$(window).scroll(function(){
+				var position = $(window).scrollTop();
+			$(id).stop().animate({top:position +'px'},1);
+		});
+		}
+		scroll_follow("#scroll");
+		$(document).ready(function(){
+			for(var i = 0; i <300; i++){
+				$('#brr').html($('#brr').html()+"<br>"+i);
+			}
+		});
+	</script>
+</head>
+<body>
+
+</body>
+</html>

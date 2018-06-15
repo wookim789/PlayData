@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<style>
+		#box{
+			width:100px;
+			height :100px;
+			background-color : red;
+		}
+		
+		#box.hover{
+			background-Color:blue;
+			border-radius:50px;
+		}
+	</style>
+	<script src = "https://code.jquery.com/jquery-3.3.1.js"></script>
+	
+	<script>
+		$(document).ready
+	(
+		function()
+		{
+			$('#box').hover
+					(
+						function()
+						{
+							$(#box).addClass('hover');
+						},
+						function()
+						{
+							$(#box).removeClass('hover');
+						}
+					);
+		}
+	);
+	</script>
+</head>
+<body>
+	<div id ="box" ></div>
+</body>
+</html>

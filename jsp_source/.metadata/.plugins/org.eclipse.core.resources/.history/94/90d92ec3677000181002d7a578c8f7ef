@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<link rel ='stylesheet' href ="jquery.lightbox=0.5.css"/>
+	<script src = "https://code.jquery.com/jquery-3.3.1.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+			$('a.light').lightBox();
+		})
+	</script>
+</head>
+<body>
+	<a class ='light' href ='../photos/image1.jpg'></a>
+	<a class ='light' href ='../photos/image2.jpg'></a>
+	<a class ='light' href ='../photos/image3.jpg'></a>
+</body>
+</html>

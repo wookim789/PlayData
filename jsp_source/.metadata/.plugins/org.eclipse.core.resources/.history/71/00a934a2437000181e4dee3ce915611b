@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src = "https://code.jquery.com/jquery-3.3.1.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+			
+		})
+	</script>
+</head>
+<body>
+	<input type = 'button' id ='button'>Toggle show<br/>
+	<div class='page'>
+		<h1>쿠쿠섬치킨에 중독</h1>
+		<p>점심메뉴빌런햄버거빌런ai봇</p>
+	</div>
+</body>
+</html>

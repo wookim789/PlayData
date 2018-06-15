@@ -1,0 +1,70 @@
+@charset "EUC-KR";
+
+/* 초기화 */
+*{
+	margin:0; padding:0;
+	fontFamily:'맑은 고딕','Malgun Gothic',Gothic, sans-serif;
+}
+
+a{text-decoration:none;}
+
+li{list-style:none;}
+
+/* 기본 클래스 */
+
+.pullLeft{float:left;}
+.pullRight{float:right;}
+
+/* 페이지 구성하기 */
+
+body{
+	width:960px; margin:0 auto;
+	background:#E6E6E6;
+}
+
+#pageWrapper{
+	background:white;
+	margin:40px 0; padding:10px 20px;
+	border-radius:5px;
+	box-shadow:0 2px 6px rgba(100,1000,100,0.3);
+}
+
+
+/* 헤더구성하기 */
+#mainHeader{padding:40px 50px;}
+.masterTitle{
+	font-size:30px;
+	color:#181818;
+}
+
+.masertDescription{
+	font-size:15px; font-weight:500;
+	color:#383838;
+}
+
+/* 네비게이션 및 풀다운 메뉴 구성하기 */
+
+#mainNavigation{
+	border-top:1px solid #C8C8C8;
+	border-bottom:1px solid #C8C8C8;
+	margin-bottom:1px solid #C8C8C8;
+	height:40px;
+}
+
+.outerMenuItem{
+	float:left;
+	position:relative;
+}
+
+.outerMenuItemHover{
+	float:left;
+	position:relative;
+}
+.menuTitle{
+	display:block;
+	heitght:30px; line-height:30px;
+	text-align:center;
+	padding:5px 20px;
+}
+
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script>
+		$(document).ready(function(){
+			$('box').css({
+				width:100,
+				height:100,
+				background:'orange'
+			}).on({
+				click:function(){
+					$(this).css('background','red';)
+				},
+				mouseenter : function(){
+					$(this).css('background','blue');
+				},
+				mouseleave:function(){
+					$(this).css('background','orange');
+				}
+			});
+			
+		});
+	</script>
+</head>
+<body>
+	<div id= 'box'></div>
+</body>
+</html>

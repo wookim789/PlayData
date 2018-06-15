@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src = "https://code.jquery.com/jquery-3.3.1.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+			$('h1').hover(function(){
+				$(this).css({
+					background:'red'
+					color:'white'
+				});
+			}, function(){
+				$(this).css({
+					background :'',
+					color:''
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1>Clcik</h1>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src = "https://code.jquery.com/jquery-3.3.1.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+			
+		})
+	</script>
+</head>
+<body>
+	<div id ="pageWrapper">
+		<header id = 'mainHeader'>
+			<hgroup>
+				<h1 class ='master-title'>HTML</h1>
+			</hgroup>
+		</header>
+		<nav id ='mainNavigation'></nav>
+		<div id ='content'>
+			<section id ='mainSection'></section>
+			<aside id= 'mainAside'></aside>
+		</div>
+		<footer id='mainFooter'></footer>
+	</div>
+
+</body>
+</html>

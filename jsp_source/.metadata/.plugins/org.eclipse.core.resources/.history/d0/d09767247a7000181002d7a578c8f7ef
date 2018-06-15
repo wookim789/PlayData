@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style src ="../css/blog.css"></style>
+</head>
+<body>
+<div id ="pageWrapper">
+		<header id = 'mainHeader'>
+			<hgroup>
+				<h1 class ='master-title'>HTML Example Preview</h1>
+				<h2 class ='master-description'>경우킴</h2>
+			</hgroup>
+		</header>
+		<nav id ='mainNavigation'>
+			<div class ='pullLeft'>
+				<ul class='outerMenu'>
+					<li class='outerMenuItem'>
+						<span class ='menuTitle'>HTML5</span>
+						<ul class='innerMenu'>
+							<li class ='innerMenuItem'><a href ='#'>data</a></li>
+							<li class ='innerMenuItem'><a href ='#'>data</a></li>
+						</ul>
+					</li>
+					<li class = 'outerMenuItem'>
+						<sapn class='menuTitle'>css3</sapn>
+						<ul class ='innerMenu'>
+							<li class ='innerMenuItem'><a href ='#'>데이터</a></li>
+							<li class ='innerMenuItem'><a href ='#'>데이터</a></li>
+							<li class ='innerMenuItem'><a href ='#'>데이터</a></li>
+						</ul>
+					</li>
+					<li class ='outerMenuItem'>
+						<sapn class ='menuTitle'>JavaScript</sapn>
+						<ul class ='innerMenu'>
+							<li class ='innerMenuItem'><a href='#'>data</a></li>
+							<li class ='innerMenuItem'><a href='#'>data</a></li>
+							<li class ='innerMenuItem'><a href='#'>data</a></li>
+							<li class ='innerMenuItem'><a href='#'>data</a></li>
+							<li class ='innerMenuItem'><a href='#'>data</a></li>
+							<li class ='innerMenuItem'><a href='#'>data</a></li>
+							<li class ='innerMenuItem'><a href='#'>data</a></li>
+							<li class ='innerMenuItem'><a href='#'>data</a></li>
+							<li class ='innerMenuItem'><a href='#'>data</a></li>
+							<li class ='innerMenuItem'><a href='#'>data</a></li>
+							<li class ='innerMenuItem'><a href='#'>data</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class ='pullRight'>
+				<div class ='searchBar'>
+					<form>
+						<input type ='text' class ='inputSearch'/>
+						<input type ='submit' class ='inputSearchSubmit' value = 'search'/>
+					</form>
+				</div>
+			</div>
+		</nav>
+		<div id ='content'>
+			<section id ='mainSection'>
+				<article>
+					<div class = 'articleHeader'>
+						<h1 class='articleTitle'>HTML5 context and application</h1>
+						<p class ='articleDate'>20180615</p>
+					</div>
+					<div class ='articleBody'>
+						<img src =''>
+						<br/><br/>
+						<p>aaaaaaaaaaaaaaaa</p>
+						<p>aaaaaaaaaaaaaaaa</p>
+					</div>
+				</article>
+				<article>
+					<div class ='articleHeader'>
+						<h1 class = 'articleTitle'>html5 application and training</h1>
+						<p class = 'articleDate'>20180615</p>
+					</div>
+					<div class ='articleBody'>
+						<img src = 'http://placehold.it/430x280'/>
+						<br/><br/>
+						<p>ldodldl</p>
+						<br/>
+						<p>proqwowl</p>
+					</div>
+				</article>
+			</section>
+			<aside id= 'mainAside'>
+				<div class ='asideList'>
+					<h3>카테고리</h3>
+					<ul>
+						<li><a href = '#'>data</a></li>
+						<li><a href = '#'>data</a></li>
+						<li><a href = '#'>data</a></li>
+						<li><a href = '#'>data</a></li>
+						<li><a href = '#'>data</a></li>
+						<li><a href = '#'>data</a></li>
+					</ul>
+				</div>
+				<div class='asideList'>
+					<h3>recent article</h3>
+					<ul>
+						<li><a href ="#">data</a></li>
+						<li><a href ="#">data</a></li>
+						<li><a href ="#">data</a></li>
+						<li><a href ="#">data</a></li>
+					</ul>
+				</div>
+			</aside>
+		</div>
+		<footer id='mainFooter'>
+			<a href = '#'>Created by team-hehagon</a>
+		</footer>
+	</div>
+</body>
+</html>

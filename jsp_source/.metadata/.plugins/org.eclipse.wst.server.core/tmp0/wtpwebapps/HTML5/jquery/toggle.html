@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src = "https://code.jquery.com/jquery-3.3.1.js"></script>
+	<style>
+		.red{color:#f00;}
+	</style>
+	
+	
+</head>
+<body>
+	<p id = 'test' class ='red'>Class name red!</p>
+	<input id = 'testbt' type ='button'>Click <br/>
+</body>
+<script>
+		$('#testbt').click(function(){
+			$('#test').toggleClass('red');
+		})
+	</script>
+</html>

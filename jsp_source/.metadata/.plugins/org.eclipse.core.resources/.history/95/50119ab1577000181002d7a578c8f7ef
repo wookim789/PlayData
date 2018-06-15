@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src = "https://code.jquery.com/jquery-3.3.1.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+			var count = 0;
+			var image = document.getElementById('image');
+			var frames = {
+					'runner/0.png','runner/1.png','runner/2.png'
+					,'../runner/3.png','../runner/4.png','../runner/5.png'
+					,'../runner/6.png','../runner/7.png','../runner/8.png'
+					,'../runner/9.png','../runner/10.png','../runner/11.png'
+					,'../runner/12.png','../runner/13.png','../runner/14.png'
+			};
+			
+			setInterval(function(){
+				image.src = frames[count%frames.length];
+				count = count +1;
+			}, 1000/20);
+		});
+	</script>
+</head>
+<body>
+	<img id ='image'/>
+</body>
+</html>

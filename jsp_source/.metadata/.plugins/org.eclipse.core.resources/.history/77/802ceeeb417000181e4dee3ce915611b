@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script src = "https://code.jquery.com/jquery-3.3.1.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+			$('a').click(function(event){
+				alert('click');
+				
+				event.preventDefault();
+			});
+		});
+	</script>
+</head>
+<body>
+	<a href = "https://www.google.co.kr/search?q=%EC%BF%A0%EC%BF%A0%EC%84%AC%EC%B9%98%ED%82%A8&oq=%EC%BF%A0%EC%BF%A0%EC%84%AC%EC%B9%98%ED%82%A8&aqs=chrome..69i57j69i60.2554j0j7&sourceid=chrome&ie=UTF-8">주소</a>
+</body>
+</html>

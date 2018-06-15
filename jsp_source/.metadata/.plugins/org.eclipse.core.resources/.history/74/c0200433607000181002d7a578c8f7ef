@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>Insert title here</title>
+   <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+   <script>
+      //이벤트 열기
+      $(document).ready(function (){
+         //문서객체 추가 함수
+         var appendDocument = function(){
+            for(var i = 0; i < 20; i++){
+               //문서 객체를 생성
+               $('<h1>김태욱 천재</h1>').appendTo('body');
+            }
+         };
+         
+         //초기에 문서 객체를 추가
+         appendDocument();
+         
+         //이벤트를 연결
+         $(window).scroll(function (){
+            //변수 선언
+            var scrollHeight = $(window).scrollTop() + $(window).height();
+            var documentHeight = $(document).height();
+            
+            //검사
+            if(scrollHeight == documentHeight){
+               appendDocument();
+            }
+            
+         });
+         
+      });
+   
+   </script>
+</head>
+<body>
+
+</body>
+</html>

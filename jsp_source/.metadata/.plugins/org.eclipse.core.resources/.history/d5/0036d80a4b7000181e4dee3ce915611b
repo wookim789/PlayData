@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<!-- <script src = "https://code.jquery.com/jquery-3.3.1.js"></script> -->
+	
+	<script>
+		/* $(document).ready(function(){
+			
+		}) */
+		
+		window.onload = function(){
+			var input_1 = document.querySelectorAll('input')[0];
+			var input_2 = document.querySelectorAll('input')[1];
+		}
+		input_1.onkeydown = function(){
+			if(6 <= input_1.value.length){
+				input_2.focus();
+				input_2.onkeydown = function(event){
+					var event = event||window.event;
+					
+					if(event.keyCode == 8&& input_2value.length==0){
+						input_1focus();
+					}
+				}
+			}
+			
+		}
+	</script>
+</head>
+<body>
+	<input type ='text' maxlength = '6'/>
+	<span>-</span>
+	<input type = 'text' maxlength ='7'/>
+</body>
+</html>
