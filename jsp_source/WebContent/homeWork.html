@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jsHome.js"></script>
+</head>
+<body>
+
+		<table border = '1'>
+			<tr>
+				<td>아이디</td>
+				<td >
+					<input type = 'text' name = 'idInputText' id = "idInput">
+					(최소 6 ~ 최대 10, 숫자와 알파벳만 사용)
+				</td>
+			</tr>
+			
+			<tr>
+				<td>비밀번호</td>
+				<td id = "pwInput">
+				<input type = 'text' name = 'pwInputText' id = 'pwInputText'>
+				(최소 6 ~ 최대 10, 숫자와 알파벳만 사용)
+				</td>
+			</tr>
+			
+			<tr>
+				<td>비밀번호 확인</td>
+				<td id = "pwInputCheck">
+				<input type = 'text' name = 'pwCheckInputText' id = 'pwCheckInputText'>
+				(최소 6 ~ 최대 10, 숫자와 알파벳만 사용)
+				</td>
+			</tr>
+			
+			<tr>
+				<td>주민번호</td>
+				<td id = "PidInput">
+				<input type = 'tel' id = 'pIdFisInputText'>
+				-
+				<input type = 'tel' id = 'pIdSecInputText'>
+				</td>
+			</tr>
+			
+			<tr>
+				<!-- 이벤트 등록 -->
+				<td>성별</td>
+				<td id = "sexCheckInput">
+				<input type = 'checkbox' name = 'CheckInput' id ='maleCheck' value ='남자'>남자
+				<input type = 'checkbox' name = 'CheckInput' id = 'femaleCheck' value ='여자'>여자
+				</td>
+			</tr>
+			
+			<tr>
+				<td>전하번호</td>
+				<td id = "phonNumInput">
+					<input type = 'tel' id = 'phFInputText' maxlength = '3'>
+					-
+					<input type = 'tel' id = 'phSInputText' maxlength = '4'>
+					-
+					<input type = 'tel' id = 'phTInputText' maxlength = '4'>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>이메일</td>
+				<td id = "phonNumInput">
+					<input type = 'text' name = 'emailInputText' id = 'email'>
+					@
+					<select>
+						<option value =''>이메일 선택</option>
+						<option value ='gmail.com'>gmail.com</option>
+						<option value ='naver.com'>naver.com</option>
+						<option value ='duam.net'>duam.net</option>
+					</select>
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<!-- 이벤트 등록 -->
+				<td>취미</td>
+				<td id = "sexCheckInput">
+				<input type = 'checkbox' name = 'maleCheckInput' value ='독서'>독서
+				<input type = 'checkbox' name = 'femaleCheckInput' value ='영화관람'>영화 관람
+				<input type = 'checkbox' name = 'femaleCheckInput' value ='운동'>운동
+				<input type = 'checkbox' name = 'femaleCheckInput' value ='음악'>음악
+				</td>
+			</tr>
+			
+			<tr style = "height : 20px">
+				<td>자기소개</td>
+				<td>
+					<input type = 'text' size = '100%' style = "height : 60px">
+				</td>
+			</tr>
+			
+			<tr>
+				
+					<td colspan='2'>
+						<center><button id = 'ok' style = "width : 70px; height : 25px; display : inline;">제출</button></center>
+						<center><button id = 'no' style = "width : 70px; height : 25px; display : inline;">취소</button></center>
+					</td>
+				
+			</tr>
+			
+			
+			
+		</table>
+
+	
+</body>
+</html>
