@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+    
+<%@ page import = "java.sql.*" %>
+<%@ page import = "javax.sql.*" %>
+<%@ page import = "javax.naming.*" %>
+<%@ page import = "member.MemberDBBean" %>
+
+<% request.setCharacterEncoding("utf-8"); %>
+
+<jsp:useBean id = "memberdata" class = "member.MemberDataBean">
+	<jsp:setProperty name = "memberdata" property="*"/>
+</jsp:useBean>
+
+<%
+	MemberDBBean manager = MemberDBBean.getInstance();
+	int result = manager.insertMember(memberdata);
+	
+	if(result !=0){
+		out.println("<script>");
+		out.println("alert('success')");
+		out.println("location.href = 'loginForm.jsp'");
+		out.println("</script>");
+	}else{
+		
+	}
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

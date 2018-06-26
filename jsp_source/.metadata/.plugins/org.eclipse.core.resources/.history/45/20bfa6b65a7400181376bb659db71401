@@ -1,0 +1,56 @@
+package score;
+
+import com.sun.org.apache.xalan.internal.xsltc.util.IntegerArray;
+
+public class ScoreModel {
+	private String id;
+	private String name;
+	private String kor;
+	private String eng;
+	private String mat;
+	private String tot;
+	private String evg;
+	private String grade;
+	
+	private void process() {
+		int tot = Integer.parseInt(this.kor) + Integer.parseInt(this.eng) + Integer.parseInt(this.mat);
+		this.tot = Integer.toString(tot);
+		float evg = (float)tot/3.0f;	
+		this.evg = Float.toString(evg);
+		
+		
+	}
+	
+	
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getKor() {
+		return kor;
+	}
+	public void setKor(String kor) {
+		this.kor = kor;
+	}
+	public String getEng() {
+		return eng;
+	}
+	public void setEng(String eng) {
+		this.eng = eng;
+	}
+	public String getMat() {
+		return mat;
+	}
+	public void setMat(String mat) {
+		this.mat = mat;
+	}
+}

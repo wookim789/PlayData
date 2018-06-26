@@ -1,0 +1,12 @@
+package snippet;
+
+public class Snippet {
+	주의점!
+	html파일이 webcontent>하위폴더>.html이 저장되있다면
+	form action url경로는 그대로 쓰고
+	
+	!!!!
+	servlet의 @WebServlet("/하위폴더이름/url경로")
+	라 지정하면 된다
+}
+

@@ -1,3 +1,8 @@
 eclipse.preferences.version=1
+org.eclipse.wst.jsdt.core.PREF_JS_RUNTIME_INSTALLS_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<runtimeSettings/>\r\n
+org.eclipse.wst.jsdt.core.codeComplete.argumentPrefixes=
+org.eclipse.wst.jsdt.core.codeComplete.argumentSuffixes=
+org.eclipse.wst.jsdt.core.codeComplete.localPrefixes=
+org.eclipse.wst.jsdt.core.codeComplete.localSuffixes=
 org.eclipse.wst.jsdt.core.codeComplete.visibilityCheck=enabled
 org.eclipse.wst.jsdt.core.timeoutForParameterNameFromAttachedJavadoc=50

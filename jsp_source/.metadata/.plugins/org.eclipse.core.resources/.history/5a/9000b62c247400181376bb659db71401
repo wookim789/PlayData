@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel ="stylesheet"type="text/css"href="../css/blog.css"></style>
+<script src = "https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src = '../js/javaScript.js'></script>
+<script src = 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
+<script src = 'http://malsup.github.com/jquery.cycle.js'></script>
+
+</head>
+<body>
+<div id ="pageWrapper">
+		<header id = 'mainHeader'>
+			<hgroup>
+				<h1 class ='master-title'><a href = '../html/blog.html'>HTML Example Preview</a></h1>
+				<h2 class ='master-description'>경우킴</h2>
+			</hgroup>
+		</header>
+		<nav id ='mainNavigation'>
+			<div class ='pullLeft'>
+				<ul class='outerMenu'>
+					<li class='outerMenuItem' >
+						<span class ='menuTitle'>HTML5</span>
+						<ul class='innerMenu'>
+							<li class ='innerMenuItem1'><a href ='#'>html5 1.</a></li>
+							<li class ='innerMenuItem1'><a href ='#'>html5 2.</a></li>
+							<li class ='innerMenuItem1'><a href ='#'>html5 3.</a></li>
+						</ul>
+					</li>
+					<li class = 'outerMenuItem'>
+						<sapn class='menuTitle'>css3</sapn>
+						<ul class ='innerMenu'>
+							<li class ='innerMenuItem2'><a href ='#'>css1</a></li>
+							<li class ='innerMenuItem2'><a href ='#'>css2</a></li>
+							<li class ='innerMenuItem2'><a href ='#'>css3</a></li>
+						</ul>
+					</li>
+					<li class ='outerMenuItem'>
+						<sapn class ='menuTitle'>JavaScript</sapn>
+						<ul class ='innerMenu'>
+							<li class ='innerMenuItem3'><a href='#'>js1</a></li>
+							<li class ='innerMenuItem3'><a href='#'>js2</a></li>
+							<li class ='innerMenuItem3'><a href='#'>js3</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class ='pullRight'>
+				<div class ='searchBar'>
+					<form>
+						<input type ='text' class ='inputSearch'/>
+						<input type ='submit' class ='inputSearchSubmit' value = 'search'/>
+					</form>
+				</div>
+			</div>
+		</nav>
+		<div id ='content'>
+			<section id ='mainSection'>
+				<article class="article1">
+					<div class = 'articleHeader'>
+						<h1 class='articleTitle'>HTML5 context and application</h1>
+						<p class ='articleDate'>20180615</p>
+					</div>
+					<div class ='articleBody'>
+						<img src =''>
+						<br/><br/>
+						<p>aaaaaaaaaaaaaaaa</p>
+						<p>aaaaaaaaaaaaaaaa</p>
+					</div>
+				</article>
+				<article>
+					<div class ='articleHeader'>
+						<h1 class = 'articleTitle'>html5 application and training</h1>
+						<p class = 'articleDate'>20180615</p>
+					</div>
+						<div class ='articleBody'>
+					
+						<button type="button" id="prev_btn" class="btn">이전</button>
+						<button type="button" id="next_btn" class="btn">다음</button>
+						<ul id ='slider'>
+							<li><img src ="../img/11.jpg"></li>
+							<li><img src ="../img/22.jpg"></li>
+							<li><img src ="../img/33.jpg"></li>
+							<li><img src ="../img/44.jpg"></li>
+						</ul>
+						
+						<br/><br/>
+						<p>ldodldl</p>
+						<br/>
+						<p>proqwowl</p>
+					</div>
+				</article>
+			</section>
+			<aside id= 'mainAside'>
+				
+				<div class='asideList'>
+					<h3>recent article</h3>
+					<ul>
+						<li class = 'recentList'><a href ="#">data</a></li>
+						<li class = 'recentList'><a href ="#">data</a></li>
+						<li class = 'recentList'><a href ="#">data</a></li>
+						<li class = 'recentList'><a href ="#">data</a></li>
+					</ul>
+				</div>
+			</aside>
+		</div>
+		<footer id='mainFooter'>
+			<a href = '#'>Created by team-hehagon</a>
+		</footer>
+	</div>
+</body>
+</html>

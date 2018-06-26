@@ -60,7 +60,7 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
-    <Connector connectionTimeout="20000" port="8000" protocol="HTTP/1.1" redirectPort="8443"/>
+    <Connector URIEncoding="utf-8" connectionTimeout="20000" port="8000" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="HTML5" path="/HTML5" reloadable="true" source="org.eclipse.jst.jee.server:HTML5"/></Host>
+      <Context docBase="HTML5" path="/HTML5" reloadable="true" source="org.eclipse.jst.jee.server:HTML5"/><Context docBase="Chapt01" path="/Chapt01" reloadable="true" source="org.eclipse.jst.jee.server:Chapt01"/><Context docBase="Session" path="/Session" reloadable="true" source="org.eclipse.jst.jee.server:Session"/><Context docBase="Chapt02" path="/Chapt02" reloadable="true" source="org.eclipse.jst.jee.server:Chapt02"/><Context docBase="JSPdirective" path="/JSPdirective" reloadable="true" source="org.eclipse.jst.jee.server:JSPdirective"/><Context docBase="Property" path="/Property" reloadable="true" source="org.eclipse.jst.jee.server:Property"/><Context docBase="Template" path="/Template" reloadable="true" source="org.eclipse.jst.jee.server:Template"/><Context docBase="javaBean" path="/javaBean" reloadable="true" source="org.eclipse.jst.jee.server:javaBean"/><Context docBase="Cookie" path="/Cookie" reloadable="true" source="org.eclipse.jst.jee.server:Cookie"/><Context docBase="COS" path="/COS" reloadable="true" source="org.eclipse.jst.jee.server:COS"/><Context docBase="somenail" path="/somenail" reloadable="true" source="org.eclipse.jst.jee.server:somenail"/></Host>
     </Engine>
   </Service>
 </Server>

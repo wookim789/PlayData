@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Server {
 	public ServerSocket ss = null;
 	public  Socket s = null;
-	static ArrayList <ChatThread> chList = new ArrayList<ChatThread>();
+	ArrayList <ChatThread> chList = new ArrayList<ChatThread>();
 	
 	
 	public static void main(String[] args) {

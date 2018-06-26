@@ -1,31 +1,45 @@
 package chattingPak;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 
-public class Server {
+
+public class Server implements Runnable{
 	
 	private static ServerSocket serverSocket = null;
 	private static Socket clientSocket = null;
-	private static ArrayList <ServerThread> serverThreadList = new ArrayList<ServerThread>();
+	private static ArrayList <ServerThread> ClientSocketThreadList = new ArrayList<ServerThread>();
+	
+	private static BufferedReader readCLMsg = null;
 
+	public static int numberOfUser = 0;
+	
+	
 	public static void main(String[] args) {
 		
-		start();
-
+		
 	}
 	
-	private static void start() {
+	public void run() {
 		try {
-			System.out.println("서버 포트 생성");
-			serverSocket = new ServerSocket(8888);
+			serverSocket = new ServerSocket(8000);
+			readCLMsg = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));	
+			
 		}catch(IOException e) {
-			System.out.println("서버 포트 생성 에러");
 			e.printStackTrace();
 		}
-		
-		
+		try {
+			while(true) {
+				clientSocket = serverSocket.accept();
+			}
+			
+		}
+		catch(Exception e) {
+			
+		}
 	}
 }

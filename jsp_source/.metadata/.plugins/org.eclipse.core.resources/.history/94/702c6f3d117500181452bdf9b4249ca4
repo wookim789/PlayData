@@ -1,0 +1,24 @@
+package score;
+
+import java.sql.DriverManager;
+
+public class SungjukDBBean {
+
+	private Connection getConnection() throws Exception{
+		Connection conn = null;
+		
+		try {
+			String driver = "oracle.jdbc.driver.OracleDriver";
+			String url = "jdbc.oracle:thin:@127.0.0.1:1521:xe";
+			
+			Class.forName(driver);
+			conn =DriverManager.getConnection(url, "hr", "123456");
+			
+		}catch(Exception e) {
+			System.out.println("연결 실패");
+			e.printStackTrace();
+		}
+		return conn;
+	}
+}
+

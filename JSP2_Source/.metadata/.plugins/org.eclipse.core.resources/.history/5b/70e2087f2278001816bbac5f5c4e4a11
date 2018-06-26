@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Login page</title>
+<style>
+	table{
+		margin:auto;
+		width:400px;
+		border:1px solid gray;
+		text-align : center;
+	}
+	
+	.td_title{
+		font-weight:bold;
+		font-size:x-large;
+	}
+</style>
+
+</head>
+<body>
+	<form name ="loginform" action ="loginProcess.jsp" method="post">
+		<table>
+			<tr>
+				<td colsapn ="2" class = "td_title">로그인 페이지</td>
+			</tr>
+			<tr>
+				<td><label for ="id">id : </label></td>
+				<td><input type = "text" name = "id" id = "id"/></td>
+			</tr>
+			<tr>
+				<td><label for ="pass">pw : </label></td>
+				<td><input type ="password" name = "pw" id = "pw" /></td>
+			</tr>
+			<tr>
+				<td colspan = "2"><a href = "javascript:loginform.submit()">login</a> &nbsp;&nbsp;
+				<a href ="joinForm.jsp">create account</a>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

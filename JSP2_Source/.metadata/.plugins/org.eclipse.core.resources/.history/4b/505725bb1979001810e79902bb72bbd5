@@ -1,0 +1,79 @@
+<%@page import="javax.websocket.Session"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"%>
+<%@ page import="member.MemberDBBean" %>
+<%@ page import = "java.util.ArrayList" %>
+<%@ page import ="member.*" %>
+
+<%!
+MemberDBBean mdbb;
+ArrayList<MemberDataBean> arr;
+
+int i=0;
+
+%>
+
+<%
+	if ((session.getAttribute("id")==null) || 
+			(!((String)session.getAttribute("id")).equals("admin"))) {
+		out.println("<script>");
+		out.println("location.href='loginForm.jsp'");
+		out.println("</script>");
+	}
+	
+	String info_id = (String)session.getAttribute("id");
+	try {
+		
+		mdbb = MemberDBBean.getInstance();
+		arr = mdbb.getDBListdata();
+		for(i = 0 ; i < arr.size(); i++){
+			if(arr.get(i).getId().equals(info_id)){
+				System.out.println(i);
+				break;
+			}
+		}
+	}catch(Exception e){
+		e.printStackTrace();
+	}
+%>
+<html>
+<head>
+<title>회원관리 시스템 관리자모드(회원 정보 보기)</title>
+<style>
+	table{
+		margin : auto;
+		width : 400px;
+		border : 1px solid gray;
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+<table>
+	<tr>
+		<td>아이디 : </td>
+		<td><%=arr.get(i).getId() %></td>
+	</tr>
+	<tr>
+		<td>비밀번호 : </td>
+		<td><%=arr.get(i).getPassword() %></td>
+	</tr>
+	<tr>
+		<td>이름 : </td>
+		<td><%=arr.get(i).getName() %></td>
+	</tr>
+	<tr>
+		<td>나이 : </td><td><%=arr.get(i).getAge() %></td>
+	</tr>
+	<tr>
+		<td>성별 : </td><td><%=arr.get(i).getGender() %></td>
+	</tr>
+	<tr>
+		<td>이메일 주소 : </td>
+		<td><%=arr.get(i).getEmail() %></td>
+	</tr>
+	<tr>
+		<td colspan=2><a href="member_list.jsp">리스트로 돌아가기</a></td>
+	</tr>
+</table>
+</body>
+</html>

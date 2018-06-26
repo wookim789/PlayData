@@ -1,0 +1,9 @@
+package score;
+
+public class ScoreModel {
+	private String id;
+	private String name;
+	private String kor;
+	private String eng;
+	private String mat;
+}

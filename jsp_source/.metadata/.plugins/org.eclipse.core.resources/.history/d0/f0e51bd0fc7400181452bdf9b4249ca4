@@ -1,0 +1,58 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import = "java.sql.*" %>
+<%request.setCharacterEncoding("utf-8"); %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<jsp:useBean id="sungjukdata" class = "score.ScoreModel" scope ="page"/>
+<jsp:setProperty name = "sungjukdata" property ="*">
+<%
+	sungjukdata.process();
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	
+	int result;
+	String driver;
+	String url;
+	try{
+		driver = "oracle.jdbc.driver.OracleDirver";
+		url= "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+		
+		Class.forName(driver);
+		conn = DriverManager.getConnection(url,"hr","123456");
+		
+		pstmt = conn.prepareStatement("insert into sungjuk values(?,?,?,?,?,?,?,?)");
+		pstmt.setString(1,sungjukdata.getHakbun());
+		pstmt.setString(2,sungjukdata.getIrum());
+		pstmt.setInt(3,sungjukdata.getKor());
+		pstmt.setInt(4,sungjukdata.getEng());
+		pstmt.setInt(5,sungjukdata.getMat());
+		pstmt.setInt(6, sungjukdata.getTot());
+		pstmt.setInt(7, sungjukdata.getAvg());
+		pstmt.setInt(8, sungjukdata.getGrade());
+		result = pstmt.executeUpdate();
+		
+		if(result!=0){
+			out.println("<script>");
+			out.println("alter('성적입력 성공!')");
+			out.println("location.href = 'sungjukForm.jsp'");
+			out.println("</script>");
+		}else{
+			out.println("<script>");
+			out.println("alert('성적입력 실패!')");
+			out.println("location.href = 'sungjukForm.jsp");
+			out.println("</script>");
+		}
+	}catch(Exception e){
+		System.out.println("데이터베이스연결실패");
+		e.printStackTrace();
+	}
+%>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

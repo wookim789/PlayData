@@ -1,0 +1,98 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="javax.sql.*" %>
+<%@ page import="javax.naming.*" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+
+<%
+	String id=null;
+	
+	if ((session.getAttribute("id")==null) || 
+	  (!((String)session.getAttribute("id")).equals("admin"))) {
+		out.println("<script>");
+		out.println("location.href='loginForm.jsp'");
+		out.println("</script>");
+	}
+	
+	Connection conn=null;
+	PreparedStatement pstmt=null;
+	ResultSet rs=null;
+	
+	id =(String)session.getAttribute("id");
+	try {
+			Context init = new InitialContext();
+			DataSource ds = 
+				(DataSource) init.lookup("java:comp/env/jdbc/OracleDB");
+			conn = ds.getConnection();
+			
+			pstmt=conn.prepareStatement("SELECT * FROM member where id = ?");
+			rs=pstmt.executeQuery();
+	}catch(Exception e){
+		e.printStackTrace();
+	}
+
+%>
+<style>
+	table{
+		margin : auto;
+		width : 400px;
+		border : 1px solid gray;
+		text-align: center;
+	}
+	.td_title{
+		font-weight: bold;
+		font-size: x-large;
+	}
+</style>
+</head>
+<body>
+<form name="joinform" action="joinProcess.jsp" method="post">
+<table border=1>
+	<tr>
+		<td colspan="2" class = "td_title">
+			회원가입 페이지
+		</td>
+	</tr>
+	<tr>
+		<td><label for = "id">아이디 : </label></td>
+		<td><input type="text" name="id" id = "id" value = <%= %>/></td>
+	</tr>
+	<tr>
+		<td><label for = "pass">비밀번호 : </label></td>
+		<td><input type="password" name="pass" id = "pass"/></td>
+	</tr>
+	<tr>
+		<td><label for = "name">이름 : </label></td>
+		<td><input type="text" name="name" id = "name"/></td>
+	</tr>
+	<tr>
+		<td><label for = "age">나이 : </label></td>
+		<td><input type="text" name="age" id = "age"/>
+		</td>
+	</tr>
+	<tr>
+		<td><label for = "gender1"></label>성별 : </td>
+		<td>
+			<input type="radio" name="gender" value="남" checked id = "gender1"/>남자
+			<input type="radio" name="gender" value="여" id = "gender2"/>여자
+		</td>
+	</tr>
+	<tr>
+		<td><label for = "email">이메일 주소 : </label></td>
+		<td><input type="text" name="email" id = "email"/></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<a href="javascript:joinform.submit()">회원가입</a>&nbsp;&nbsp;
+			<a href="javascript:joinform.reset()">다시작성</a>
+		</td>
+	</tr>
+</table>
+</form>
+</body>
+</html>

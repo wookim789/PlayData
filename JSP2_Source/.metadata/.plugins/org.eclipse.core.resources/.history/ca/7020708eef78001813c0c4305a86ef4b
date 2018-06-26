@@ -1,0 +1,48 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page import="member.MemberDBBean" %>
+<%
+	MemberDBBean mdbb = MemberDBBean.getInstance();
+	mdbb.getDBListdata().get(0).getId();
+	String id=null;
+	
+	if ((session.getAttribute("id")==null) || 
+	  (!((String)session.getAttribute("id")).equals("admin"))) {
+		out.println("<script>");
+		out.println("location.href='loginForm.jsp'");
+		out.println("</script>");
+	}
+
+
+%>
+<html>
+<head>
+<title>회원관리 시스템 관리자모드(회원 목록 보기)</title>
+<style>
+	table{
+		margin : auto;
+		width : 400px;
+		border : 1px solid gray;
+		text-align: center;
+	}
+	.td_title{
+		font-weight: bold;
+		font-size: x-large;
+	}
+</style>
+</head>
+<body>
+<table>
+	<tr><td colspan=2 class="td_title">회원 목록</td></tr>
+	<%	
+		int i =0;
+		while(mdbb.getDBListdata().size()>i){%>
+	<tr>
+		<td><a href="member_info.jsp?id=<%=mdbb.getDBListdata().get(i).getId() %>"><%=mdbb.getDBListdata().get(i).getId() %></a></td>
+		<td><a href="member_updateList.jsp?id=<%=mdbb.getDBListdata().get(i).getId() %>">수정</a></td>
+		<td><a href="member_delete.jsp?id=<%=mdbb.getDBListdata().get(i).getId() %>">삭제</a></td>	
+
+	</tr>
+	<%i++;} %>
+</table>
+</body>
+</html>

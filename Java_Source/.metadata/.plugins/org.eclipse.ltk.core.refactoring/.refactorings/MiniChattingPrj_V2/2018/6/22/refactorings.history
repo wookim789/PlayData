@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;chattingPak.ServerChat_Th.java&apos; to &apos;ServerThread.java&apos;&#x0D;&#x0A;- Original project: &apos;MiniChattingPrj_V2&apos;&#x0D;&#x0A;- Original element: &apos;chattingPak.ServerChat_Th.java&apos;&#x0D;&#x0A;- Renamed element: &apos;chattingPak.ServerThread.java&apos;" description="Rename compilation unit &apos;ServerChat_Th.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;chattingPak{ServerChat_Th.java" name="ServerThread.java" references="false" stamp="1527822289134" version="1.0"/>
+</session>

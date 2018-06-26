@@ -1,0 +1,70 @@
+package grade;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class SungjukDBBean {
+   private static SungjukDBBean instance = new SungjukDBBean();
+   
+   public static SungjukDBBean getInstance()
+   {
+      return instance;
+   }
+   
+   private SungjukDBBean() {}
+   
+   private Connection getConnection() throws Exception
+   {
+      Connection conn = null;
+      
+      try {
+         String driver = "oracle.jdbc.driver.OracleDriver";
+         String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+         
+         Class.forName(driver);
+         conn = DriverManager.getConnection(url, "hr", "123456");
+      }
+      catch(Exception e){
+         System.out.println("데이터베이스 연결 실패!");
+         e.printStackTrace();
+      }
+      return conn;
+   }
+   
+   public int insertGrade(gradeBean data) throws Exception
+   {
+      Connection conn=null;
+      PreparedStatement pstmt=null;
+      int result=0;
+      
+      try 
+      {
+         data.process();
+         conn=getConnection();
+         
+         pstmt = conn.prepareStatement("insert into grade values(?,?,?,?,?,?,?,?)");
+         pstmt.setString(1, data.getHakbun());
+         pstmt.setString(2, data.getName());
+         pstmt.setInt(3, data.getKor());
+         pstmt.setInt(4, data.getEng());
+         pstmt.setInt(5, data.getMath());
+         pstmt.setInt(6, data.getTot());
+         pstmt.setDouble(7, data.getAvg());
+         pstmt.setString(8, data.getScore());
+         result = pstmt.executeUpdate();
+      }
+      catch(Exception ex){
+         System.out.println("가입오류" + ex.getMessage());
+         ex.printStackTrace();
+      }
+      finally
+      {
+         if(pstmt!=null) try {pstmt.close();}catch(SQLException ex){}
+         if(conn!=null) try {conn.close();}catch(SQLException ex){}
+      }
+      
+      return result;
+   }
+}

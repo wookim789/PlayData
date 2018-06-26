@@ -1,0 +1,10 @@
+package member;
+
+public class MemberDataBean {
+	private String id;
+	private String password;
+	private String name;
+	private int age;
+	private String gender;
+	private String email;
+}

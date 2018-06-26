@@ -1,0 +1,5 @@
+package member;
+
+public class MemberDataBean {
+
+}

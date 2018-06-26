@@ -25,22 +25,22 @@ import oracle.jdbc.OracleTypes;
 
 public class UserData implements ActionListener, Runnable  {
 
-	static private Container mainPanel;
-	static private JFrame frame;
-	static private JPanel tab, logIntab,IDPWtab,texttab,CreateTab ,CreateIDTab, msgPanel, msgInsert, buttonTab ;
+	private Container mainPanel;
+	private JFrame frame;
+	private JPanel tab, logIntab,IDPWtab,texttab,CreateTab ,CreateIDTab, msgPanel, msgInsert, buttonTab ;
 
-	static private CardLayout clayout;
+	private CardLayout clayout;
 
-	static private JLabel logInLabel,Password, cridLab, crpwLab, crnameLab,crphoneLab,creamilLab;
-	static private JTextField IDTextBox,PWTextBox, CR_ID, CR_PW, CR_Name, CR_Phone, CR_Email;
+	private JLabel logInLabel,Password, cridLab, crpwLab, crnameLab,crphoneLab,creamilLab;
+	private JTextField IDTextBox,PWTextBox, CR_ID, CR_PW, CR_Name, CR_Phone, CR_Email;
 	
-	static private JButton logInButton,createOKButton, createIDButton;
+	private JButton logInButton,createOKButton, createIDButton;
 
-	static private String ip = "192.168.0.194";
-	static private Socket socket;
-	static private boolean status;
-	static private BufferedReader inMsg = null;
-	static private PrintWriter outMsg = null;
+	private String ip = "192.168.0.194";
+	private Socket socket;
+	private boolean status;
+	private BufferedReader inMsg = null;
+	private PrintWriter outMsg = null;
 	
 	private String driver = "oracle.jdbc.driver.OracleDriver";
 	private String url = "jdbc:oracle:thin:@192.168.0.194:1521:orcl";
@@ -48,7 +48,11 @@ public class UserData implements ActionListener, Runnable  {
 	private CallableStatement cstmt = null;
 	private BufferedReader br =null;
 	private ResultSet rs =null;
-	static public String id,pw,name,phone,email;
+	public static String id;
+	public String pw;
+	public String name;
+	public String phone;
+	public String email;
 
 	UserData(){
 		frame = new JFrame("LogIn");

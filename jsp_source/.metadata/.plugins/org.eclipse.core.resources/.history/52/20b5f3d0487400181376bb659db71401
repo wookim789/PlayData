@@ -1,0 +1,6 @@
+package test;
+
+public class BeanTest {
+	private String name = "DKDU";
+
+}

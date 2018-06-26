@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="scoreJsp.jsp">
+		ID : <input type = "text" name = "id"> <br>
+		name : <input type = "text" name = "name"> <br>
+		Kor : <input type = "text" name = "kor"> <br>
+		Eng : <input type = "text" name = "eng"> <br>
+		Mat : <input type = "text" name = "mat"> <br>
+	</form>
+</body>
+</html>

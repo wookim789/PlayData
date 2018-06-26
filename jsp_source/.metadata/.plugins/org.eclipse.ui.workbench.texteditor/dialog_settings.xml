@@ -6,6 +6,12 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="thumbbnailff-888"/>
+			<item value="thumbbnailForm"/>
+			<item value="imagePath"/>
+			<item value="sungjukdata"/>
+			<item value="recentList"/>
+			<item value="search"/>
 			<item value="pullLeft"/>
 		</list>
 		<list key="replacehistory">

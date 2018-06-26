@@ -3,79 +3,59 @@ package guitarMain;
 import java.util.LinkedList;
 
 public class CalculateScaleClass {
-	int num;
-	int root;
-	int scale[];
+	int num,root;
 	String rootName;
-	
-	int majorPentaScale[];
-	int minorPentaScale[];
+
+	LinkedList <Integer> minorPentaScale = new LinkedList<Integer>();
+	LinkedList <Integer> majorPentaScale = new LinkedList<Integer>();
 	LinkedList <Integer> majSearch = new LinkedList <Integer>();
 	LinkedList <Integer> minSearch = new LinkedList <Integer>();
 	
 	CalculateScaleClass (){
 		this.root = 0;
 		this.num = 0;
-		this.scale = new int[8];
-		this.majorPentaScale = new int [4];
-		this.minorPentaScale = new int [4];
 		this.rootName = null;
 	}
 	//Choose the root Number
 	public void sixStringRootNumM(String rootName) {
-
 		switch(rootName) {
 		case "Fb":
 		case "E":
 			this.root = 0;
 			break;
-			
 		case "Es":
 		case "F":
 			this.root = 1;
 			break;
-			
 		case "Fs":
 		case "Gb":
 			this.root = 2;
 			break;
-			
 		case "G":
 			this.root = 3;
 			break;
-			
 		case "Gs":
 		case "Ab":
 			this.root = 4;
 			break;
-			
 		case "A":
 			this.root = 5;
 			break;
-			
 		case "As":
 		case "Bb":
 			this.root = 6;
 			break;
-			
 		case "B":
 			this.root = 7;
 			break;
-			
 		case "Bs":
-		case "Cb":
+		case "C":
 			this.root = 8;
 			break;
-			
-		case "C":
-			this.root = 9;
-			break;
-			
 		case "Cs":
 		case "Db":
 			this.root = 10;
 			break;
-			
 		case "D":
 			this.root = 11;
 			break;
@@ -83,195 +63,142 @@ public class CalculateScaleClass {
 	}
 	
 	//Calculate the Elements to the majorScalse 
-	public void majorScaleM() {
+	public void majorPentatonic() {
 		this.num = this.root;
-		this.scale[0] = this.root;
-		
-		for(int i = 0; i <= 7; i ++) {
-		
+		majorPentaScale.add(this.root);
+
+		for(int i = 0; i < 7; i ++) {
+			if(i == 2||i == 6) {
+				this.num = this.num + 1;
+			}else {
+				this.num = this.num + 2;
+			}
+			majorPentaScale.add(this.num);
 		}
+		this.num = 0;
+
+//		minorPentaScale.set(3) 
+//		this.minorPentaScale = this.majorScale[1];
+//		this.majorPentaScale[2] = this.majorScale[2];
+//		this.majorPentaScale[3] = this.majorScale[4];
+//		this.majorPentaScale[4] = this.majorScale[5];
 
 	}
-	//Calculate the Elements to the minorScalse 
-	public void minorScaleM() {
-		this.num = this.root;
-		this.scale[0] = root;
-		
-		for(int i =0; i <= 7; i ++) {
-			this.num = this.num + 2;
-			this.scale[i+1] = this.num;
-		}
-		this.scale[2] = this.scale[2] - 1;
-		this.scale[5] = this.scale[5] - 1;
-	}	
-	//Calculate the Elements to the Pentatonic
-	public void minorPentatonic() {
-		this.minorPentaScale[0] = this.scale[0];
-		this.minorPentaScale[1] = this.scale[1];
-		this.minorPentaScale[2] = this.scale[2];
-		this.minorPentaScale[3] = this.scale[4];
-		this.minorPentaScale[4] = this.scale[5];
-	}
-	public void majorPentatonic() {
-		this.majorPentaScale[0] = this.scale[0];
-		this.majorPentaScale[1] = this.scale[2]-1;
-		this.majorPentaScale[2] = this.scale[3];
-		this.majorPentaScale[3] = this.scale[4];
-		this.majorPentaScale[4] = this.scale[6]-1;
-	}
+
 	
 	public void majorScaleSearch() {
-		this.root = this.scale[0];
+		//num initialize
 		this.num = this.root;
+		majSearch.add(this.root);
 		int cnt = 0;
-		int threeCount = 0;
+
 		//아래로 찾기
-		while(  this.num > 0) 
-		{
-			if(cnt == 5) {
-				cnt = 0;
-			}
-			if((cnt == 0)||(cnt == 2 ))
-			{	
-				cnt++;
-		
-				if(this.num > 0) {
-					majSearch.addFirst(this.num - 1);
-				}else {
+		while( this.num > 0 ) {
+			switch (cnt) {
+				case 0:
+				case 4:
+					this.num = this.num - 1;
+					if (this.num > 0) {
+						majSearch.addFirst(this.num);
+						cnt++;
+					}
 					break;
-				}
-				
-			}else  {
-				if(this.num > 0) {
-					majSearch.addFirst(this.num - 2);
-				}else {
-					break;
-				}
-				if(cnt < 6) {
-					cnt++;
-				}else {
+				case 7:
 					cnt = 0;
-				}
-				
+					break;
+				default:
+					this.num = this.num - 2;
+					if (this.num > 0) {
+						majSearch.addFirst(this.num);
+						cnt++;
+					}
+					break;
 			}
 		}
-		
+		//num, cnt initialize
+		this.num = this.root;
+		cnt = 0;
+
+		//위로 찾기
 		while( this.num < 49) 
 		{
-			if(twoCount ==2 && threeCount == 3) {
-				twoCount = 0;
-				threeCount = 0;
-			}
-			if((twoCount == 2 && threeCount == 0)||
-			   (twoCount == 2 && threeCount == 3)) 
-			{	
-				if(twoCount == 0 ) {
-					twoCount++;
-				}else if(threeCount ==0) {
-					threeCount++;
-				}
-				if(this.num < 49) {
-					majSearch.addFirst(this.num + 1);
-				}else {
+			switch (cnt) {
+				case 2:
+				case 6:
+					this.num = this.num + 1;
+					if (this.num > 0) {
+						majSearch.add(this.num);
+						cnt++;
+					}
 					break;
-				}
-				
-			}else if(twoCount < 2) {
-				if(this.num < 49) 
-					majSearch.addFirst(this.num + 2);
-				else
+				case 7:
+					cnt = 0;
 					break;
-				
-				twoCount++;
-				
-			}else if(threeCount < 3){
-				if(this.num > 0) 
-					majSearch.addFirst(this.num - 2);
-				else 
+				default:
+					this.num = this.num + 2;
+					if (this.num > 0) {
+						majSearch.add(this.num);
+						cnt++;
+					}
 					break;
-				
-				threeCount++;
 			}
 		}
 	}
 	
 	public void minorScaleSearch() {
-		this.root = this.scale[0];
 		this.num = this.root;
-		int twoCount = 0;
-		int threeCount = 0;
+		int cnt = 0;
+		minSearch.add(this.root);
+//		System.out.println(this.num);
 		//아래로 찾기
-		while (this.num > 0) 
-		{
-			if(twoCount ==2 && threeCount == 5) {
-				twoCount = 0;
-				threeCount = 0;
-			} 
-			if((twoCount == 2 && threeCount == 0)||
-			   (twoCount == 2 && threeCount == 2)||
-			   (twoCount == 2 && threeCount == 5)) 
-			{	
-				if(threeCount < 5) {
-					threeCount++;
-				}
-				if(this.num > 0) {
-					majSearch.addFirst(this.num - 1);
-				}else {
+		while( this.num > 0 ) {
+			switch (cnt) {
+				case 2:
+				case 5:
+					this.num = this.num - 1;
+					if (this.num > 0) {
+						minSearch.addFirst(this.num);
+						cnt++;
+					}
 					break;
-				}
-				
-			}else if(twoCount < 2) {
-				if(this.num > 0) {
-					majSearch.addFirst(this.num - 2);
-				}else {
+				case 7:
+					cnt = 0;
 					break;
-				}
-				twoCount++;
-				
-			}else if(threeCount < 5){
-				if(this.num > 0) {
-					majSearch.addFirst(this.num - 2);
-				}else {
+				default:
+					this.num = this.num - 2;
+					if (this.num > 0) {
+						minSearch.addFirst(this.num);
+						cnt++;
+					}
 					break;
-				}
-				threeCount++;
 			}
-	}
-		for(int i = 0; this.num < 49; i++) 
+		}
+		//num, cnt initialize
+		this.num = this.root;
+		cnt = 0;
+
+		//위로 찾기
+		while( this.num < 49)
 		{
-			if( twoCount ==1 && threeCount == 4){
-				twoCount = 0;
-				threeCount = 0;
-			}
-			if((twoCount == 2 && threeCount == 0)||
-			   (twoCount == 2 && threeCount == 3)) 
-			{	
-				if(twoCount == 0 ) {
-					twoCount++;
-				}else if(threeCount ==0) {
-					threeCount++;
-				}
-				if(this.num < 49) {
-					majSearch.addFirst(this.num + 1);
-				}else {
+			switch (cnt) {
+				case 1:
+				case 4:
+					this.num = this.num + 1;
+					if (this.num > 0) {
+						minSearch.add(this.num);
+						cnt++;
+					}
 					break;
-				}
-				
-			}else if(twoCount < 2) {
-				if(this.num < 49) 
-					majSearch.addFirst(this.num + 2);
-				else
+				case 7:
+					cnt = 0;
 					break;
-				
-				twoCount++;
-				
-			}else if(threeCount < 3){
-				if(this.num > 0) 
-					majSearch.addFirst(this.num - 2);
-				else 
+				default:
+					this.num = this.num + 2;
+					if (this.num > 0) {
+						minSearch.add(this.num);
+						cnt++;
+					}
 					break;
-				
-				threeCount++;
 			}
 		}
 	}

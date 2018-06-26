@@ -19,7 +19,7 @@ li{list-style:none;}
 
 body{
 	width:960px; margin:0 auto;
-	background:#E6E6E6;
+	background:#D2F0CA;
 }
 
 #pageWrapper{
@@ -34,7 +34,7 @@ body{
 #mainHeader{padding:40px 50px;}
 .masterTitle{
 	font-size:30px;
-	color:#181818;
+	color:#6EFFD3;
 }
 
 .masertDescription{
@@ -49,6 +49,7 @@ body{
 	border-bottom:1px solid #C8C8C8;
 	margin-bottom:1px solid #C8C8C8;
 	height:40px;
+	background:#CAFFD3;
 }
 
 .outerMenuItem{
@@ -116,6 +117,9 @@ body{
 	outline:0;
 	box-shadow:inset 0 1px 1px rgba(0,0,0,0.5);
 }
+.recentList{
+	cursor: pointer;
+}
 
 .inputSearchSubmit{
 	display:block;
@@ -123,10 +127,10 @@ body{
 	
 	width:50px; height:26px;
 	border-radius:0 15px 15px 0;
-	border:1px solid #CCCCCC;
-	
+	border:1px solid #0D9987;
+	background : #0D9987;
 	margin-left:-1px;
-	
+	color :white;
 	vertical-align:top;
 	display:inline-block;
 }
@@ -172,6 +176,9 @@ article{
 	color:#6C6C6C;
 }
 
+/* ¿Ã∫•∆Æ∞¥√º */
 
-
+.HtmlMenu{
+	display:none;
+}
 

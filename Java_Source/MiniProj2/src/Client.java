@@ -27,24 +27,24 @@ import oracle.jdbc.OracleTypes;
 
 public class Client implements ActionListener, Runnable {
 
-static private Container mainPanel;
-static private JFrame frame;
-static private JPanel tab, logIntab, logOuttab, msgPanel, msgInsert ;
-static private JScrollPane scrollPanel;
+private Container mainPanel;
+private JFrame frame;
+private JPanel tab, logIntab, logOuttab, msgPanel, msgInsert ;
+private JScrollPane scrollPanel;
 
-static private CardLayout clayout;
+private CardLayout clayout;
 
-static private JLabel logInLabel, logOutLabel;
-static private JTextField  msgInsertText; //logInTextBox, 
-static private JTextArea msgText;
-static private JButton logInButton, logOutButton, exitButton;
+private JLabel logInLabel, logOutLabel;
+private JTextField  msgInsertText; //logInTextBox, 
+private JTextArea msgText;
+private JButton logInButton, logOutButton, exitButton;
 
 //static private String userName,id,ip = "127.0.0.1";
-static private String userName,id,ip = "192.168.0.194";
-static private Socket socket;
-static private boolean status;
-static private BufferedReader inMsg = null;
-static private PrintWriter outMsg = null;
+private String userName,id,ip = "192.168.0.194";
+private Socket socket;
+private boolean status;
+private BufferedReader inMsg = null;
+private PrintWriter outMsg = null;
 
 private String driver = "oracle.jdbc.driver.OracleDriver";
 //private String url = "jdbc:oracle:thin:@127.0.0.1:1521:orcl";

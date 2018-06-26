@@ -36,8 +36,4 @@ public class DrawGuitarString extends JPanel{
 		}
 
 	}
-	
-	
-	
-
 }

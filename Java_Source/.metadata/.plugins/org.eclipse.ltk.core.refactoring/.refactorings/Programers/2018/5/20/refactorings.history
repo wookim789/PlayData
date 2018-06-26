@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;ex.JavaEX1.java&apos; to &apos;ReverseStr.java&apos;&#x0D;&#x0A;- Original project: &apos;Programers&apos;&#x0D;&#x0A;- Original element: &apos;ex.JavaEX1.java&apos;&#x0D;&#x0A;- Renamed element: &apos;ex.ReverseStr.java&apos;" description="Rename compilation unit &apos;JavaEX1.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;ex{JavaEX1.java" name="ReverseStr.java" references="false" stamp="1526464677831" version="1.0"/>
+</session>
