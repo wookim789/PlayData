@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ page import="java.sql.*"%>
 <%@ page import="javax.sql.*" %>
 <%@ page import="javax.naming.*" %>
@@ -33,7 +33,7 @@
 %>
 <html>
 <head>
-<title>È¸¿ø°ü¸® ½Ã½ºÅÛ °ü¸®ÀÚ¸ðµå(È¸¿ø Á¤º¸ º¸±â)</title>
+<title>íšŒì›ê´€ë¦¬ ì‹œìŠ¤í…œ ê´€ë¦¬ìžëª¨ë“œ(íšŒì› ì •ë³´ ë³´ê¸°)</title>
 <style>
 	table{
 		margin : auto;
@@ -46,29 +46,29 @@
 <body>
 <table>
 	<tr>
-		<td>¾ÆÀÌµð : </td>
+		<td>ì•„ì´ë”” : </td>
 		<td><%=rs.getString("id") %></td>
 	</tr>
 	<tr>
-		<td>ºñ¹Ð¹øÈ£ : </td>
+		<td>ë¹„ë°€ë²ˆí˜¸ : </td>
 		<td><%=rs.getString("password") %></td>
 	</tr>
 	<tr>
-		<td>ÀÌ¸§ : </td>
+		<td>ì´ë¦„ : </td>
 		<td><%=rs.getString("name") %></td>
 	</tr>
 	<tr>
-		<td>³ªÀÌ : </td><td><%=rs.getString("age") %></td>
+		<td>ë‚˜ì´ : </td><td><%=rs.getString("age") %></td>
 	</tr>
 	<tr>
-		<td>¼ºº° : </td><td><%=rs.getString("gender") %></td>
+		<td>ì„±ë³„ : </td><td><%=rs.getString("gender") %></td>
 	</tr>
 	<tr>
-		<td>ÀÌ¸ÞÀÏ ÁÖ¼Ò : </td>
+		<td>ì´ë©”ì¼ ì£¼ì†Œ : </td>
 		<td><%=rs.getString("email") %></td>
 	</tr>
 	<tr>
-		<td colspan=2><a href="member_list.jsp">¸®½ºÆ®·Î µ¹¾Æ°¡±â</a></td>
+		<td colspan=2><a href="member_list.jsp">ë¦¬ìŠ¤íŠ¸ë¡œ ëŒì•„ê°€ê¸°</a></td>
 	</tr>
 </table>
 </body>

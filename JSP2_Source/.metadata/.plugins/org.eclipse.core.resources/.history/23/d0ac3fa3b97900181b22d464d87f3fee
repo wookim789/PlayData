@@ -1,0 +1,23 @@
+package member;
+import java.util.*;
+
+public class aa {
+
+	public static void main(String[] args) {
+		int arr[] = {1,2,2,3,3,4};
+		 Deque<Integer> dq = new ArrayDeque<Integer>();
+		    dq.push(arr[0]);
+			for(int i = 1; i < arr.length; i++) {
+				if(dq.peek()!=arr[i]) {
+					dq.push(arr[i]);
+				}
+			}
+			int[] answer  = new int[dq.size()];
+			System.out.println(answer[dq.size()]);
+			for(int i = arr.length -1; i >= 0; i--) {
+				answer[i] = dq.pop();
+	            System.out.println(answer[i]);
+			}
+	}
+
+}

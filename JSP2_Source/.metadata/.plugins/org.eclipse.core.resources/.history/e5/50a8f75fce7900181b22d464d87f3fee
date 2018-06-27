@@ -1,0 +1,9 @@
+package board;
+import java.sql.*;
+
+public class BoardDBBean {
+	private static BoardDBBean instance = new BoardDBBean();
+	private static BoardDBBean getInstance(){
+		return instance();
+	}
+}

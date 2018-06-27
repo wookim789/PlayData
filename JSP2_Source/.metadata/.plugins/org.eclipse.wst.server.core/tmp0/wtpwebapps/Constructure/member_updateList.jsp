@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<%@ page import = "member.MemberDBBean" %>
+<%@ page import = "java.util.ArrayList" %>
+<%@ page import = "member.*" %>
 	<jsp:useBean id = "memberdata" class = "member.MemberDataBean">
 		<jsp:setProperty name = "memberdata" property="*"/>
 	</jsp:useBean>
@@ -10,33 +11,31 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
 
-<%
-	String id=null;
-	
+<%! 
+int i = 0; 
+ArrayList<MemberDataBean> arr;
+%>
+<% 
+	request.setCharacterEncoding("UTF-8");
 	if ((session.getAttribute("id")==null) || 
 	  (!((String)session.getAttribute("id")).equals("admin"))) {
 		out.println("<script>");
 		out.println("location.href='loginForm.jsp'");
 		out.println("</script>");
 	}
-	try {	
-	MemberDBBean manager = MemberDBBean.getInstance();
-	int result = manager.insertMember(memberdata);
-	if(result !=0){
-		out.println("<script>");
-		out.println("alert('success')");
-		out.println("location.href = 'member_list.jsp'");
-		out.println("</script>");
-	}else{
-		out.println("<script>");
-		out.println("alert('failed')");
-	  	out.println("location.href='member_updateList.jsp'");
-	  	out.println("</script>");	
+	
+	MemberDBBean mdbb = MemberDBBean.getInstance();
+	arr = mdbb.getDBListdata();
+	
+	while(!arr.get(i).getId().equals(request.getParameter("id"))){
+		System.out.println("arr id:"+arr.get(i).getId());
+		System.out.println("req id:"+request.getParameter("id"));
+		i++;
 	}
-	}catch(Exception e){
-		e.printStackTrace();
-	}
-
+	System.out.println("arr id:"+arr.get(i).getId());
+	System.out.println("req id:"+request.getParameter("id"));
+	
+	System.out.println(i);
 %>
 <style>
 	table{
@@ -61,32 +60,32 @@
 	</tr>
 	<tr>
 		<td><label for = "id">아이디 :</label></td>
-		<td> <%=rs.getString("id") %></td>
-		<td><input type = "hidden" name ="id" value = <%=rs.getString("id") %> ></td>
+		<td><%= arr.get(i).getId() %></td>
+		<td><input type = "hidden" name ="id" value = <%= arr.get(i).getId() %> ></td>
 	</tr>
 	<tr>
 		<td><label for = "pass">비밀번호 : </label></td>
-		<td><input type="password" name="pass" id = "pass" value = <%=rs.getString("password") %>></td>
+		<td><input type="password" name="pass"  value = <%= arr.get(i).getPassword() %>></td>
 	</tr>
 	<tr>
 		<td><label for = "name">이름 : </label></td>
-		<td><input type="text" name="name" id = "name" value = <%=rs.getString("name") %>></td>
+		<td><input type="text" name="name"  value = <%= arr.get(i).getName() %>></td>
 	</tr>
 	<tr>
 		<td><label for = "age">나이 : </label></td>
-		<td><input type="text" name="age" id = "age" value = <%=rs.getInt("age") %>>
+		<td><input type="text" name="age" value = <%= arr.get(i).getAge() %>>
 		</td>
 	</tr>
 	<tr>
 		<td><label for = "gender1"></label>성별 : </td>
 		<td>
-			<input type="radio" name="gender" value="male" checked id = "gender1">남자
-			<input type="radio" name="gender" value="female" id = "gender2"/>여자
+			<input type="radio" name="gender" value="male" checked >남자
+			<input type="radio" name="gender" value="female" />여자
 		</td>
 	</tr>
 	<tr>
 		<td><label for = "email">이메일 주소 : </label></td>
-		<td><input type="text" name="email" id = "email" value = <%=rs.getString("email") %>></td>
+		<td><input type="text" name="email" value = <%= arr.get(i).getEmail() %>></td>
 	</tr>
 	<tr>
 		<td colspan="2">
@@ -99,3 +98,5 @@
 </form>
 </body>
 </html>
+
+<% i = 0;%>

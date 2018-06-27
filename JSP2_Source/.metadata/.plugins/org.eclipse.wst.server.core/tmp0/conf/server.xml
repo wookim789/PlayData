@@ -151,7 +151,7 @@
 
       <Context docBase="C:\BigDeep\JSP2_Source\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\BigDeep\JSP2_Source\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Constructure" path="/Constructure" reloadable="true" source="org.eclipse.jst.jee.server:Constructure">
    <Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="500" maxIdle="100" name="jdbc/OracleDB" password="123456" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:xe" username="hr"/>
-</Context></Host>
+</Context><Context docBase="C:\BigDeep\JSP2_Source\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\BlackBoard" path="/BlackBoard" reloadable="true" source="org.eclipse.jst.jee.server:BlackBoard"/></Host>
     </Engine>
   </Service>
 </Server>

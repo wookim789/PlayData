@@ -1,0 +1,82 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+    
+<%@ page import = "board.BoardDBBean" %>
+<%@ page import = "board.BoardDataBean" %>
+<%@ page import = "java.util.List" %>
+<%@ page import = "java.text.SimpleDateFormat" %>
+<%@ include file = "Color.jsp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<%
+	int pageSize =10;
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-d HH:mm");
+	String pageNum = request.getParameter("pageNum");
+	
+	if(pageNum == null){
+		pageNum = "1";
+	}
+	
+	int currentPage = Integer.parseInt(pageNum);
+	int startRow = (currentPage - 1) * pageSize + 1;
+	int endRow = startRow + pageSize - 1;
+	int count = 0;
+	int number = 0;
+	
+	List articleList = null;
+	BoardDBBean dbPro = BoardDBBean.getInstance();
+	count = dbPro.getArticleCount();
+	
+	if(count < startRow){
+		currentPage = currentPage - 1;
+		startRow = (currentPage -1 )* pageSize + 1;
+		endRow = startRow + pageSize - 1;
+	}
+	if(count > 0){
+		articleList = dbPro.getArticles(startRow, endRow);
+	}
+	number = count - (currentPage - 1) * pageSize;
+	
+%>
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>BlackBoard</title>
+</head>
+<body bgcolor ="<%=bodyback_c%>">
+	<center>
+		<b>글목록</b>
+		<table width ="600">
+			<tr>
+				<td align = "right" bgcolor = "<%=value_c%>">
+					<a href ="writeForm.jsp">글쓰기</a>
+				</td>
+			</tr>
+		</table>
+	<%
+		if(count == 0){
+	%>		
+		<table width = "600" border ="1" cellpadding = "0" cellspacing="0">
+			<tr>
+				<td align = "center"> 게시판에 저장된 글이 없습니다. </td>
+			</tr>
+		</table>
+		
+	<%
+		}else{
+	%>
+			<table width = "600" border = "1" cellpadding = "0" cellspacing="0">
+				<tr height = "30" bgcolor = "<%=value_c%>">
+					
+				</tr>
+			</table>
+	<% 
+		}
+	%>
+	</center>
+</body>
+</html>

@@ -1,0 +1,4 @@
+CREATE TABLE test(
+	id VARCHAR2(12) PRIMARY KEY,
+	name VARCHAR2(12)
+)

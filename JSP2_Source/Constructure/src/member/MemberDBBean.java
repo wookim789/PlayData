@@ -65,7 +65,60 @@ public class MemberDBBean {
       return result;
    }
    
-   
+   public int getDBListUpdate(MemberDataBean memberdata){
+	   Connection conn = null;
+	   PreparedStatement pstmt = null;
+	   int result = 0;
+	   try
+	      {
+	         conn = getConnection();
+	         
+	         pstmt = conn.prepareStatement("UPDATE member SET password = ?, name = ?, age = ?,gender = ?, email = ?  WHERE id=?");
+	    
+	         pstmt.setString(1,  memberdata.getPassword());
+	         pstmt.setString(2,  memberdata.getName());
+	         pstmt.setInt(3,  memberdata.getAge());
+	         pstmt.setString(4,  memberdata.getGender());
+	         pstmt.setString(5,  memberdata.getEmail());
+	         pstmt.setString(6,  memberdata.getId());
+	         result = pstmt.executeUpdate();
+	      }
+	      catch (Exception ex) {
+	         System.out.println("가입오류" + ex.getMessage());
+	         ex.printStackTrace();
+	      } finally {
+	         if(pstmt != null) try {pstmt.close();}catch(SQLException ex) {}
+	         if(conn != null) try {pstmt.close();}catch(SQLException ex) {}
+	      }
+	   
+	   
+	   return result;
+   }
+   public int getDBlistDel(String id) {
+	   Connection conn = null;
+	   PreparedStatement pstmt = null;
+	   int result = 0;
+	   
+	   try
+	      {
+	         conn = getConnection();
+	      
+	         pstmt = conn.prepareStatement("DELETE FROM member WHERE id=?");
+	    
+	         pstmt.setString(1, id);
+	         result = pstmt.executeUpdate();
+	      }
+	      catch (Exception ex) {
+	         System.out.println("가입오류" + ex.getMessage());
+	         ex.printStackTrace();
+	      } finally {
+	         if(pstmt != null) try {pstmt.close();}catch(SQLException ex) {}
+	         if(conn != null) try {pstmt.close();}catch(SQLException ex) {}
+	      }
+	   
+	   
+	   return result;
+   }
    public ArrayList<MemberDataBean> getDBListdata(){
 	   ArrayList<MemberDataBean> arr=null;
 	   MemberDataBean mdb =null;

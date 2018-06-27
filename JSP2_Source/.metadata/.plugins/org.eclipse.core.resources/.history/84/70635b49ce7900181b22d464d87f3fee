@@ -1,0 +1,6 @@
+package board;
+import java.sql.*;
+
+public class BoardDBBean {
+
+}

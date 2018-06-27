@@ -2,9 +2,10 @@
 <%@ page import="java.sql.*"%>
 <%@ page import="javax.sql.*" %>
 <%@ page import="javax.naming.*" %>
+<%@ page import = "member.*" %>
+
 <%
-	String id=null;
-	
+	request.setCharacterEncoding("UTF-8");
 	if ((session.getAttribute("id")==null) || 
 	  (!((String)session.getAttribute("id")).equals("admin"))) {
 		out.println("<script>");
@@ -14,32 +15,16 @@
 	
 	String delete_id=request.getParameter("id");
 	
-	Connection conn=null;
-	PreparedStatement pstmt=null;
-	ResultSet rs=null;
+
 	
 	try {
-			Context init = new InitialContext();
-			DataSource ds = 
-				(DataSource) init.lookup("java:comp/env/jdbc/OracleDB");
-			conn = ds.getConnection();
-			
-			pstmt=conn.prepareStatement("DELETE FROM member WHERE id=?");
-			pstmt.setString(1,delete_id);
-			pstmt.executeUpdate();
+			MemberDBBean mdbb = MemberDBBean.getInstance();
+			mdbb.getDBlistDel(delete_id);
 			
 			out.println("<script>");
 			out.println("location.href='member_list.jsp'");
 			out.println("</script>");
 	}catch(Exception e){
 		e.printStackTrace();
-	}finally{
-		try{
-			pstmt.close();
-			conn.close();
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
 	}
 %>

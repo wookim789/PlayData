@@ -1,0 +1,68 @@
+package board;
+import java.awt.List;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+public class BoardDBBean {
+	private static BoardDBBean instance = new BoardDBBean();
+	
+	public static BoardDBBean getInstance(){
+		return instance;
+	}
+	
+	private BoardDBBean() {
+		
+	}
+	
+	private Connection getConnection() throws Exception{
+		Context initCtx = new InitialContext();
+		Context envCtx = (Context)initCtx.lookup("java:comp/env");
+		DataSource ds = (DataSource)envCtx.lookup("jdbc/OracleDB");
+		return ds.getConnection();
+	}
+	
+	private void close(ResultSet rs, PreparedStatement pstmt, Connection conn) {
+		if(rs != null)try {rs.close();}catch(SQLException ex) {}
+		if(pstmt != null)try {pstmt.close();}catch (SQLException ex) {}
+		if(conn != null)try {conn.close();}catch(SQLException ex) {}
+	}
+	public List getArticles(int start, int end) throws Exception{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		ArrayList articleList =null;
+		String sql = null;
+		
+		try {
+			conn = getConnection();
+			
+			sql = "select * from " + 
+			"(select rownum rnum, num, writer, passwd," +
+			"subject, email, content, reg_date," +
+			"readcount, ref, re_step, re_level form" +
+			"(select * from board order by ref desc, re_step asc))"+
+			"where rnum>=? and rnum<=";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, start);
+		pstmt.setInt(2, end);
+		rs = pstmt.executeQuery();
+		
+		if(rs.next()) {
+			articleList = new ArrayList();
+			do {
+				BoardDataBean article = new BoardDataBean();
+				article.setNum(rs.getInt("num"));
+				article.setWriter(num);
+			}
+		}
+		}
+		
+	}
+}

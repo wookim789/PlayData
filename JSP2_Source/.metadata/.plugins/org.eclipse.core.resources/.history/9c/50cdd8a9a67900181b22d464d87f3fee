@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="javax.sql.*" %>
+<%@ page import="javax.naming.*" %>
+<%@ page import="member.MemberDBBean" %>
+	<jsp:useBean id = "memberdata" class = "member.MemberDataBean">
+		<jsp:setProperty name = "memberdata" property="*"/>
+	</jsp:useBean>
+<%
+	System.out.println("업데이트문서");
+	
+	
+	if ((session.getAttribute("id")==null) || 
+	  (!((String)session.getAttribute("id")).equals("admin"))) {
+		out.println("<script>");
+		out.println("location.href='loginForm.jsp'");
+		out.println("alert('aa')");
+		out.println("</script>");
+
+	}
+	String id=null;
+	request.setCharacterEncoding("UTF-8");
+	String id_update=request.getParameter("id");
+	
+	System.out.println("업데이트문서1") ;
+	try {
+			MemberDBBean mdbb = MemberDBBean.getInstance();
+			memberdata.setId(request.getParameter("id"));
+			memberdata.setPassword(request.getParameter("pass"));
+			memberdata.setName(request.getParameter("name"));
+			memberdata.setAge(request.getParameter("age"));
+			memberdata.setEmail(request.getParameter("email"));
+			System.out.println("업데이트문서2") ;
+			out.println("<script>");
+			out.println("location.href='member_list.jsp'");
+			out.println("</script>");
+	}catch(Exception e){
+		e.printStackTrace();
+	}
+%>

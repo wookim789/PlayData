@@ -1,0 +1,42 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="javax.sql.*" %>
+<%@ page import="javax.naming.*" %>
+<%@ page import = "member.*" %>
+	<jsp:useBean id = "memberdata" class = "member.MemberDataBean">
+		<jsp:setProperty name = "memberdata" property="*"/>
+	</jsp:useBean>
+<%
+	String id=null;
+	
+	if ((session.getAttribute("id")==null) || 
+	  (!((String)session.getAttribute("id")).equals("admin"))) {
+		out.println("<script>");
+		out.println("location.href='loginForm.jsp'");
+		out.println("</script>");
+	}
+	
+	String delete_id=request.getParameter("id");
+	
+	Connection conn=null;
+	PreparedStatement pstmt=null;
+	ResultSet rs=null;
+	
+	try {
+			
+			
+			out.println("<script>");
+			out.println("location.href='member_list.jsp'");
+			out.println("</script>");
+	}catch(Exception e){
+		e.printStackTrace();
+	}finally{
+		try{
+			pstmt.close();
+			conn.close();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+%>

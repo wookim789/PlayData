@@ -50,7 +50,7 @@
 	<%while(rs.next()){%>
 	<tr>
 		<td><a href="member_info.jsp?id=<%=rs.getString("id") %>"><%=rs.getString("id") %></a></td>
-		<td><a href="member_updateList.jsp?id=<%=rs.getString("id") %>">수정</a></td>
+		<td><a href="member_update.jsp?id=<%=rs.getString("id") %>">수정</a></td>
 		<td><a href="member_delete.jsp?id=<%=rs.getString("id") %>">삭제</a></td>	
 	</tr>
 	<%} %>

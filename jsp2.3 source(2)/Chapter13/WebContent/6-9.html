@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<HTML>
+<head>
+	<meta charset="utf-8"/>
+	<title>영화 credit 예제</title>
+
+</head>
+<body onload="startCredit()" bgcolor="black" color="white">
+<!-- onload : 브라우저에서 문서 로딩이 완료되는 발생하는 이벤트 
+     onload 이벤트가 발생하면 startCredit() 함수가 호출 되도록 설정 -->
+	<div id="credit">
+	</div>
+<script>
+	// credit으로 나올 글씨들의 List를 array 선언
+	var creditList = new Array(
+		"윤동주 시집",
+		"",
+		"",
+		"",
+		"",
+		"<서시>",
+		"",
+		"죽는 날까지 하늘을 우러러", 
+		"한점 부끄럼이 없기를,", 
+		"잎새에 이는 바람에도", 
+		"나는 괴로워했다.",
+		"별을 노래하는 마음으로",
+		"모든 죽어가는 것을 사랑해야지",
+		"그리고 나한테 주어진 길을", 
+		"걸어가야겠다.", 
+		"",
+		"오늘밤에도 별이 바람에 스치운다.",
+		"",
+		"",
+		"",
+		"",
+		"<눈감고 가라>",
+		"",
+		"태양을 사모하는 아이들아", 
+		"별을 사랑하는 아이들아", 
+		"밤이 어두웠는데", 
+		"눈감고 가거라",
+		"발부리에 돌이 채이거든",
+		"감았던 눈을 와짝 떠라",
+		"",
+		"",
+		"",
+		"",
+		"<새로운 길>",
+		"",
+        "내를 건너서 숲으로", 
+		"고개를 넘어서 마을로", 
+		"어제도 가고 오늘도 갈", 
+		"나의 길 새로운 길",
+		"민들레가 피고 까치가 날고",
+		"아가씨가 지나고 바람이 일고",  
+		"나의 길은 언제나 새로운 길",
+		"오늘도..... 내일도.....",
+		"내를 건너서 숲으로",
+		"고개를 넘어서 마을로"   
+	);
+
+	var divCredit = null;			// credit DIV Element의 객체 변수 
+	var divTop = 0;					// credit DIV Element의 top 위치 저장을 위한 변수 
+	var divHeight = 0;				// credit DIV Element의 height 위치 저장을 위한 변수 
+	var precounter = 0;				// text node fadein을 하기위한 counter 변수 
+	var fadeout_on = false;			// credit text fadeout flag
+	var fadein_on = false;			// credit text fadein flag
+	var textAppearIdx = 0;			// credit Text를 fade in 하기 위한 index 값
+	var textDisappearIdx=0;			// credit Text를 fade out 하기 위한 index 값 
+	var changeAppearCnt=0;			// credit Text를 fade in 하기 위한 counter 값
+	var changeDisappearCnt=0;		// credit Text를 fade out 하기 위한 counter 값
+	var appearColor = 0;			// credit Text를 fade in 하기 위한 color 값
+	var disappearColor=255;			// credit Text를 fade out 하기 위한 color 값
+	var tmpTop = 0;
+
+	function startCredit() {
+
+		divCredit = document.getElementById("credit");	// credit Element 객체 검색
+		var wiw = window.innerWidth;		// 브라우저 윈도우의 width 사이즈 반환
+		var wih = window.innerHeight;		// 브라우저 윈도우의 height 사이즈 반환
+		console.log(wiw)
+		divCredit.style.cssText = "position:absolute;top:"+wih+"px;left:0px;width:"+wiw+"px;height:"+0+"px;font-size:20px;overflow:hidden;";	// divCredit의 style.cssText 속성을 통해 text의 style을 한번에 설정
+
+		createDivs(creditList);				// credit에 사용하는 text array를 사용한  Div 생성
+		scrollFirst();
+	}
+
+	// creditList array에 있는 값을 textNode로 생성하여 credit에 child을 붙이는 함수
+	function createDivs(arrayList){
+		var tmpCenter=document.createElement("CENTER");	// CENTER Element에 생성
+		// creditList의 원소 갯수만큼 for문을 돌면서 TextNode 생성
+		for(var idx = 0;idx < arrayList.length;idx++){
+			var tmpDiv = document.createElement("DIV");	// DIV Element에 생성
+			var tmpText = document.createTextNode(arrayList[idx]);	// Array의 원소 값을 가지고 text node 생성
+			var tmpBr = document.createElement("BR");		// 줄바꿈을 하기 위해 BR element 생성
+			tmpDiv.setAttribute("id","textLine"+idx); // DIV Element에 id attribute 생성 
+			tmpDiv.style.cssText = "position:relative;color:black;font-size:20px;";	// 생성된 DIV에 style 설정
+			tmpDiv.appendChild(tmpText);	// 생성한 Text Node를 DIV의 Child로 붙임
+			tmpDiv.appendChild(tmpBr);		// 생성한 BR Element를 DIV의 Child로 붙임
+			tmpCenter.appendChild(tmpDiv);  // 생성한 DIV Element를 CENTER의 Child로 붙임
+		}
+
+		divCredit.appendChild(tmpCenter);	// 생성한 CENTER Element를 DIV(credit)의 Child로 붙임
+	}
+
+
+	function scrollFirst(){
+		divTop = parseInt(divCredit.style.top);	// top 값을 Integer형으로 변환
+		if(isNaN(divTop)){						// divTop 값이 숫자가 아닌지 검사하여 숫자가 아니면 0으로 설정
+			divTop = 0;
+		}
+
+		divTop -= 2;							// scroll 처리를 위해서 top 값을 2씩 감소
+		divCredit.style.top = divTop+"px";		// credit DIV의 top 값을 재설정
+		setTimeout("scrollSecond()",20);		// 20 밀리세컨드 후에 scrollSecond() 호출
+	}
+
+
+	function scrollSecond() {
+		divHeight = parseInt(divCredit.style.height);	// height 값을 Integer형으로 변환
+		if (isNaN(divHeight)){						    // divHeight 값이 숫자가 아닌지 검사하여 숫자가 아니면 0으로 설정
+			divHeight = 0;
+		}
+		divHeight += 2;									// scroll 처리를 위해서 height 값을 2씩 증가
+		divCredit.style.height = divHeight+"px";		// credit DIV의 height 값을 재설정
+		
+		precounter++;									// text가 나오는 시점을 계산하기 위해서 precounter 증가 
+		if(precounter > 20) {
+			fadein_on = true;
+		}
+		if(fadein_on) {
+			if(textAppearIdx < creditList.length) {
+				var tmpText1 = document.getElementById("textLine"+textAppearIdx);	//credit text node를 검색
+				tmpText1.style.color = "rgb("+appearColor+","+appearColor+","+appearColor+")";	// 글자색을 천천히 black -> white로 변경하기 위해 변수처리
+				appearColor+=17;				// text color 변수 17씩 증가
+			}
+			changeAppearCnt++;					// fade in 처리를 위한 counter 증가
+			if(changeAppearCnt > 15) {
+				changeAppearCnt=0;				// fade in 처리하기 위한 Counter 초기화
+				appearColor=0;					// color 값 초기화 0
+				textAppearIdx++;				// 다음 text node index 값 
+			}
+		}
+		tmpTop = parseInt(divCredit.style.top);
+		if (isNaN(tmpTop)){
+			tmpTop = 0;
+		}
+		if(tmpTop < 120 && fadeout_on==false) {	// fade out 처리 시작을 Credit DIV의 top이 60일 때 부터 시
+			fadeout_on=true;
+		}
+		if(fadeout_on) {
+			if(textDisappearIdx < creditList.length) {
+				var tmpText2 = document.getElementById("textLine"+textDisappearIdx);
+				tmpText2.style.color="rgb("+disappearColor+","+disappearColor+","+disappearColor+")";
+				disappearColor-=17;  		// text color 변수 17씩 감소
+			}
+			changeDisappearCnt++;				// fade out 처리를 위한 counter 증가
+			if(changeDisappearCnt>15) {			
+				changeDisappearCnt=0;			// fade out 처리하기 위한 Counter 초기화
+				disappearColor=255;				// color 값 초기화 255
+				textDisappearIdx++;				// 다음 text node index 값 
+				
+			}
+		}
+		setTimeout("scrollFirst()",20);
+	}
+</script>
+</body>
+</HTML>

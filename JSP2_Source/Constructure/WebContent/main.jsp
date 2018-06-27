@@ -9,7 +9,6 @@
 		out.println("location.href='loginForm.jsp'");
 		out.println("</script>");
 	}
-
 %>
 <html>
 <head>

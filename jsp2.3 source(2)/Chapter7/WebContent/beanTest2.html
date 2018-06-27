@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#formArea{
+		margin : auto;
+		width : 400px;
+		border : 1px solid black;
+	}
+	h1,fieldset{
+		text-align : center;
+	}
+</style>
+</head>
+<body>
+<section id = "formArea">
+	<h1>propery="*" 테스트</h1>
+	<form action = "beanTest2.jsp" method = "POST">
+		<fieldset>
+			<label for = "name">이름 : </label><input type = "text" name = "name" id = "name"/><br>
+			<label for = "addr">주소 : </label><input type = "text" name = "addr" id = "addr"/><br>
+			<label for = "email">이메일 주소 : </label><input type = "email" name = "email" id = "email"/><br>
+			<label for = "birthday">생년월일 : </label><input type = "date" name = "birthday" id = "birthday"/><br>
+			<input type = "submit" value = "전송">
+		</fieldset>
+	</form>
+</section>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+   pageEncoding="UTF-8"%>
+<%@ page import="board.BoardDBBean"%>
+<%@ page import="board.BoardDataBean"%>
+<%@ page import="java.util.List"%>
+<%@ page import ="java.util.*" %>
+<%@ page import="java.text.SimpleDateFormat"%>
+<%@ include file="Color.jsp"%>
+
+<%
+   int pageSize = 10;
+   SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-d HH:mm");
+   
+   String pageNum = request.getParameter("pageNum"); //페이지 접속시 보여줄 페이지 계산
+   
+   if(pageNum == null) //위 request에서 pageNum값이 null일때는 맨처음 페이지에 접속 시 페이지 정보가 없기 때문에 
+      pageNum = "1";
+   
+   int currentPage = Integer.parseInt(pageNum);
+   int startRow = (currentPage - 1) * pageSize + 1; //보여줄 글의 시작 번호
+   int endRow = startRow + pageSize - 1;			//보여줄 글의 마지막 번호
+   int count = 0; //글의 총 개수
+   int number = 0;
+   
+   ArrayList<BoardDataBean> articleList = null;
+   BoardDBBean dbPro = BoardDBBean.getInstance();
+   count = dbPro.getArticleCount();
+   
+   //맨 마지막 페이지의 마지막 글을 삭제하여 마지막 페이지가 없어졌을 때 필요
+   //글이 10씩 저장되는 페이지가 있고 글은 총 31개가 있다
+   //이 때 페이지 수는 4개이다.
+   //마지막 페이지에는 하나의 글만 존재한다.
+   //이 때 마지막 글을 보고 다시 뒤로 가면
+   //4페이로 이동하는게 좋다
+   //하지만 이 상황에서 글을 삭제하면 4페이지로 이동하는게 아니라 3페이지로 이동하는게 맞다.
+   //따라서 count 총 글개수가 startRow보다 작아지는 순간 (위에서 말한 상황)
+   //해당 if문이 실행된다. 총개수 : 30 < 시작수 :31
+   if(count < startRow)
+   {
+      currentPage = currentPage - 1;
+      startRow = (currentPage - 1) * pageSize + 1;
+      endRow = startRow + pageSize - 1;
+   }
+   //1페이지에 글이 하나밖에 없을때 삭제하면
+   if(count > 0)
+      articleList = dbPro.getArticlees(startRow, endRow);
+   
+   number = count - (currentPage - 1) * pageSize; //페이지 번호에 해당한다. DB데이터가 아니다.
+%>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>게시판</title>
+</head>
+
+<body bgcolor="<%=bodyback_c%>">
+   <center>
+      <b>글목록</b>
+      <table width="600">
+         <tr>
+            <td align="right" bgcolor="<%=value_c%>"><a
+               href="writeForm.jsp">글쓰기</a></td>
+         </tr>
+      </table>
+<%
+   if(count == 0)
+   {
+%>
+      <table width="600" border="1" cellpadding="0" cellspacing="0">
+         <tr>
+            <td align="center">게시판에 저장된 글이 없습니다.</td>
+         </tr>
+      </table>
+<%
+   }
+   else
+   {
+%>
+      <table width="600" border="1" cellpadding="0" cellpacing="0" align="center">
+         <tr height="30" bgcolor="<%=value_c%>">
+            <td align="center" width="50"> 번 호 </td>
+            <td align="center" width="250"> 제 목 </td>
+            <td align="center" width="100"> 작성자 </td>
+            <td align="center" width="150"> 작성일 </td>
+            <td align="center" width="50"> 조 회 </td>
+      </tr>
+<%
+      for(int i=0; i<articleList.size(); i++)
+      {
+         BoardDataBean article = (BoardDataBean)articleList.get(i);
+%>
+         <tr height="30">
+            <td align="center" width="50"> <%=number%> </td>
+            <td width="250">
+<%
+               if(article.getRe_level() > 0)
+               {
+                  for(int level = 0; level < article.getRe_level(); level++)
+                  {
+%>
+                     &nbsp;
+<%
+                  }
+%>
+                  <img src="image/re.gif">
+<%
+               }
+               else
+               {
+%>
+                  &nbsp;
+<%
+               }
+%>
+               <a href="content.jsp?num=<%=article.getNum()%>&pageNum=<%=currentPage%>&number=<%=number%>">
+               <%=article.getSubject()%></a>
+<%
+               if(article.getReadcount() >= 20)
+               {
+%>
+                  <img src="images/hot.gif"border="0" height="16">
+<%   
+               }
+%>
+               </td>
+               <td align="center" width="100">
+               <a href="mailto:<%=article.getEmail()%>"> <%=article.getWriter()%></a>
+               </td>
+               
+               <td align="center" width="50"> <%=article.getReadcount() %></td>
+         </tr>
+<%
+         number--;
+      }
+%>
+      </table>
+      <br>
+<%
+      }
+   
+      if(count > 0)
+      {
+         int pageCount = ((count-1) / pageSize)+1;
+         int startPage = 1;
+         int i;
+         
+         if(currentPage%10 != 0)
+            startPage = (int)(currentPage/10)*10+1;
+         else
+            startPage = currentPage - 9;
+         
+         int pageBlock = 10;
+         
+         if(startPage > 10)
+         {
+%>
+            <a href="List.jsp?pageNum= <%=startPage-10%>">[이전]</a>
+<%
+         }
+         
+         for(i=startPage; (i<=startPage+9) && (i<=pageCount) ; i++)
+         {
+%>
+            <a href="List.jsp?pageNum=<%=i%>">[<%=i%>]</a>
+<%
+         }
+         
+         if(i < pageCount) 
+         {
+%>
+            <a href="List.jsp?pageNum=<%=startPage+10%>">[다음]</a>
+<%
+         }
+      }
+%>
+   </center>
+</body>
+</html>

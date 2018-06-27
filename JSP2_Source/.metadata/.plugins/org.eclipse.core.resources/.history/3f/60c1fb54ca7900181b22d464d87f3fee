@@ -1,0 +1,162 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+    <%@ page contentType = "text/html; charset=utf-8" %>
+    <%@ page import = "board.BoardDBBean" %>
+    <%@ page import = "board.BoardDataBean" %>
+    <%@ page import = "java.util.List" %>
+    <%@ page import = "java.text.SimpleDateFormat" %>
+    <%@ include file = "color.jsp" %>
+    
+    <%
+       int pageSize = 10;
+       SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-d HH:mm");
+       
+       String pageNum = request.getParameter("pageNum");
+       
+       if(pageNum ==null)
+       {
+          pageNum = 1;
+       }
+       
+       int currentPage = Integer.parseInt(pageNum);
+       int startRow = (currentPage -1) * pageSize +1;
+       int endRow = startRow +pageSize -1 ;
+       int count = 0;
+       int number = 0;
+       
+       List articleList =null;
+       BoardDBBean dbPro = BoardDBBean.getInstance();
+       count = dbPro.getArticleCount();
+       
+       //맨 마지막 페이지의 마지막 글을 삭제하여 마지막 페이지가 없어졌을 때 필요
+       if(count < startRow)
+       {
+          currentPage = currentPage - 1;
+          startRow = (currentPage - 1) * pageSize + 1;
+          endRow = startRow +pageSize -1;
+          
+       }
+       if (count > 0)
+       {
+          articleList = dbPro.getArticles(startRow, endRow);
+       }
+       
+       number = count - (currentPage - 1 ) * pageSize;
+       
+    %>
+    
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>게시판</title>
+</head>
+<body bgcolor = "<%=bodyback_c%>">
+   <center>
+      <b> 글 목록</b>
+      <table>
+         <tr>
+            <td align = "right" bgcolor ="<%=value_c %>">
+               <a href="writeForm.jsp"> 글쓰기</a>
+            </td>
+         </tr>
+      </table>
+   <%
+      if ( counnt == 0)
+      {
+   %>      
+         <table>
+            <tr>
+               <td align="center"> 게시판에 저장된 글이 없습니다.</td>
+            </tr>
+         </table>
+      
+      
+   <%
+      }
+      else
+      {
+   %>
+         <table border ="1" width="600" cellpadding ="0" align="center">
+            <tr height ="30" bgcolor ="<%=value_c %>">
+               <td align = "center" width="50"> 번호 </td>
+               <td align = "center" width="250"> 제목 </td>
+               <td align = "center" width="100"> 작성자 </td>
+               <td align = "center" width="150"> 작성일 </td>
+               <td align = "center" width="50"> 조회 </td>
+            </tr>
+   <%
+            for (int i=0; i<articleList.size(); i ++)
+            {
+               BoardDataBean article = (BoardDataBean)articleList.get(i);
+   %>
+               <tr height="30">
+                  <td align="center" width="50"> <%=number %> </td>
+                  <td width="250">
+   <%
+                  if(article.getRe_level() > 0)
+                  {
+                     for(int level =0; level < article.getRe_level(); level++)
+                     {
+   %>
+                        &nbsp;
+   <%
+                     }
+   %>
+                     <img src="image/re.gif">
+   <%
+                  }
+                  else
+                  {
+   %>
+                     &nbsp;
+   <%
+                  }
+   %>
+                  <a href="content.jsp?num=<%=article.getNum() %>
+                  &pageNum=<%=currentPage %>&number=<%=number %>">
+                     <%=article.getSubject() %></a>
+   <%
+                  if(article.getReadcount() >= 20)
+                  {
+   %>
+                     <img src="images/hot.gif"border="0" height="16">
+   <%
+                  }
+                  else{
+   %>             	  
+                  
+                	  &nbsp;
+          <%
+                  }
+           %>
+  				<a href = "context.jsp?num=<%article.getNum()%>&pageNum=<%=currentPage%>&number=<%=number%>">
+  					<%=article.getSubject() %></a>
+  			<% 		
+  				if(article.getReadcount()>=20){
+  			%>	
+  					<img src = "images/hor.gif"border="0" height="16">
+  				
+                  
+         </table>
+   		 <br>
+   <%	
+   	}
+  			if(count >0){
+  				int pageCount = ((count-1)/pageSize)+1;
+  				int startPage = 1;
+  				int i;
+  				
+  				if(currentPage%10 !=0){
+  					startPage=(int)(currentPage/10)*10+1;
+  				}else{
+  					startPage = currentPage - 9;
+  				}
+  				int pageBlock =10;
+  			}
+ %>    
+   </center>
+   
+</body>
+</html>

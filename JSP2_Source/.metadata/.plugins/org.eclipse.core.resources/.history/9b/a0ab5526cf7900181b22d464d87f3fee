@@ -1,0 +1,25 @@
+package board;
+import java.sql.*;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+public class BoardDBBean {
+	private static BoardDBBean instance = new BoardDBBean();
+	
+	public static BoardDBBean getInstance(){
+		return instance;
+	}
+	
+	private BoardDBBean() {
+		
+	}
+	
+	private Connection getConnection() throws Exception{
+		Context initCtx = new InitialContext();
+		Context envCtx = (Context)initCtx.lookup("java:comp/env");
+		DataSource ds = (DataSource)envCtx.lookup("jdbc/OracleDB");
+		return ds.getConnection();
+	}
+}

@@ -1,0 +1,26 @@
+package board;
+import java.sql.Timestamp;
+
+public class BoardDataBean {
+	private int num;
+	private String writer;
+	private String passwd;
+	private String subject;
+	private String eamil;
+	private String content;
+	private Timestamp reg_date;
+	private int readcount;
+	private int ref;
+	private int re_step;
+	private int re_level;
+	
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
+	public String getWriter() {
+		
+	}
+}
