@@ -1,0 +1,14 @@
+package member;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+
+public class aa {
+
+	public static void main(String[] args) {
+		int arr[] = {1,2,2,3,3,4,1};
+		List<Integer> item = new ArrayList<Integer>();
+		List <Integer> answer = new ArrayList<>(new HashSet<Integer>(item));
+	}
+
+}

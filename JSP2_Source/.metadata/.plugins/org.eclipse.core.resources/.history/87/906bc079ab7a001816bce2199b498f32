@@ -1,0 +1,44 @@
+<%@page import="sun.awt.image.PixelConverter.Bgrx"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+ <%@ include file = "color.jsp" %>
+ 
+ <%
+ 	int num = Integer.parseInt(request.getParameter("num"));
+ 	String pageNum = request.getParameter("pageNum");
+ %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Post board</title>
+<script language="javascript">
+	/* function deleteSave() {
+		if(document.delForm.passwd.valuee==""){
+			alert("비밀번호입력");
+			document.delForm.passwd.focus();
+			return true;
+		}
+	} */
+</script>
+</head>
+<body bgcolor="<%=bodyback_c%>">
+	<center>
+		<b>글삭제</b><br>
+		<form method="post" name = "delForm" action="deletePro.jsp?pageNum=<%=pageNum %>" onsubmit="return deleteSave()">
+			<table>
+				<tr height="30">
+					<td align="center" bgcolor="<%=value_c %>">
+					<b>비밀번호 입력.</b>
+					</td>
+				</tr>
+				<tr height="30">
+					<td align="center">비밀번호 :
+					<input type="submit" value="글삭제">
+					<input type="button" value="글목록" onclick="document.location.href='list.jsp?pageNum=<%=pageNum%>'">
+					</td>
+				</tr>
+			</table>
+ 	</center>
+</body>
+</html>

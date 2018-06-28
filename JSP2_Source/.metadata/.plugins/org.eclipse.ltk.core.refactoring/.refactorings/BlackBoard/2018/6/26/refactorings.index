@@ -6,3 +6,9 @@
 1530074223899	Rename resource 'color.jsp'
 1530074230924	Rename resource 'list.jsp'
 1530074241215	Rename resource 'color4.jsp'
+1530154979760	Rename resource 'Color.jsp'
+1530154984268	Rename resource 'List.jsp'
+1530154987574	Rename resource 'WriteForm.jsp'
+1530154991158	Rename resource 'WritePro.jsp'
+1530155150703	Delete element
+1530156060966	Move 4 resources to 'WebContent'

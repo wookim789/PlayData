@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ page import = "board.BoardDBBean" %>
+<%@ page import = "board.BoardDataBean" %>
+<%@ page import = "java.text.SimpleDateFormat" %>
+<%@ page include file = "color.jsp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Post board</title>
+</head>
+<%
+	int num = Integer.parseInt(request.getParameter("num"));
+	String pageNum = request.getParameter("pageNum");
+	int number = Integer.parseInt(request.getParameter("number"));
+	
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd HH:mm");
+	
+	try{
+		BoardDBBean dbPro = BoardDBBean.getInstance();
+		BoardDataBean article = dbPro.getArticle(num);
+		
+		int ref = article.getRef();
+		int re_step = article.getRe_step();
+		int re_level = article.getRe_level();
+	}
+%>
+<body>
+
+</body>
+</html>
